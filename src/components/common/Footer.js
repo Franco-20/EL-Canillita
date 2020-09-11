@@ -10,8 +10,11 @@ const Footer = () => {
         <section className="bg-light">
             <div className="bg-light my-3 container-fluid">
                 <div className="row">
-                    <div className="col-md-3">
-                        <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "2em" }} icon={faInstagram} /></Button>
+                    <div className="col-md-3 my-3 text-center">
+                        <a href="#"><p>Términos y Condiciones</p></a>
+                        <a href="#"><p>Ayuda</p></a>
+                        <a href="#"><p>Más información</p></a>
+                        <a href="#"><p>Políticas de privacidad</p></a>
                     </div>
                     <div className="col-md-6 text-center">
                         <img className="w-25" src="img/canillitaPrueba.png" alt="" />
