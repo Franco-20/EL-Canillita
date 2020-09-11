@@ -10,22 +10,22 @@ const Footer = () => {
         <section className="bg-light">
             <div className="bg-light my-3 container-fluid">
                 <div className="row">
-                    <div className="col-md-3 my-3 text-center">
+                    <div className="col-md-3 my-4 p-2 text-center">
                         <a href="#"><p>Términos y Condiciones</p></a>
                         <a href="#"><p>Ayuda</p></a>
                         <a href="#"><p>Más información</p></a>
                         <a href="#"><p>Políticas de privacidad</p></a>
                     </div>
-                    <div className="col-md-6 text-center">
+                    <div className="col-md-6 text-center my-3">
                         <img className="w-25" src="img/canillitaPrueba.png" alt="" />
                         <p>25 de Mayo 654, S.M. Tucumán
                     Tucumán (T4000DAN)</p>
                         <h4>Contacto</h4>
-                        <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "3em" }} icon={faWhatsapp} /></Button>
-                        <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "3em" }} icon={faEnvelope} /></Button>
+                        <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "2em" }} icon={faWhatsapp} /></Button>
+                        <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "2em" }} icon={faEnvelope} /></Button>
                     </div>
                     <div className="col-md-3 my-4">
-                        <p className="my-4">Siguenos en nuestras Redes Sociales:</p>
+                        <p className="my-4 py-4">Siguenos en nuestras Redes Sociales:</p>
                         <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "3em" }} icon={faInstagram} /></Button>
                         <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "3em" }} icon={faFacebook} /></Button>
                         <Button variant="light" href="#" className="m-1"><FontAwesomeIcon style={{ fontSize: "3em" }} icon={faLinkedin} /></Button>
