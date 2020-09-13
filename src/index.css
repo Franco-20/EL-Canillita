@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input[type="email-"],
+input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border-color:black ;
+    border-width: 1px;
+    
+}
+
+.titulolog{
+  text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
