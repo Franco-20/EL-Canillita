@@ -5,7 +5,7 @@ import './bootstrap.min.css';
 import Navbar from "./components/common/Encabezado";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/principal/Inicio";
-import Error404 from "./components/error/Error404";
+import Error404 from "./components/Error/Error404";
 import Actualidad from "./components/categorias/Actualidad";
 import Deportes from "./components/categorias/Deportes";
 import Espectaculos from "./components/categorias/Espectaculos";
@@ -16,7 +16,6 @@ import Salud from "./components/categorias/Salud";
 import Tecnologia from "./components/categorias/Tecnología";
 import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
-
 function App() {
   return (
     <Router>
