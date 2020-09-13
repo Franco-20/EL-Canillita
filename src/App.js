@@ -16,6 +16,7 @@ import Salud from "./components/categorias/Salud";
 import Tecnologia from "./components/categorias/Tecnología";
 import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
+import InfoNoticia from "./components/InfoNoticia";
 
 function App() {
   return (
@@ -55,6 +56,10 @@ function App() {
         <Route exact path="/tecnologia">
           <Tecnologia></Tecnologia>
         </Route>
+        <Route exact path="/noticias">
+          <InfoNoticia></InfoNoticia>
+        </Route>
+        
         <Route exact path="/error404">
           <Error404></Error404>
         </Route>
