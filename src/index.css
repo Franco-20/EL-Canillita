@@ -27,3 +27,17 @@ input[type="password"]{
     color: #1a2537;
     font-size: 40px;
 }
+
+.fondosesion{
+ background-image: url("components/imagenes/fondoceleste2.jpg");
+  background-size: 100%;
+ 
+}
+
+.botonsesion{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  
+
+}
