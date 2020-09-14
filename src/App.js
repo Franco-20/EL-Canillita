@@ -54,7 +54,7 @@ function App() {
         <Route exact path="/tecnologia">
           <Tecnologia></Tecnologia>
         </Route>
-        <Route exact path="/error404">
+        <Route exact path="*">
           <Error404></Error404>
         </Route>
       </Switch>
