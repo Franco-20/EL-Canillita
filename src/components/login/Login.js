@@ -5,7 +5,8 @@ import { Button } from "react-bootstrap";
 
 const Login = () => {
   return (
-    <div className="container ">
+    <div className="fondosesion">
+    <div className="container">
       <h1>Registrarse</h1>
 
       <Form>
@@ -53,6 +54,7 @@ const Login = () => {
           Registrarse
         </Button>
       </Form>
+    </div>
     </div>
   );
 };

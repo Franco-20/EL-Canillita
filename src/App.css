@@ -1,0 +1,23 @@
+.imagengrande{
+    width: 100%;
+}
+
+.publicidad{
+    margin-top: 70px ;
+    margin-left: 50px ;
+    width:300px;
+    height:275px;
+}
+
+.publicidad2{
+    margin-top: 20px;
+    margin-left: 50px;
+    width:300px;
+    height:275px;
+}
+
+.iconos{
+width: 50px !important;
+height: 25px !important;
+flex-direction: row-reverse !important;
+}
