@@ -10,7 +10,7 @@ import Actualidad from "./components/categorias/Actualidad";
 import Deportes from "./components/categorias/Deportes";
 import Espectaculos from "./components/categorias/Espectaculos";
 import Economia from "./components/categorias/Economía";
-import Fotografia from "../assents/Fotografía";
+import Fotografia from "../src/assents/Fotografía";
 import Politica from "./components/categorias/Política";
 import Salud from "./components/categorias/Salud";
 import Tecnologia from "./components/categorias/Tecnología";
