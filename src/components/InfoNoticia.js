@@ -26,7 +26,7 @@ const InfoNoticia = () => {
                         <img alt="" src={imagen} className="imagengrande" />
                         <p className="my-2"><small><b>12 de Septiembre del 2019 / Autor: Juan Perez</b></small></p>
                     </Col>
-                    <Col lg={4}>
+                    <Col className="d-none d-sm-none d-md-block" lg={4}>
                         <img alt="" src={imagencovid} className="publicidad"></img>
                         <img alt="" src={imagenpublicidad} className="publicidad2"></img>
                     </Col>
