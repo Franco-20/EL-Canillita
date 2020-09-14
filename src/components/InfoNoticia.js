@@ -3,7 +3,7 @@ import React from 'react';
 import imagen from '../assents/img/noticiacovid.jpg';
 import imagencovid from '../assents/img/publicidad2.gif';
 import imagenpublicidad from '../assents/img/publicidad1.jpg';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faComment, faShareSquare } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,7 +18,7 @@ const InfoNoticia = () => {
                             <h1 className="my-4"><strong>Coronavirus en Tucumán: 9 muertes y 543 casos en total este sábado</strong></h1>
                             <h3 className="my-4">PANDEMIA | Hace instantes el Ministerio de Salud dio su reporte vespertino del virus: a las cifras de la mañana se sumaron 3 fallecimientos y 183 positivos. Todos los números.</h3>
                         </div>
-                        <div className="">
+                        <div className="mr-auto">
                             <FontAwesomeIcon className="iconos" icon={faThumbsUp} />
                             <FontAwesomeIcon className="iconos" icon={faComment} />
                             <FontAwesomeIcon className="iconos" icon={faShareSquare} />
