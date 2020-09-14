@@ -10,7 +10,7 @@ import Actualidad from "./components/categorias/Actualidad";
 import Deportes from "./components/categorias/Deportes";
 import Espectaculos from "./components/categorias/Espectaculos";
 import Economia from "./components/categorias/Economía";
-import Fotografia from "./assents/Fotografía";
+import Fotografia from "./components/categorias/Fotografía";
 import Politica from "./components/categorias/Política";
 import Salud from "./components/categorias/Salud";
 import Tecnologia from "./components/categorias/Tecnología";
@@ -56,7 +56,11 @@ function App() {
         <Route exact path="/tecnologia">
           <Tecnologia></Tecnologia>
         </Route>
-        <Route exact path="*">
+        <Route exact path="/noticias">
+          <InfoNoticia></InfoNoticia>
+        </Route>
+        
+        <Route exact path="/error404">
           <Error404></Error404>
         </Route>
       </Switch>
