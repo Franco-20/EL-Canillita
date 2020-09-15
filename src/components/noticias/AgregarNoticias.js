@@ -116,6 +116,11 @@ const AgregarNoticias = () => {
             name="categoria"
           />
         </div>
+        <div className="text-center lead">
+        <Form.Group controlId="principalId">
+          <Form.Check type="checkbox" label="Publicar en principal" />
+        </Form.Group>
+        </div>
         <Button variant="primary" type="submit" className="w-100">
           Agregar
         </Button>
