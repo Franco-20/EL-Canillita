@@ -89,10 +89,10 @@ function App() {
         <Route exact path="/noticias/editar">
           <EditarNoticias></EditarNoticias>
         </Route>
-        <Route exact path="/principal">
+        <Route exact path="/admin/">
           <ListarNoticias noticias={noticias}></ListarNoticias>
         </Route>
-        <Route exact path="/item">
+        <Route exact path="/admin/item">
           <ItemNoticias noticias={noticias}></ItemNoticias>
         </Route>
       </Switch>

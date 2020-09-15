@@ -25,7 +25,7 @@ const ListarNoticias = (props) => {
         {props.noticias.map((noticia) => <ItemNoticias key={noticia.id} noticia={noticia}></ItemNoticias>) }
         </tbody>
       </Table>
-      <Button className="w-100 mb-5 mt-2" >Agregar noticia</Button>
+      <Button className="w-100 mb-5 mt-2" href="/noticias/agregar">Agregar noticia</Button>
     </section>
      
        
