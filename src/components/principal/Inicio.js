@@ -2,7 +2,7 @@ import React from "react";
 import ApiClimaMoneda from "./ApiClimaMoneda";
 import Card from "react-bootstrap/Card";
 
-const Inicio = () => {
+const Inicio = (props) => {
   return (
     <div>
       <ApiClimaMoneda />

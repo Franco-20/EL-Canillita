@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./bootstrap.min.css";
@@ -22,6 +22,25 @@ import AgregarNoticias from "./components/noticias/AgregarNoticias";
 import EditarNoticias from "./components/noticias/EditarNoticias";
 
 function App() {
+const [noticias, setNoticias] = useState([]);
+useEffect(()=>{
+  consultar();
+
+},[]);
+
+const consultar = async () => {
+
+  try {
+    const respuesta = await fetch("http://localhost:4004/noticias")
+    console.log(respuesta);
+    const resultado = await respuesta.json();
+    setNoticias(resultado);
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
   return (
     <Router>
       <Navbar></Navbar>
@@ -33,7 +52,7 @@ function App() {
           <Sesion></Sesion>
         </Route>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio noticias= {noticias}></Inicio>
         </Route>
         <Route exact path="/actualidad">
           <Actualidad></Actualidad>

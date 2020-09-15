@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+import Swal from 'sweetalert2';
 
 const AgregarNoticias = (props) => {
     const [error, setError] = useState(false);
@@ -18,13 +19,12 @@ const AgregarNoticias = (props) => {
     const seleccionarCategoria = (e) =>{
         setCategoria(e.target.value);
     }
-     const handlerSubmit = (e) =>{
+     const handlerSubmit = async (e) =>{
       e.preventDefault();
       if(tituloNoticia.trim() === "" ||
          resumen.trim() === "" || 
          detalle.trim() === "" ||
          imagen.trim() === "" ||
-         imagen2.trim() === "" ||
          autor.trim() === "" ||
          fecha === "" ||
          categoria === ""
@@ -34,9 +34,43 @@ const AgregarNoticias = (props) => {
         }
         setError(false);
 
-    }
+        const noticia= {
+            tituloNoticia: tituloNoticia,
+            resumen: resumen,
+            detalle: detalle,
+            imagen: imagen,
+            imagen2:imagen2,
+            categoria: categoria, 
+            autor: autor, 
+            fecha: fecha,
+            principal: principal
+        };
+
+         try {
+            const post = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(noticia)
+
+            } 
+            const resultado = await fetch("http://localhost:4004/noticias", post) 
+            console.log(resultado)
+            if(resultado.status === 201){
+                    Swal.fire(
+                        'Listo!',
+                        'Noticia nueva creada!',
+                        'success'
+                      )
+                }
+
+         } catch (error) {
+             console.log(error);
+         }
 
 
+    };
 
   return (
     <section className="container">
