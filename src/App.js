@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import './bootstrap.min.css';
+import "./bootstrap.min.css";
 import Navbar from "./components/common/Encabezado";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/principal/Inicio";
@@ -17,6 +17,8 @@ import Tecnologia from "./components/categorias/Tecnología";
 import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
 import InfoNoticia from "./components/InfoNoticia";
+
+import AgregarNoticias from "./components/noticias/AgregarNoticias";
 
 function App() {
   return (
@@ -59,9 +61,11 @@ function App() {
         <Route exact path="/noticias">
           <InfoNoticia></InfoNoticia>
         </Route>
-        
         <Route exact path="/error404">
           <Error404></Error404>
+        </Route>
+        <Route exact path="/noticias/agregar">
+          <AgregarNoticias></AgregarNoticias>
         </Route>
       </Switch>
       <Footer></Footer>

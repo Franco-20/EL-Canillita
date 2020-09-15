@@ -1,0 +1,38 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "tituloNoticia": "Aumentan los casos de COVID",
+      "resumen": "los casos del nuevo virus no dejan de crecer en Argentina",
+      "detalle": "msdskfpsgkopdgkpdfgkpdkgpdkfgpdp[gfd",
+      "imagen": "https://images.app.goo.gl/hQgPVvUBRqcUG3m26",
+      "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "categoria": "actualidad",
+      "autor": "Franco",
+      "fecha": "20/09/20"
+    },
+    {
+      "id": 2,
+      "tituloNoticia": "Messi se va",
+      "resumen": "messi deja el barcelona",
+      "detalle": "msdskfpsgkopdgkpdfgkpdkgpdkfgpdpfsknvksdfnsgnskfmslmsdf[gfd",
+      "imagen": "https://images.app.goo.gl/hQgPVvUBRqcUG3m26",
+      "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "categoria": "deportes",
+      "autor": "ai",
+      "fecha": "10/09/20"
+    },
+    {
+      "id": 3,
+      "tituloNoticia": "Cierran las sucursales de Vea",
+      "resumen": "Las sucursales del supermercado cerraron hoy",
+      "detalle": "msdskfpsgkopdgkpdfgkpdkgpdkfgpdp[gfd",
+      "imagen": "https://images.app.goo.gl/hQgPVvUBRqcUG3m26",
+      "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "categoria": "actualidad",
+      "autor": "Diego",
+      "fecha": "20/08/20"
+    }
+  ]
+  
+}
