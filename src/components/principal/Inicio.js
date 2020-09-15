@@ -12,9 +12,9 @@ const Inicio = () => {
         </article>
         <h3 className="mt-4 mb-3 titulo text-center">Destacadas del dia</h3>
         <div className="d-flex justify-content-center">
-          <div className="row">
+          <div className="row ">
             <div>
-              <Card className="bg-dark text-white">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid.jpg"}
                   alt="Card image"
@@ -32,8 +32,8 @@ const Inicio = () => {
                 </Card.ImgOverlay>
               </Card>
             </div>
-            <div className="ml-3">
-              <Card className="bg-dark text-white cardDestacado">
+            <div className="col-sm-12 col-md-4 col-lg-3">
+              <Card className="bg-dark text-white cardDestacado efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -48,7 +48,7 @@ const Inicio = () => {
                   <Card.Text>Last updated 3 mins ago</Card.Text>
                 </Card.ImgOverlay>
               </Card>
-              <Card className="bg-dark text-white cardDestacado mt-2">
+              <Card className="bg-dark text-white cardDestacado mt-2 efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -67,15 +67,15 @@ const Inicio = () => {
           </div>
         </div>
         
-        <article className="text-center ">
+        <article className="text-center mt-4">
           <img src={process.env.PUBLIC_URL + "coto.gif"} alt="" />
         </article>
         <h4 className="subtitulos">
-          Actualidad <hr />
+          Actualidad <hr/>
         </h4>
-        <div className="d-flex">
+        <div className="d-flex justify-content-center">
           <div className="row">
-            <div className="mr-5 cards ">
+            <div className=" mr-3 ml-4 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -90,7 +90,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards ">
+            <div className=" mr-3 efecto  ">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -105,7 +105,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards ">
+            <div className="mr-3 efecto  ">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -131,8 +131,8 @@ const Inicio = () => {
         </h4>
 
         <div className="d-flex justify-content-center">
-          <div className="row">
-            <div className="mr-5 cards">
+          <div className="row ">
+            <div className="mr-3 ml-4 efecto ">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -147,7 +147,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards">
+            <div className="mr-3 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -162,7 +162,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards">
+            <div className="mr-3 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -184,8 +184,8 @@ const Inicio = () => {
         </article>
         <h4 className="subtitulos">Politica <hr/></h4>        
         <div className="d-flex justify-content-center">
-          <div className="row">
-            <div className="mr-5 cards">
+          <div className="row ">
+            <div className="mr-3 ml-4 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -200,7 +200,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards">
+            <div className="mr-3 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -215,7 +215,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards">
+            <div className="mr-3 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -237,8 +237,8 @@ const Inicio = () => {
         </article>
         <h4 className="subtitulos">Salud<hr /></h4>        
         <div className="d-flex justify-content-center">
-          <div className="row">
-            <div className="mr-5 cards">
+          <div className="row ">
+            <div className="mr-3 ml-4 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -253,7 +253,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards">
+            <div className="mr-3 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -268,7 +268,7 @@ const Inicio = () => {
                 />
               </Card>
             </div>
-            <div className="mr-5 cards">
+            <div className="mr-3 efecto">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
