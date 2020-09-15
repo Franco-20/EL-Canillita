@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
-const AgregarNoticias = () => {
+const AgregarNoticias = (props) => {
+    const [error, setError] = useState(false);
     const [tituloNoticia, setTituloNoticia] = useState("");
     const [resumen, setResumen] = useState("");
     const [detalle, setDetalle] = useState("");
@@ -18,6 +20,19 @@ const AgregarNoticias = () => {
     }
      const handlerSubmit = (e) =>{
       e.preventDefault();
+      if(tituloNoticia.trim() === "" ||
+         resumen.trim() === "" || 
+         detalle.trim() === "" ||
+         imagen.trim() === "" ||
+         imagen2.trim() === "" ||
+         autor.trim() === "" ||
+         fecha === "" ||
+         categoria === ""
+        ){
+            setError(true);
+            return;
+        }
+        setError(false);
 
     }
 
@@ -27,6 +42,9 @@ const AgregarNoticias = () => {
     <section className="container">
       <Form onSubmit={handlerSubmit}>
         <h1 className="text-center my-5">Agregar Nueva Noticia</h1>
+        {error === true ? (
+          <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
+        ) : null}
         <FormGroup controlId="noticiaId">
           <Form.Label>Titulo Noticia *</Form.Label>
           <FormControl
