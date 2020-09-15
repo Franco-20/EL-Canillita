@@ -10,6 +10,7 @@ const Inicio = () => {
         <article className="text-center mt-4">
           <img src={process.env.PUBLIC_URL + "virus.gif"} alt="" />
         </article>
+        {/* SECCION DESTACADO */}
         <h3 className="mt-4 mb-3 titulo text-center">Destacadas del dia</h3>
         <div className="d-flex justify-content-center">
           <div className="row ">
@@ -66,12 +67,17 @@ const Inicio = () => {
             </div>
           </div>
         </div>
-        
+
+        {/* SECCION CATEGORIA */}
+
+        {/* PUBLICIDAD */}
         <article className="text-center mt-4">
           <img src={process.env.PUBLIC_URL + "coto.gif"} alt="" />
         </article>
+
+        {/* SECCION ACTUALIDAD */}
         <h4 className="subtitulos">
-          Actualidad <hr/>
+          Actualidad <hr />
         </h4>
         <div className="d-flex justify-content-center">
           <div className="row">
@@ -122,9 +128,13 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+
+        {/* PUBLICIDAD */}
         <article className="text-center my-4">
           <img src={process.env.PUBLIC_URL + "covid.gif"} alt="" />
         </article>
+
+        {/* SECCION DEPORTES */}
         <h4 className="subtitulos">
           Deporte
           <hr />
@@ -179,10 +189,16 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+
+        {/* PUBLICIDAD */}
         <article className="text-center mt-4">
           <img src={process.env.PUBLIC_URL + "macro.gif"} alt="" />
         </article>
-        <h4 className="subtitulos">Politica <hr/></h4>        
+
+        {/* SECCION POLITICA */}
+        <h4 className="subtitulos">
+          Politica <hr />
+        </h4>
         <div className="d-flex justify-content-center">
           <div className="row ">
             <div className="mr-3 ml-4 efecto">
@@ -232,10 +248,17 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+
+        {/* PUBLICIDAD */}
         <article className="text-center mt-4">
           <img src={process.env.PUBLIC_URL + "emi.gif"} alt="" />
         </article>
-        <h4 className="subtitulos">Salud<hr /></h4>        
+
+        {/* SECCION SALUD */}        
+        <h4 className="subtitulos">
+          Salud
+          <hr />
+        </h4>
         <div className="d-flex justify-content-center">
           <div className="row ">
             <div className="mr-3 ml-4 efecto">
@@ -285,6 +308,8 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+
+        {/* PUBLICIDAD */}
         <article className="text-center mt-4 mb-4">
           <img src={process.env.PUBLIC_URL + "campo.gif"} alt="" />
         </article>
