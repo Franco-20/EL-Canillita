@@ -67,6 +67,10 @@ const Inicio = () => {
           </div>
         </div>
       </div>
+      <h3 className="titulo">Categorias</h3>
+        <article className="text-center">
+        <img src={process.env.PUBLIC_URL + "coto.gif"} alt=""/>
+        </article>
     </div>
   );
 };
