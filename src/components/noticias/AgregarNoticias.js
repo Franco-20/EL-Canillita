@@ -1,17 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
 const AgregarNoticias = () => {
+    const [tituloNoticia, setTituloNoticia] = useState("");
+    const [resumen, setResumen] = useState("");
+    const [detalle, setDetalle] = useState("");
+    const [imagen, setImagen] = useState("");
+    const [imagen2, setImagen2] = useState("");
+    const [categoria, setCategoria] = useState("");
+    const [autor, setAutor] = useState("");
+    const [fecha, setFecha] = useState("");
+    const [principal, setPrincipal] = useState("false");
+
+    const seleccionarCategoria = (e) =>{
+        setCategoria(e.target.value);
+    }
+     const handlerSubmit = (e) =>{
+      e.preventDefault();
+
+    }
+
+
+
   return (
     <section className="container">
-      <Form>
+      <Form onSubmit={handlerSubmit}>
         <h1 className="text-center my-5">Agregar Nueva Noticia</h1>
         <FormGroup controlId="noticiaId">
           <Form.Label>Titulo Noticia *</Form.Label>
           <FormControl
             type="text"
             placeholder=" Aumenta el Dolar oficial"
+            onChange={(e) => setTituloNoticia(e.target.value)}
           ></FormControl>
         </FormGroup>
 
@@ -20,6 +41,7 @@ const AgregarNoticias = () => {
           <FormControl
             type="text"
             placeholder=" Leve aumento en la moneda verde"
+            onChange={(e) => setResumen(e.target.value)}
           ></FormControl>
         </FormGroup>
 
@@ -28,6 +50,7 @@ const AgregarNoticias = () => {
           <FormControl
             type="text"
             placeholder="mfksfmvlxkfgldkglsfspflsgnsgmlfg"
+            onChange={(e) => setDetalle(e.target.value)}
           ></FormControl>
         </FormGroup>
 
@@ -36,6 +59,7 @@ const AgregarNoticias = () => {
           <FormControl
             type="url"
             placeholder="https://images.app.goo.gl/hQgPVvUBRqcUG3m26"
+            onChange={(e) => setImagen(e.target.value)}
           ></FormControl>
         </FormGroup>
 
@@ -44,20 +68,29 @@ const AgregarNoticias = () => {
           <FormControl
             type="url"
             placeholder="https://images.app.goo.gl/hQgPVvUBRqcUG3m26"
+            onChange={(e) => setImagen2(e.target.value)}
           ></FormControl>
         </FormGroup>
 
         <FormGroup controlId="autorNoticia">
           <Form.Label> Autor</Form.Label>
-          <FormControl type="text" placeholder="Franco O."></FormControl>
+          <FormControl 
+          type="text" 
+          placeholder="Franco O."
+          onChange={(e) => setAutor(e.target.value)}
+          ></FormControl>
         </FormGroup>
 
         <FormGroup controlId="fechaNoticia">
           <Form.Label>Fecha</Form.Label>
-          <FormControl type="number" placeholder="20/09/20"></FormControl>
+          <FormControl 
+          type="date" 
+          placeholder="20/09/20"
+          onChange={(e) => setFecha(e.target.value)}
+          ></FormControl>
         </FormGroup>
 
-        <h3 className="text-center">Categoria</h3>
+        <h3 className="text-center">Categoria *</h3>
         <div className="text-center my-4">
           <Form.Check
             type="radio"
@@ -65,6 +98,7 @@ const AgregarNoticias = () => {
             value="actualidad"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -72,6 +106,7 @@ const AgregarNoticias = () => {
             value="deportes"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -79,6 +114,7 @@ const AgregarNoticias = () => {
             value="espectaculos"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -86,6 +122,7 @@ const AgregarNoticias = () => {
             value="tecnologia"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -93,6 +130,7 @@ const AgregarNoticias = () => {
             value="politica"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -100,6 +138,7 @@ const AgregarNoticias = () => {
             value="economia"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -107,6 +146,7 @@ const AgregarNoticias = () => {
             value="salud"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
           <Form.Check
             type="radio"
@@ -114,11 +154,18 @@ const AgregarNoticias = () => {
             value="fotografia"
             inline
             name="categoria"
+            onChange={seleccionarCategoria}
           />
         </div>
         <div className="text-center lead">
         <Form.Group controlId="principalId">
-          <Form.Check type="checkbox" label="Publicar en principal" />
+          <Form.Check 
+          type="checkbox" 
+          label="Publicar en principal" 
+          value="principal"
+          name="principal"
+          onChange= {(e) => setPrincipal(e.target.value)}
+          />
         </Form.Group>
         </div>
         <Button variant="primary" type="submit" className="w-100">

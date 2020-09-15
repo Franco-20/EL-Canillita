@@ -19,6 +19,7 @@ import Sesion from "./components/login/Sesion";
 import InfoNoticia from "./components/InfoNoticia";
 
 import AgregarNoticias from "./components/noticias/AgregarNoticias";
+import EditarNoticias from "./components/noticias/EditarNoticias";
 
 function App() {
   return (
@@ -66,6 +67,9 @@ function App() {
         </Route>
         <Route exact path="/noticias/agregar">
           <AgregarNoticias></AgregarNoticias>
+        </Route>
+        <Route exact path="/noticias/editar">
+          <EditarNoticias></EditarNoticias>
         </Route>
       </Switch>
       <Footer></Footer>

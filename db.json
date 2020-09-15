@@ -9,7 +9,8 @@
       "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
       "categoria": "actualidad",
       "autor": "Franco",
-      "fecha": "20/09/20"
+      "fecha": "20/09/20",
+      "principal": "true"
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
       "categoria": "deportes",
       "autor": "ai",
-      "fecha": "10/09/20"
+      "fecha": "10/09/20",
+      "principal": "true"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
       "categoria": "actualidad",
       "autor": "Diego",
-      "fecha": "20/08/20"
+      "fecha": "20/08/20",
+      "principal": "true"
     }
   ]
   
