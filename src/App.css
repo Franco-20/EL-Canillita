@@ -41,3 +41,22 @@ flex-direction: row-reverse !important;
     width: 350px;
     margin-left: 30px;  
 }
+.subtitulos{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 30px;
+   padding-top:50px ;
+   padding-bottom: 10;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #131313;
+    color: #2c2c2c;
+    letter-spacing: .05em;
+    text-shadow: 
+      4px 4px 0px #d5d5d5, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+.cards:hover{
+    box-shadow: 10px 10px 10px 0px rgb(83, 81, 81);
+    transition: .5s;
+    border: none;
+}

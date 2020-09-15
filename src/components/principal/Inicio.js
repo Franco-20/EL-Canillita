@@ -7,10 +7,10 @@ const Inicio = () => {
     <div>
       <ApiClimaMoneda />
       <div className="container">
-          <article className="text-center">
-            <img src={process.env.PUBLIC_URL + "virus.gif"} alt=""/>
-          </article>
-          <h3 className="mt-4 mb-3 titulo text-center">Destacadas del dia</h3>
+        <article className="text-center mt-4">
+          <img src={process.env.PUBLIC_URL + "virus.gif"} alt="" />
+        </article>
+        <h3 className="mt-4 mb-3 titulo text-center">Destacadas del dia</h3>
         <div className="d-flex justify-content-center">
           <div className="row">
             <div>
@@ -66,11 +66,61 @@ const Inicio = () => {
             </div>
           </div>
         </div>
-      </div>
-      <h3 className="titulo">Categorias</h3>
-        <article className="text-center">
-        <img src={process.env.PUBLIC_URL + "coto.gif"} alt=""/>
+        <h3 className="titulo">Categorias</h3>
+        <article className="text-center ">
+          <img src={process.env.PUBLIC_URL + "coto.gif"} alt="" />
         </article>
+        <h4 className="subtitulos">Actualidad<hr/></h4>
+        <div className="d-flex">
+          <div className="row">
+            <div className="mr-5 cards ">
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+                <Card.Img
+                  variant="top"
+                  src={process.env.PUBLIC_URL + "covid1.jpg"}
+                />
+              </Card>
+            </div>
+            <div className="mr-5 cards ">
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+                <Card.Img
+                  variant="top"
+                  src={process.env.PUBLIC_URL + "covid1.jpg"}
+                />
+              </Card>
+            </div>
+            <div className="mr-5 cards ">
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+                <Card.Img
+                  variant="top"
+                  src={process.env.PUBLIC_URL + "covid1.jpg"}
+                />
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
