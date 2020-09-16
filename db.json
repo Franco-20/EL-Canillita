@@ -1,30 +1,6 @@
 {
   "noticias": [
     {
-      "id": 1,
-      "tituloNoticia": "Aumentan los casos de COVID",
-      "resumen": "los casos del nuevo virus no dejan de crecer en Argentina",
-      "detalle": "msdskfpsgkopdgkpdfgkpdkgpdkfgpdp[gfd",
-      "imagen": "https://images.app.goo.gl/hQgPVvUBRqcUG3m26",
-      "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "categoria": "actualidad",
-      "autor": "Franco",
-      "fecha": "20/09/20",
-      "principal": "true"
-    },
-    {
-      "id": 2,
-      "tituloNoticia": "Messi se va",
-      "resumen": "messi deja el barcelona",
-      "detalle": "msdskfpsgkopdgkpdfgkpdkgpdkfgpdpfsknvksdfnsgnskfmslmsdf[gfd",
-      "imagen": "https://images.app.goo.gl/hQgPVvUBRqcUG3m26",
-      "imagen2": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "categoria": "deportes",
-      "autor": "ai",
-      "fecha": "10/09/20",
-      "principal": "true"
-    },
-    {
       "id": 3,
       "tituloNoticia": "Cierran las sucursales de Vea",
       "resumen": "Las sucursales del supermercado cerraron hoy",
@@ -49,138 +25,6 @@
       "id": 4
     },
     {
-      "tituloNoticia": "Ahora 12 en Peluquerias",
-      "resumen": "Se lanzo el nuevo programa en 12 cuotas ",
-      "detalle": "fjnsasdjfodsjfopsfkdsfopkoskopropfkroforfr",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "actualidad",
-      "autor": "Barbi",
-      "fecha": "2020-09-15",
-      "principal": "principal",
-      "id": 5
-    },
-    {
-      "tituloNoticia": "Ahora 12 en Peluquerias",
-      "resumen": "Se lanzo el nuevo programa en 12 cuotas ",
-      "detalle": "fjnsasdjfodsjfopsfkdsfopkoskopropfkroforfr",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "actualidad",
-      "autor": "Barbi",
-      "fecha": "2020-09-15",
-      "principal": "principal",
-      "id": 6
-    },
-    {
-      "tituloNoticia": "Tratado Israel con EAU",
-      "resumen": "nuevo tratado nakfnsdfsfkosfkosd",
-      "detalle": "fkgopdkgp[dslgp[dlgpdlpglpdgpdg",
-      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "Barbu ",
-      "fecha": "2020-09-10",
-      "principal": "false",
-      "id": 7
-    },
-    {
-      "tituloNoticia": "Tratado Israel con EAU",
-      "resumen": "nuevo tratado nakfnsdfsfkosfkosd",
-      "detalle": "fkgopdkgp[dslgp[dlgpdlpglpdgpdg",
-      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "Barbu ",
-      "fecha": "2020-09-10",
-      "principal": "false",
-      "id": 8
-    },
-    {
-      "tituloNoticia": "Tratado Israel con EAU",
-      "resumen": "nuevo tratado nakfnsdfsfkosfkosd",
-      "detalle": "fkgopdkgp[dslgp[dlgpdlpglpdgpdg",
-      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "Barbu ",
-      "fecha": "2020-09-10",
-      "principal": "false",
-      "id": 9
-    },
-    {
-      "tituloNoticia": "fsofksogfsdrolf",
-      "resumen": "fsdkmldgmdfgdfgv",
-      "detalle": "dkfmgodfkgpdfkgvpdfgka",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "fsmkfd",
-      "fecha": "2020-08-10",
-      "principal": "false",
-      "id": 10
-    },
-    {
-      "tituloNoticia": "fsofksogfsdrolf",
-      "resumen": "fsdkmldgmdfgdfgv",
-      "detalle": "dkfmgodfkgpdfkgvpdfgka",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "fsmkfd",
-      "fecha": "2020-08-10",
-      "principal": "false",
-      "id": 11
-    },
-    {
-      "tituloNoticia": "orjsofjsoefrsore",
-      "resumen": "godjrgidrkofgr",
-      "detalle": "segrrsgsrege",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "barbu",
-      "fecha": "2020-09-07",
-      "principal": "false",
-      "id": 12
-    },
-    {
-      "tituloNoticia": "orjsofjsoefrsore",
-      "resumen": "godjrgidrkofgr",
-      "detalle": "segrrsgsrege",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "barbu",
-      "fecha": "2020-09-07",
-      "principal": "false",
-      "id": 13
-    },
-    {
-      "tituloNoticia": "orjsofjsoefrsore",
-      "resumen": "godjrgidrkofgr",
-      "detalle": "segrrsgsrege",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "barbu",
-      "fecha": "2020-09-07",
-      "principal": "false",
-      "id": 14
-    },
-    {
-      "tituloNoticia": "orjsofjsoefrsore",
-      "resumen": "godjrgidrkofgr",
-      "detalle": "segrrsgsrege",
-      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
-      "imagen2": "",
-      "categoria": "politica",
-      "autor": "barbu",
-      "fecha": "2020-09-07",
-      "principal": "false",
-      "id": 15
-    },
-    {
       "tituloNoticia": "Aumenta el dolar",
       "resumen": "dfmasdfmodsms",
       "detalle": "fsmfdsmfkmsd",
@@ -193,16 +37,28 @@
       "id": 16
     },
     {
-      "tituloNoticia": "Nuevo impuesto 35%",
-      "resumen": "fksofksokoskof",
-      "detalle": "fsmfosdfosksfksofs",
+      "tituloNoticia": "Aumenta el dolar",
+      "resumen": "dgdagdgsd",
+      "detalle": "gdsgdfsgdgfd",
       "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
       "imagen2": "",
-      "categoria": "economia",
-      "autor": "DAi",
+      "categoria": "tecnologia",
+      "autor": "fsfdsfdsfsdfds",
       "fecha": "2020-09-09",
       "principal": "false",
       "id": 17
+    },
+    {
+      "tituloNoticia": "Aumenta el dolar",
+      "resumen": "fdskjfsdjfise",
+      "detalle": "ijfsopfjsfjsd",
+      "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "imagen2": "",
+      "categoria": "economia",
+      "autor": "fsefssf",
+      "fecha": "2020-09-04",
+      "principal": "false",
+      "id": 19
     }
   ]
 }

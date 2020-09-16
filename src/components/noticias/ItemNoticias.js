@@ -1,9 +1,51 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
+import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const ItemNoticias = (props) => {
+    const eliminarNoticia = (id) => {
+        console.log(id);
+    
+        Swal.fire({
+          title: "Estas seguro de eliminar la noticia?",
+          text: "No se puede recuperar la noticia eliminada!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Si, eliminar!",
+          cancelButtonText: "Cancelar",
+        }).then(async (result) => {
+          console.log(result);
+          if (result.value) {
+              try {
+                  const respuesta = await fetch(`http://localhost:4004/noticias/${id}`,
+                  {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                  }     
+                   ); 
+                   console.log(respuesta);
+          if (respuesta.status === 200) {
+            props.setRecargarNoticia(true);
+            Swal.fire(
+              "Eliminado!",
+              "El producto fue eliminado correctamente.",
+              "success"
+            );
+         
+          }
+              } catch (error) {
+                  console.log(error);
+              }
+            }
+        });
+      };
+            
+
+
     return (
         <tr>
         <td>{props.noticia.id}</td>
@@ -13,11 +55,12 @@ const ItemNoticias = (props) => {
         <td>
           <span className="mx-2 "><a href=""><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></span>
           <span className="mx-1"><a href=""><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></a></span>
-          <span className="mx-1 "><a href=""><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></a></span>
+          <span className="mx-1 "><button onClick={() => eliminarNoticia(props.noticia.id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
         </td>
       </tr>
 
     );
+        
 };
 
 export default ItemNoticias;
