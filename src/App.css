@@ -61,43 +61,43 @@
 @media screen and (min-width: 992px) {
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
-  .body {
+  .body{
     width: 45%;
   }
-  .publicidad {
+  .banner{
     display: none;
   }
-  .abajo {
+  .abajo{
     margin-left: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .destacada {
+  .destacada{
     margin-right: 20px;
   }
 }
 
 @media all and (max-width: 600px) {
-  .body {
+  .body{
     width: 100%;
   }
-  .publicidad {
+  .banner{
     display: none;
   }
   .titulo {
     font-size: 50px;
     justify-content: center;
   }
-  .abajo {
+  .abajo{
     margin-left: 27px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .medio {
+  .medio{
     margin-left: 27px;
     margin-top: 20px;
   }
-  .destacada {
+  .destacada{
     margin-left: 15px;
     margin-bottom: 10px;
   }

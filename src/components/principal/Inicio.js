@@ -7,7 +7,7 @@ const Inicio = (props) => {
     <div>
       <ApiClimaMoneda />
       <div className="container">
-        <article className="text-center mt-4 publicidad">
+        <article className="text-center mt-4 banner">
           <img
             src={process.env.PUBLIC_URL + "virus.gif"}
             alt="gif coronovirus"
@@ -72,7 +72,7 @@ const Inicio = (props) => {
         {/* SECCION CATEGORIA */}
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4 publicidad">
+        <article className="text-center mt-4 banner">
           <img src={process.env.PUBLIC_URL + "coto.gif"} alt="" />
         </article>
 
@@ -131,7 +131,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center my-4 publicidad">
+        <article className="text-center my-4 banner">
           <img src={process.env.PUBLIC_URL + "covid.gif"} alt="" />
         </article>
 
@@ -140,6 +140,7 @@ const Inicio = (props) => {
           Deporte
           <hr />
         </h4>
+
         <div className="d-flex justify-content-center">
           <div className="row ">
             <div className="mr-3 ml-4 efecto body">
@@ -191,7 +192,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4 publicidad">
+        <article className="text-center mt-4 banner">
           <img src={process.env.PUBLIC_URL + "macro.gif"} alt="" />
         </article>
 
@@ -250,7 +251,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4 publicidad">
+        <article className="text-center mt-4 banner">
           <img src={process.env.PUBLIC_URL + "emi.gif"} alt="" />
         </article>
 
@@ -310,7 +311,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4 mb-4 publicidad">
+        <article className="text-center mt-4 mb-4 banner">
           <img src={process.env.PUBLIC_URL + "campo.gif"} alt="" />
         </article>
       </div>
