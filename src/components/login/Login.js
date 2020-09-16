@@ -2,50 +2,54 @@ import React from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button } from "react-bootstrap";
+import Card from 'react-bootstrap/Card'
 
 const Login = () => {
   return (
     <div className="fondosesion">
     <div className="container">
-      <h1>Registrarse</h1>
+      <h1 className="py-3">Registrarse</h1>
+      <h6 className="text-center pl-3 text-secondary">Todos los campos marcados con * son obligatorios.
+      </h6>
+      
 
-      <Form>
+      <Form className="shadow p-3 mb-5 rounded bg-light">
         <Form.Row>
           <Form.Group as={Col } className="mr-3" controlId="formGridText">
-            <Form.Label Col lg="6" md="6" sm="6">Nombre</Form.Label>
+            <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
             <Form.Control type="text" placeholder="Juan" />
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridText">
-            <Form.Label  Col lg="6" md="6" sm="6">Apellido</Form.Label>
+            <Form.Label  Col lg="6" md="6" sm="6">Apellido*</Form.Label>
             <Form.Control className="mx-3" type="text" placeholder="Perez" />
           </Form.Group>
         </Form.Row>
 
         <Form.Group controlId="formGridCorreo">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Email*</Form.Label>
           <Form.Control placeholder="pepito@gmail.com" />
         </Form.Group>
 
         <Form.Group controlId="formGridDireccion">
-          <Form.Label>Direccion</Form.Label>
+          <Form.Label>Direccion*</Form.Label>
           <Form.Control placeholder="muñecas 541" />
         </Form.Group>
 
         <Form.Group controlId="formGridLocalidad">
-          <Form.Label>Localidad</Form.Label>
+          <Form.Label>Localidad*</Form.Label>
           <Form.Control placeholder="Capital" />
         </Form.Group>
 
         
         <Form.Group controlId="formGridCodigoPostal">
-          <Form.Label>Codigo Postal</Form.Label>
+          <Form.Label>Codigo Postal*</Form.Label>
           <Form.Control placeholder="4000" type="number"/>
         </Form.Group>
 
         
         <Form.Group controlId="formGridTelefono">
-          <Form.Label >Telefono</Form.Label>
+          <Form.Label >Telefono*</Form.Label>
           <Form.Control placeholder="154123543" type="text" />
         </Form.Group>
 
