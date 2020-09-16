@@ -3,6 +3,7 @@ import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
 
 const AgregarNoticias = (props) => {
     const [error, setError] = useState(false);
@@ -65,6 +66,7 @@ const AgregarNoticias = (props) => {
                         'Noticia nueva creada!',
                         'success'
                       )
+                      props.history.push('/admin')
                 }
 
          } catch (error) {
@@ -233,4 +235,4 @@ const AgregarNoticias = (props) => {
   );
 };
 
-export default AgregarNoticias;
+export default withRouter(AgregarNoticias);

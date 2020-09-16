@@ -33,8 +33,7 @@ function App() {
     if(recargarNoticia){
     consultar();
     setRecargarNoticia(false);
-  }
-  }, [recargarNoticia]);
+  }}, [recargarNoticia]);
 
   const consultar = async () => {
     try {
@@ -98,9 +97,6 @@ function App() {
         </Route>
         <Route exact path="/admin">
           <ListarNoticias noticias={noticias} setRecargarNoticia={setRecargarNoticia}></ListarNoticias>
-        </Route>
-        <Route exact path="/admin/item">
-          <ItemNoticias noticias={noticias} setRecargarNoticia={setRecargarNoticia}></ItemNoticias>
         </Route>
         <Route exact path="/principal">
           <MostrarNoticias noticias={noticias}></MostrarNoticias>

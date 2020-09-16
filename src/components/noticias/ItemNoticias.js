@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit, faStar } from '@fortawesome/free-solid-svg-icons';
 
+
 const ItemNoticias = (props) => {
     const eliminarNoticia = (id) => {
         console.log(id);
@@ -35,6 +36,7 @@ const ItemNoticias = (props) => {
               "El producto fue eliminado correctamente.",
               "success"
             );
+            props.history.push('/admin');
          
           }
               } catch (error) {
@@ -43,8 +45,6 @@ const ItemNoticias = (props) => {
             }
         });
       };
-            
-
 
     return (
         <tr>
