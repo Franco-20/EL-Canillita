@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import './bootstrap.min.css';
+import "./bootstrap.min.css";
 import Navbar from "./components/common/Encabezado";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/principal/Inicio";
@@ -18,7 +18,28 @@ import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
 import InfoNoticia from "./components/InfoNoticia";
 
+import AgregarNoticias from "./components/noticias/AgregarNoticias";
+import EditarNoticias from "./components/noticias/EditarNoticias";
+import ItemNoticias from "./components/noticias/ItemNoticias";
+import ListarNoticias from "./components/noticias/ListarNoticias";
+
 function App() {
+  const [noticias, setNoticias] = useState([]);
+  useEffect(() => {
+    consultar();
+  }, []);
+
+  const consultar = async () => {
+    try {
+      const respuesta = await fetch("http://localhost:4004/noticias");
+      console.log(respuesta);
+      const resultado = await respuesta.json();
+      setNoticias(resultado);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Router>
       <Navbar></Navbar>
@@ -59,9 +80,20 @@ function App() {
         <Route exact path="/noticias">
           <InfoNoticia></InfoNoticia>
         </Route>
-        
         <Route exact path="/error404">
           <Error404></Error404>
+        </Route>
+        <Route exact path="/noticias/agregar">
+          <AgregarNoticias></AgregarNoticias>
+        </Route>
+        <Route exact path="/noticias/editar">
+          <EditarNoticias></EditarNoticias>
+        </Route>
+        <Route exact path="/admin/">
+          <ListarNoticias noticias={noticias}></ListarNoticias>
+        </Route>
+        <Route exact path="/admin/item">
+          <ItemNoticias noticias={noticias}></ItemNoticias>
         </Route>
       </Switch>
       <Footer></Footer>
