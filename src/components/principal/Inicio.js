@@ -7,15 +7,18 @@ const Inicio = (props) => {
     <div>
       <ApiClimaMoneda />
       <div className="container">
-        <article className="text-center mt-4">
-          <img src={process.env.PUBLIC_URL + "virus.gif"} alt="gif coronovirus" />
+        <article className="text-center mt-4 publicidad">
+          <img
+            src={process.env.PUBLIC_URL + "virus.gif"}
+            alt="gif coronovirus"
+          />
         </article>
         {/* SECCION DESTACADO */}
-        <h3 className="mt-4 mb-3 titulo text-center">Destacadas del dia</h3>
-        <div className="d-flex justify-content-center">
+        <h3 className=" titulo text-center">Destacadas del dia</h3>
+        <div className="d-flex justify-content-center col-sm-12">
           <div className="row">
-            <div>
-            <Card className="bg-dark text-white cardDestacado efecto">
+            <div className="body destacada">
+              <Card className="bg-dark text-white cardDestacado efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -31,7 +34,7 @@ const Inicio = (props) => {
                 </Card.ImgOverlay>
               </Card>
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-3">
+            <div className="col-sm-12 col-md-3 col-lg-3">
               <Card className="bg-dark text-white cardDestacado efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
@@ -69,7 +72,7 @@ const Inicio = (props) => {
         {/* SECCION CATEGORIA */}
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4">
+        <article className="text-center mt-4 publicidad">
           <img src={process.env.PUBLIC_URL + "coto.gif"} alt="" />
         </article>
 
@@ -79,7 +82,7 @@ const Inicio = (props) => {
         </h4>
         <div className="d-flex justify-content-center">
           <div className="row">
-            <div className=" mr-3 ml-4 efecto">
+            <div className=" mr-3 ml-4 efecto body">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -94,7 +97,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className=" mr-3 efecto  ">
+            <div className=" mr-3 efecto medio">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -109,7 +112,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto  ">
+            <div className="mr-3 efecto abajo">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -128,7 +131,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center my-4">
+        <article className="text-center my-4 publicidad">
           <img src={process.env.PUBLIC_URL + "covid.gif"} alt="" />
         </article>
 
@@ -137,10 +140,9 @@ const Inicio = (props) => {
           Deporte
           <hr />
         </h4>
-
         <div className="d-flex justify-content-center">
           <div className="row ">
-            <div className="mr-3 ml-4 efecto ">
+            <div className="mr-3 ml-4 efecto body">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -155,7 +157,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto">
+            <div className="mr-3 efecto medio">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -170,7 +172,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto">
+            <div className="mr-3 efecto abajo">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -189,7 +191,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4">
+        <article className="text-center mt-4 publicidad">
           <img src={process.env.PUBLIC_URL + "macro.gif"} alt="" />
         </article>
 
@@ -199,7 +201,7 @@ const Inicio = (props) => {
         </h4>
         <div className="d-flex justify-content-center">
           <div className="row ">
-            <div className="mr-3 ml-4 efecto">
+            <div className="mr-3 ml-4 efecto body">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -214,7 +216,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto">
+            <div className="mr-3 efecto medio">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -229,7 +231,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto">
+            <div className="mr-3 efecto abajo">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -248,18 +250,18 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4">
+        <article className="text-center mt-4 publicidad">
           <img src={process.env.PUBLIC_URL + "emi.gif"} alt="" />
         </article>
 
-        {/* SECCION SALUD */}        
+        {/* SECCION SALUD */}
         <h4 className="subtitulos">
           Salud
           <hr />
         </h4>
         <div className="d-flex justify-content-center">
           <div className="row ">
-            <div className="mr-3 ml-4 efecto">
+            <div className="mr-3 ml-4 efecto body">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -274,7 +276,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto">
+            <div className="mr-3 efecto medio">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -289,7 +291,7 @@ const Inicio = (props) => {
                 />
               </Card>
             </div>
-            <div className="mr-3 efecto">
+            <div className="mr-3 efecto abajo">
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -308,7 +310,7 @@ const Inicio = (props) => {
         </div>
 
         {/* PUBLICIDAD */}
-        <article className="text-center mt-4 mb-4">
+        <article className="text-center mt-4 mb-4 publicidad">
           <img src={process.env.PUBLIC_URL + "campo.gif"} alt="" />
         </article>
       </div>
