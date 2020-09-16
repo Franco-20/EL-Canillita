@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from "react-bootstrap/Card";
-import ItemNoticias from "./ItemNoticias";
+import Noti from './Noti';
 
 const MostrarNoticias = (props) => {
     return (
@@ -17,26 +16,14 @@ const MostrarNoticias = (props) => {
           <div className="row">
             <div>
               {props.noticias.map((noticias) => (
-                <ItemNoticias
-                  key={noticias.id}
-                  noticia={noticias}
-                ></ItemNoticias>
+               <Noti key={noticias.id}
+               noticia={noticias}></Noti>
               ))}
             </div>
             <div className="col-sm-12 col-md-4 col-lg-3">
-              {props.noticias.map((noticias) => (
-                <ItemNoticias
-                  key={noticias.id}
-                  noticia={noticias}
-                ></ItemNoticias>
-              ))}
+             
 
-              {props.noticias.map((noticias) => (
-                <ItemNoticias
-                  key={noticias.id}
-                  noticia={noticias}
-                ></ItemNoticias>
-              ))}
+              
             </div>
           </div>
         </div>
