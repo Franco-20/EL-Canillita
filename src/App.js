@@ -22,6 +22,8 @@ import AgregarNoticias from "./components/noticias/AgregarNoticias";
 import EditarNoticias from "./components/noticias/EditarNoticias";
 import ItemNoticias from "./components/noticias/ItemNoticias";
 import ListarNoticias from "./components/noticias/ListarNoticias";
+import MostrarNoticias from "./components/noticias/MostrarNoticias";
+import Noti from "./components/noticias/Noti";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -94,6 +96,12 @@ function App() {
         </Route>
         <Route exact path="/admin/item">
           <ItemNoticias noticias={noticias}></ItemNoticias>
+        </Route>
+        <Route exact path="/principal">
+          <MostrarNoticias noticias={noticias}></MostrarNoticias>
+        </Route>
+        <Route exact path="/principal/noti">
+          <Noti noticias={noticias}></Noti>
         </Route>
       </Switch>
       <Footer></Footer>
