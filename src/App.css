@@ -1,62 +1,104 @@
-.imagengrande{
-    width: 100%;
+.imagengrande {
+  width: 100%;
 }
 
-.publicidad{
-    margin-top: 70px ;
-    margin-left: 50px ;
-    width:300px;
-    height:275px;
+.publicidad {
+  margin-top: 70px;
+  margin-left: 50px;
+  width: 300px;
+  height: 275px;
 }
 
-.publicidad2{
-    margin-top: 20px;
-    margin-left: 50px;
-    width:300px;
-    height:275px;
+.publicidad2 {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 300px;
+  height: 275px;
 }
 
-.iconos{
-width: 50px !important;
-height: 25px !important;
-flex-direction: row-reverse !important;
+.iconos {
+  width: 50px !important;
+  height: 25px !important;
+  flex-direction: row-reverse !important;
 }
 
 /* PAGINA INICIO */
-.titulo{
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 60px;
-    padding: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    text-rendering: optimizeLegibility;
-    color: #131313;
-    color: #2c2c2c;
-    letter-spacing: .05em;
-    text-shadow: 
-      4px 4px 0px #d5d5d5, 
-      7px 7px 0px rgba(0, 0, 0, 0.2);
+.titulo {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 60px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #131313;
+  color: #2c2c2c;
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
 }
-.cardDestacado{
-    width: 350px;
-    margin-left: 10px;  
+.cardDestacado {
+  width: 350px;
+  margin-left: 10px;
 }
-.subtitulos{
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 40px;
-   padding-top:50px ;
-   padding-bottom: 10;
-    text-transform: uppercase;
-    text-rendering: optimizeLegibility;
-    color: #131313;
-    color: #2c2c2c;
-    letter-spacing: .05em;
-    text-shadow: 
-      4px 4px 0px #d5d5d5, 
-      7px 7px 0px rgba(0, 0, 0, 0.2);
+.subtitulos {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 40px;
+  padding-top: 50px;
+  padding-bottom: 10;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #131313;
+  color: #2c2c2c;
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
 }
-.efecto:hover{
-    box-shadow: 10px 10px 10px 0px rgb(83, 81, 81);
-    transition: .5s;
-    border: none;
+.efecto:hover {
+  box-shadow: 10px 10px 10px 0px rgb(83, 81, 81);
+  transition: 0.5s;
+  border: none;
+}
+@media screen and (min-width: 992px) {
+}
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .body{
+    width: 45%;
+  }
+  .banner{
+    display: none;
+  }
+  .abajo{
+    margin-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .destacada{
+    margin-right: 20px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .body{
+    width: 100%;
+  }
+  .banner{
+    display: none;
+  }
+  .titulo {
+    font-size: 50px;
+    justify-content: center;
+  }
+  .abajo{
+    margin-left: 27px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .medio{
+    margin-left: 27px;
+    margin-top: 20px;
+  }
+  .destacada{
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
 }
