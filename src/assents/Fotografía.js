@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Qemao from '../assents/img/quema.jpg';
 
 const Fotografía = () => {
     return (
@@ -13,7 +12,7 @@ const Fotografía = () => {
                             <h3 className="my-4">PANDEMIA | Hace instantes el Ministerio de Salud dio su reporte vespertino del virus: a las cifras de la mañana se sumaron 3 fallecimientos y 183 positivos. Todos los números.</h3>
                         </div>
                         <h1>Imagenes</h1>
-                    <img alt="" src={Qemao} className="" />
+                    <img alt="" src="" className="" />
                 </Col>
             </Row>
         </Container>
