@@ -22,7 +22,7 @@ const ListarNoticias = (props) => {
           </tr>
         </thead>
         <tbody>
-        {props.noticias.map((noticia) => <ItemNoticias key={noticia.id} noticia={noticia}></ItemNoticias>) }
+        {props.noticias.map((noticia) => <ItemNoticias key={noticia.id} noticia={noticia} setRecargarNoticia={props.setRecargarNoticia}></ItemNoticias>) }
         </tbody>
       </Table>
       <Button className="w-100 mb-5 mt-2" href="/noticias/agregar">Agregar noticia</Button>

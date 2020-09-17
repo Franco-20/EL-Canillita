@@ -1,17 +1,14 @@
 import React from 'react';
 import Card from "react-bootstrap/Card";
 
-
-
 const noti = (props) => {
     return (
         <Card className="bg-dark text-white cardDestacado efecto">
                 <Card.Img
-                  src={process.env.PUBLIC_URL + "covid1.jpg"}
-                  alt="Card image"
+                  src={props.noticia.imagen}
                 />
                 <Card.ImgOverlay>
-                  <Card.Title>Card title</Card.Title>
+    <Card.Title>{props.noticia.tituloNoticia}</Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
