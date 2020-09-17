@@ -87,7 +87,7 @@ function App() {
         <Route exact path="/noticias">
           <InfoNoticia></InfoNoticia>
         </Route>
-        <Route exact path="*">
+        <Route exact path="/error404">
           <Error404></Error404>
         </Route>
         <Route exact path="/noticias/agregar">
@@ -106,7 +106,7 @@ function App() {
             
 
 
-            return <EditarNoticias buscarNoticia={buscarNoticia}></EditarNoticias>;
+            return <EditarNoticias noticia={buscarNoticia}></EditarNoticias>;
           }}
         ></Route>
         <Route exact path="/admin">
