@@ -21,7 +21,7 @@
       "categoria": "actualidad",
       "autor": "Barbi",
       "fecha": "2020-09-15",
-      "principal": "principal",
+      "principal": "true",
       "id": 4
     },
     {

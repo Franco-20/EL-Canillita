@@ -30,10 +30,11 @@ function App() {
   const [recargarNoticia, setRecargarNoticia] = useState(true);
 
   useEffect(() => {
-    if(recargarNoticia){
-    consultar();
-    setRecargarNoticia(false);
-  }}, [recargarNoticia]);
+    if (recargarNoticia) {
+      consultar();
+      setRecargarNoticia(false);
+    }
+  }, [recargarNoticia]);
 
   const consultar = async () => {
     try {
@@ -90,13 +91,29 @@ function App() {
           <Error404></Error404>
         </Route>
         <Route exact path="/noticias/agregar">
-          <AgregarNoticias setRecargarNoticia={setRecargarNoticia}></AgregarNoticias>
+          <AgregarNoticias
+            setRecargarNoticia={setRecargarNoticia}
+          ></AgregarNoticias>
         </Route>
-        <Route exact path="/noticias/editar">
-          <EditarNoticias></EditarNoticias>
-        </Route>
+        <Route
+          exact
+          path="/noticias/editar/:id"
+          render={(props) => {
+
+            const parametroUrl = parseInt(props.match.params.id)
+            console.log(parametroUrl);
+            const buscarNoticia = noticias.find((item)=> item.id === parametroUrl)
+            
+
+
+            return <EditarNoticias noticia={buscarNoticia}></EditarNoticias>;
+          }}
+        ></Route>
         <Route exact path="/admin">
-          <ListarNoticias noticias={noticias} setRecargarNoticia={setRecargarNoticia}></ListarNoticias>
+          <ListarNoticias
+            noticias={noticias}
+            setRecargarNoticia={setRecargarNoticia}
+          ></ListarNoticias>
         </Route>
         <Route exact path="/principal">
           <MostrarNoticias noticias={noticias}></MostrarNoticias>

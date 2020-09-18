@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit, faStar } from '@fortawesome/free-solid-svg-icons';
+import {Link} from 'react-router-dom';
 
 
 const ItemNoticias = (props) => {
@@ -53,9 +54,9 @@ const ItemNoticias = (props) => {
         <td>{props.noticia.resumen}</td>
         <td>{props.noticia.categoria}</td>
         <td>
-          <span className="mx-2 "><a href=""><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></span>
-          <span className="mx-1"><a href=""><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></a></span>
-          <span className="mx-1 "><button onClick={() => eliminarNoticia(props.noticia.id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
+          <span className="mx-2 "><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+          <span className="mx-1"><Link to={`/noticias/editar/${props.noticia.id}`} className="btn btn-success mr-2"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></span>
+          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarNoticia(props.noticia.id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
         </td>
       </tr>
 

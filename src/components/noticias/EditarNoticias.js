@@ -1,25 +1,28 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
-const EditarNoticias = () => {
-
-    const [tituloNoticia, setTituloNoticia] = useState("");
-    const [resumen, setResumen] = useState("");
-    const [detalle, setDetalle] = useState("");
-    const [imagen, setImagen] = useState("");
-    const [imagen2, setImagen2] = useState("");
+const EditarNoticias = (props) => {
     const [categoria, setCategoria] = useState("");
-    const [autor, setAutor] = useState("");
-    const [fecha, setFecha] = useState("");
     const [principal, setPrincipal] = useState("false");
+    const [error, setError] = useState(false);
 
+    const tituloNoticiaRef = useRef("");
+    const resumenRef = useRef("");
+    const detalleRef = useRef("");
+    const imagenRef = useRef("");
+    const imagen2Ref = useRef ("");
+    const autorRef = useRef("");
+    const fechaRef = useRef ("");
+
+   
     const seleccionarCategoria = (e) =>{
         setCategoria(e.target.value);
-    }
+    };
 
     const handlerSubmit = (e) =>{
         e.preventDefault();
+        
   
       }
 
@@ -32,7 +35,8 @@ const EditarNoticias = () => {
           <FormControl
             type="text"
             placeholder=" Aumenta el Dolar oficial"
-            onChange={(e) => setTituloNoticia(e.target.value)}
+            ref={tituloNoticiaRef}
+            defaultValue={props.noticia.tituloNoticia}
           ></FormControl>
         </FormGroup>
 
@@ -41,7 +45,8 @@ const EditarNoticias = () => {
           <FormControl
             type="text"
             placeholder=" Leve aumento en la moneda verde"
-            onChange={(e) => setResumen(e.target.value)}
+           ref={resumenRef}
+           defaultValue={props.noticia.resumen}
           ></FormControl>
         </FormGroup>
 
@@ -50,7 +55,8 @@ const EditarNoticias = () => {
           <FormControl
             type="text"
             placeholder="mfksfmvlxkfgldkglsfspflsgnsgmlfg"
-            onChange={(e) => setDetalle(e.target.value)}
+            ref={detalleRef}
+            defaultValue={props.noticia.detalle}
           ></FormControl>
         </FormGroup>
 
@@ -59,7 +65,8 @@ const EditarNoticias = () => {
           <FormControl
             type="url"
             placeholder="https://images.app.goo.gl/hQgPVvUBRqcUG3m26"
-            onChange={(e) => setImagen(e.target.value)}
+            ref={imagenRef}
+            defaultValue={props.noticia.imagen}
           ></FormControl>
         </FormGroup>
 
@@ -68,7 +75,8 @@ const EditarNoticias = () => {
           <FormControl
             type="url"
             placeholder="https://images.app.goo.gl/hQgPVvUBRqcUG3m26"
-            onChange={(e) => setImagen2(e.target.value)}
+            ref={imagen2Ref}
+          defaultValue={props.noticia.imagen2}
           ></FormControl>
         </FormGroup>
 
@@ -77,7 +85,8 @@ const EditarNoticias = () => {
           <FormControl 
           type="text" 
           placeholder="Franco O."
-          onChange={(e) => setAutor(e.target.value)}
+          ref={autorRef}
+          preventDefault={props.noticia.autor}  
           ></FormControl>
         </FormGroup>
 
@@ -86,7 +95,8 @@ const EditarNoticias = () => {
           <FormControl 
           type="date" 
           placeholder="20/09/20"
-          onChange={(e) => setFecha(e.target.value)}
+          ref={fechaRef}
+          preventDefault={props.noticia.fecha}
           ></FormControl>
         </FormGroup>
 
@@ -99,6 +109,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "actualidad"}
           />
           <Form.Check
             type="radio"
@@ -107,6 +118,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "deportes"}
           />
           <Form.Check
             type="radio"
@@ -115,6 +127,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "espectaculos"}
           />
           <Form.Check
             type="radio"
@@ -123,6 +136,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "tecnologia"}
           />
           <Form.Check
             type="radio"
@@ -131,6 +145,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "politica"}
           />
           <Form.Check
             type="radio"
@@ -139,6 +154,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "economia"}
           />
           <Form.Check
             type="radio"
@@ -147,6 +163,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "salud"}
           />
           <Form.Check
             type="radio"
@@ -155,6 +172,7 @@ const EditarNoticias = () => {
             inline
             name="categoria"
             onChange={seleccionarCategoria}
+            defaultChecked={props.noticia.categoria === "fotografia"}
           />
         </div>
         <div className="text-center lead">
@@ -164,12 +182,12 @@ const EditarNoticias = () => {
           label="Publicar en principal" 
           value="principal"
           name="principal"
-          onChange= {(e) => setPrincipal(e.target.value)}
+          defaultChecked={props.noticia.principal === "true"} 
           />
         </Form.Group>
         </div>
         <Button variant="primary" type="submit" className="w-100">
-          Modificar
+          Editar
         </Button>
       </Form>
     </section>
