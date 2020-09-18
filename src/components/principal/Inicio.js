@@ -10,7 +10,7 @@ const Inicio = (props) => {
         <article className="text-center mt-4 banner">
           <img
             src={process.env.PUBLIC_URL + "virus.gif"}
-            alt="gif coronovirus"
+            alt="bannercoronovirus"
           />
         </article>
         {/* SECCION DESTACADO */}
@@ -73,7 +73,7 @@ const Inicio = (props) => {
 
         {/* PUBLICIDAD */}
         <article className="text-center mt-4 banner">
-          <img src={process.env.PUBLIC_URL + "coto.gif"} alt="" />
+          <img src={process.env.PUBLIC_URL + "coto.gif"} alt="banner de publicidad del supermercado coto" />
         </article>
 
         {/* SECCION ACTUALIDAD */}
@@ -132,7 +132,7 @@ const Inicio = (props) => {
 
         {/* PUBLICIDAD */}
         <article className="text-center my-4 banner">
-          <img src={process.env.PUBLIC_URL + "covid.gif"} alt="" />
+          <img src={process.env.PUBLIC_URL + "covid.gif"} alt="banner de publicadad de Jaldo" />
         </article>
 
         {/* SECCION DEPORTES */}
@@ -193,7 +193,7 @@ const Inicio = (props) => {
 
         {/* PUBLICIDAD */}
         <article className="text-center mt-4 banner">
-          <img src={process.env.PUBLIC_URL + "macro.gif"} alt="" />
+          <img src={process.env.PUBLIC_URL + "macro.gif"} alt="banner de publicidad del Banco Macro" />
         </article>
 
         {/* SECCION POLITICA */}
@@ -252,7 +252,7 @@ const Inicio = (props) => {
 
         {/* PUBLICIDAD */}
         <article className="text-center mt-4 banner">
-          <img src={process.env.PUBLIC_URL + "emi.gif"} alt="" />
+          <img src={process.env.PUBLIC_URL + "emi.gif"} alt="banner sobre la empresa EMI de ventas de materiales para la contruccion" />
         </article>
 
         {/* SECCION SALUD */}
@@ -312,7 +312,7 @@ const Inicio = (props) => {
 
         {/* PUBLICIDAD */}
         <article className="text-center mt-4 mb-4 banner">
-          <img src={process.env.PUBLIC_URL + "campo.gif"} alt="" />
+          <img src={process.env.PUBLIC_URL + "campo.gif"} alt="banner de publicidad sobre CRUCIANELLI" />
         </article>
       </div>
     </div>
