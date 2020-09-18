@@ -38,7 +38,6 @@
 }
 .cardDestacado {
   width: 350px;
-  margin-left: 10px;
 }
 .subtitulos {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
@@ -72,8 +71,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .destacada{
-    margin-right: 20px;
+  .cardDestacado{
+    display:flex;
+  }
+  .destacadaGrande{
+    width: 700px;
   }
 }
 

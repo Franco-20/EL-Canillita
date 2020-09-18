@@ -18,11 +18,10 @@ const Inicio = (props) => {
         <div className="d-flex justify-content-center col-sm-12">
           <div className="row">
             <div className="body destacada">
-              <Card className="bg-dark text-white cardDestacado efecto">
+              <Card className="bg-dark text-white efecto destacadaGrande">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
-                  alt="Card image"
-                />
+                  alt="Card image"/>
                 <Card.ImgOverlay>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
@@ -34,7 +33,7 @@ const Inicio = (props) => {
                 </Card.ImgOverlay>
               </Card>
             </div>
-            <div className="col-sm-12 col-md-3 col-lg-3">
+            <div className="col-sm-12 col-lg-3 justify-content-center">
               <Card className="bg-dark text-white cardDestacado efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
@@ -50,7 +49,7 @@ const Inicio = (props) => {
                   <Card.Text>Last updated 3 mins ago</Card.Text>
                 </Card.ImgOverlay>
               </Card>
-              <Card className="bg-dark text-white cardDestacado mt-2 efecto">
+              <Card className="bg-dark text-white cardDestacado efecto mt-1">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
