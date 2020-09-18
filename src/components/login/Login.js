@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 
 const Login = () => {
+  const[datos, setDatos] = useState({
+    nombre: '',
+    apellido: ''
+  })
+  const handleInputChange = (e) =>{
+    //console.log(e.target.value);
+    setDatos({
+      ...datos,
+      [e.target.name] : e.target.value
+    })
+  }
+  const enviarDatos = (e) => {
+    e.preventDefault();
+    e.target.reset();
+  }
+
+
   return (
     <div className="fondosesion">
     <div className="container">
@@ -13,32 +30,48 @@ const Login = () => {
       </h6>
       
 
-      <Form className="shadow p-3 mb-5 rounded bg-light">
+      <Form className="shadow p-3 mb-5 rounded bg-light" onSubmit={enviarDatos}>
         <Form.Row>
           <Form.Group as={Col } className="mr-3" controlId="formGridText">
             <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
-            <Form.Control type="text" placeholder="Juan" />
+            <Form.Control 
+            type="text" 
+            placeholder="Juan" 
+            name="nombre"
+            onChange={handleInputChange}
+            />
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridText">
             <Form.Label  Col lg="6" md="6" sm="6">Apellido*</Form.Label>
-            <Form.Control className="mx-3" type="text" placeholder="Perez" />
+            <Form.Control 
+            className="mx-3" 
+            type="text" 
+            placeholder="Perez"
+            name="apellido"
+            onChange={handleInputChange}
+            />
           </Form.Group>
         </Form.Row>
 
         <Form.Group controlId="formGridCorreo">
           <Form.Label>Email*</Form.Label>
-          <Form.Control placeholder="pepito@gmail.com" />
+          <Form.Control 
+          type="email"
+          placeholder="pepito@gmail.com" />
         </Form.Group>
 
         <Form.Group controlId="formGridDireccion">
           <Form.Label>Direccion*</Form.Label>
-          <Form.Control placeholder="muñecas 541" />
+          <Form.Control 
+          placeholder="muñecas 541" />
         </Form.Group>
 
         <Form.Group controlId="formGridLocalidad">
           <Form.Label>Localidad*</Form.Label>
-          <Form.Control placeholder="Capital" />
+          <Form.Control 
+          type="text"
+          placeholder="Capital" />
         </Form.Group>
 
         
