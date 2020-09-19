@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button, Alert } from "react-bootstrap";
@@ -15,37 +15,35 @@ const Login = () => {
   const [telefono, setTelefono] = useState('');
   const [accept, setAcepto] = useState('');
 
-  const[desvio, setDesvio] = useState(false);
-   
+  const [desvio, setDesvio] = useState(false);
+
   const sendEmail = e => {
-    //const form = e.currentTarget;
-    //if (form.checkValidity() === false) {
-      e.preventDefault();
-    //} 
+    e.preventDefault();
     if (
-      nombre.trim() === '' || 
-      apellido.trim() === '' || 
-      email.trim() === '' || 
-      direccion.trim() === '' || 
-      localidad.trim() === '' || 
-      codigoPostal.trim() === '' || 
-      telefono.trim() === '' || 
+      nombre.trim() === '' ||
+      apellido.trim() === '' ||
+      email.trim() === '' ||
+      direccion.trim() === '' ||
+      localidad.trim() === '' ||
+      codigoPostal.trim() === '' ||
+      telefono.trim() === '' ||
       accept === '') {
-      setDesvio(true)
-      return
-    } else {
+      setDesvio(true);
+      return;
+
+    } {
+
       emailjs.sendForm('diegogala', 'template_5azup3f', e.target, 'user_cO75FCUgZjJuhII3zgxx7')
-      .then((result) => {
-          console.log(result.text+ "si funciona");
-      }, (error) => {
+        .then((result) => {
+          console.log(result.text + "si funciona");
+        }, (error) => {
           console.log(error.text + "unerror");
-      });
-      
+        });
+
       Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
-      //e.target.reset()
+      e.target.useState('')
     }
     setDesvio(false)
-
   };
 
 
@@ -87,6 +85,7 @@ const Login = () => {
                 name="apellido"
                 placeholder="Perez"
                 onChange={(e) => setApellido(e.target.value)}
+
               />
               <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
