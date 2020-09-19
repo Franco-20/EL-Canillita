@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import emailjs from 'emailjs-com';
 
 const Login = () => {
   const [nombre, setNombre] = useState('');
@@ -14,16 +15,14 @@ const Login = () => {
   const [telefono, setTelefono] = useState('');
   const [accept, setAcepto] = useState('');
 
-  const [error, setError] = useState(false);
-
-
-
-  const handleSubmit = e => {
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
+  const[desvio, setDesvio] = useState(false);
+   
+  const sendEmail = e => {
+    //const form = e.currentTarget;
+    //if (form.checkValidity() === false) {
       e.preventDefault();
-      e.stopPropagation();
-    } if (nombre.trim() === '' ||
+    //} 
+    if (nombre.trim() === '' ||
       apellido.trim() === '' ||
       email.trim() === '' ||
       direccion.trim() === '' ||
@@ -31,12 +30,22 @@ const Login = () => {
       codigoPostal.trim() === '' ||
       telefono.trim() === '' ||
       accept === '') {
-      setError(true)
+      setDesvio(true)
       return
     } else {
+      emailjs.sendForm('diegogala', 'template_5azup3f', e.target, 'user_cO75FCUgZjJuhII3zgxx7')
+      .then((result) => {
+          console.log(result.text+ "si funciona");
+      }, (error) => {
+          console.log(error.text + "unerror");
+      });
+      
       Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
     }
-    setError(false)
+    
+   
+    setDesvio(false)
+    e.target.reset()
   };
 
 
@@ -48,9 +57,9 @@ const Login = () => {
       </h6>
 
 
-        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={error} onSubmit={handleSubmit}>
+        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={desvio} onSubmit={sendEmail}>
           {
-            error ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null
+            desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null
           }
           <Form.Row>
             <Form.Group as={Col} className="mr-3" controlId="validationCustom01">
@@ -92,6 +101,7 @@ const Login = () => {
             <Form.Control
               required
               type="email"
+              name="email"
               placeholder="pepito@gmail.com"
               onChange={(e) => setEmail(e.target.value)}
 
@@ -167,7 +177,7 @@ const Login = () => {
           <Form.Group>
             <Form.Check
               required
-              label="Agree to terms and conditions"
+              label="Acepta términos y condiciones"
               feedback="You must agree before submitting."
               onChange={(e) => setAcepto(e.target.value)}
             />

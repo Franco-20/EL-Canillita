@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 const Inicio = (props) => {
   return (
     <div>
-      <ApiClimaMoneda />
+    <ApiClimaMoneda />
       <div className="container">
         <article className="text-center mt-4">
           <img src={process.env.PUBLIC_URL + "virus.gif"} alt="gif coronovirus" />
@@ -15,7 +15,7 @@ const Inicio = (props) => {
         <div className="d-flex justify-content-center">
           <div className="row">
             <div>
-            <Card className="bg-dark text-white cardDestacado efecto">
+              <Card className="bg-dark text-white cardDestacado efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -252,7 +252,7 @@ const Inicio = (props) => {
           <img src={process.env.PUBLIC_URL + "emi.gif"} alt="" />
         </article>
 
-        {/* SECCION SALUD */}        
+        {/* SECCION SALUD */}
         <h4 className="subtitulos">
           Salud
           <hr />
