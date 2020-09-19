@@ -22,13 +22,14 @@ const Login = () => {
     //if (form.checkValidity() === false) {
       e.preventDefault();
     //} 
-    if (nombre.trim() === '' ||
-      apellido.trim() === '' ||
-      email.trim() === '' ||
-      direccion.trim() === '' ||
-      localidad.trim() === '' ||
-      codigoPostal.trim() === '' ||
-      telefono.trim() === '' ||
+    if (
+      nombre.trim() === '' || 
+      apellido.trim() === '' || 
+      email.trim() === '' || 
+      direccion.trim() === '' || 
+      localidad.trim() === '' || 
+      codigoPostal.trim() === '' || 
+      telefono.trim() === '' || 
       accept === '') {
       setDesvio(true)
       return
@@ -41,11 +42,10 @@ const Login = () => {
       });
       
       Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
+      //e.target.reset()
     }
-    
-   
     setDesvio(false)
-    e.target.reset()
+
   };
 
 
@@ -62,7 +62,7 @@ const Login = () => {
             desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null
           }
           <Form.Row>
-            <Form.Group as={Col} className="mr-3" controlId="validationCustom01">
+            <Form.Group as={Col} className="mr-3" controlId="formGridText">
               <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
               <Form.Control
                 required
@@ -83,10 +83,9 @@ const Login = () => {
               <Form.Label Col lg="6" md="6" sm="6">Apellido*</Form.Label>
               <Form.Control
                 required
-                className="mx-3"
                 type="text"
-                placeholder="Perez"
                 name="apellido"
+                placeholder="Perez"
                 onChange={(e) => setApellido(e.target.value)}
               />
               <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
