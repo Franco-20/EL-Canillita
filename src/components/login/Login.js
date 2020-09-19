@@ -1,97 +1,182 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
-import { Button } from "react-bootstrap";
-import Card from 'react-bootstrap/Card'
+import { Button, Alert } from "react-bootstrap";
+import Swal from 'sweetalert2';
 
 const Login = () => {
-  const[datos, setDatos] = useState({
-    nombre: '',
-    apellido: ''
-  })
-  const handleInputChange = (e) =>{
-    //console.log(e.target.value);
-    setDatos({
-      ...datos,
-      [e.target.name] : e.target.value
-    })
-  }
-  const enviarDatos = (e) => {
-    e.preventDefault();
-    e.target.reset();
-  }
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [email, setEmail] = useState('');
+  const [direccion, setDireccion] = useState('');
+  const [localidad, setLocalidad] = useState('');
+  const [codigoPostal, setCodigoPostal] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [accept, setAcepto] = useState('');
+
+  const [error, setError] = useState(false);
+
+
+
+  const handleSubmit = e => {
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+    } if (nombre.trim() === '' ||
+      apellido.trim() === '' ||
+      email.trim() === '' ||
+      direccion.trim() === '' ||
+      localidad.trim() === '' ||
+      codigoPostal.trim() === '' ||
+      telefono.trim() === '' ||
+      accept === '') {
+      setError(true)
+      return
+    } else {
+      Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
+    }
+    setError(false)
+  };
 
 
   return (
     <div className="fondosesion">
-    <div className="container">
-      <h1 className="py-3">Registrarse</h1>
-      <h6 className="text-center pl-3 text-secondary">Todos los campos marcados con * son obligatorios.
+      <div className="container">
+        <h1 className="py-3">Registrarse</h1>
+        <h6 className="text-center pl-3 text-secondary">Todos los campos marcados con * son obligatorios.
       </h6>
-      
 
-      <Form className="shadow p-3 mb-5 rounded bg-light" onSubmit={enviarDatos}>
-        <Form.Row>
-          <Form.Group as={Col } className="mr-3" controlId="formGridText">
-            <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
-            <Form.Control 
-            type="text" 
-            placeholder="Juan" 
-            name="nombre"
-            onChange={handleInputChange}
+
+        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={error} onSubmit={handleSubmit}>
+          {
+            error ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null
+          }
+          <Form.Row>
+            <Form.Group as={Col} className="mr-3" controlId="validationCustom01">
+              <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Juan"
+                name="nombre"
+                onChange={(e) => setNombre(e.target.value)}
+
+              />
+              <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Debe de ingresar algun dato
+          </Form.Control.Feedback>
+
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridText">
+              <Form.Label Col lg="6" md="6" sm="6">Apellido*</Form.Label>
+              <Form.Control
+                required
+                className="mx-3"
+                type="text"
+                placeholder="Perez"
+                name="apellido"
+                onChange={(e) => setApellido(e.target.value)}
+              />
+              <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Debe de ingresar algun dato
+          </Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
+
+          <Form.Group controlId="inputGroupPrepend">
+            <Form.Label>Email*</Form.Label>
+            <Form.Control
+              required
+              type="email"
+              placeholder="pepito@gmail.com"
+              onChange={(e) => setEmail(e.target.value)}
+
             />
+            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Debe de ingresar un email valido ejemplo: perez@ejemplo.com
+          </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridText">
-            <Form.Label  Col lg="6" md="6" sm="6">Apellido*</Form.Label>
-            <Form.Control 
-            className="mx-3" 
-            type="text" 
-            placeholder="Perez"
-            name="apellido"
-            onChange={handleInputChange}
+          <Form.Group controlId="formGridDireccion">
+            <Form.Label>Direccion*</Form.Label>
+            <Form.Control
+              required
+              name="direccion"
+              placeholder="muñecas 541"
+              onChange={(e) => setDireccion(e.target.value)}
+            />
+            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Debe de ingresar algun dato
+          </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group controlId="formGridLocalidad">
+            <Form.Label>Localidad*</Form.Label>
+            <Form.Control
+              required
+              name="localidad"
+              type="text"
+              placeholder="Capital"
+              onChange={(e) => setLocalidad(e.target.value)}
+            />
+            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Debe de ingresar algun dato
+          </Form.Control.Feedback>
+          </Form.Group>
+
+
+          <Form.Group controlId="formGridCodigoPostal">
+            <Form.Label>Codigo Postal*</Form.Label>
+            <Form.Control
+              required
+              name="codigopostal"
+              placeholder="4000"
+              type="number"
+              onChange={(e) => setCodigoPostal(e.target.value)}
+            />
+            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Debe de ingresar algun dato numerico
+          </Form.Control.Feedback>
+
+          </Form.Group>
+
+
+          <Form.Group controlId="formGridTelefono">
+            <Form.Label >Telefono*</Form.Label>
+            <Form.Control
+              required
+              name="telefono"
+              placeholder="154123543"
+              type="number"
+              onChange={(e) => setTelefono(e.target.value)}
+            />
+            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Debe de ingresar algun dato numerico
+          </Form.Control.Feedback>
+
+          </Form.Group>
+          <Form.Group>
+            <Form.Check
+              required
+              label="Agree to terms and conditions"
+              feedback="You must agree before submitting."
+              onChange={(e) => setAcepto(e.target.value)}
             />
           </Form.Group>
-        </Form.Row>
-
-        <Form.Group controlId="formGridCorreo">
-          <Form.Label>Email*</Form.Label>
-          <Form.Control 
-          type="email"
-          placeholder="pepito@gmail.com" />
-        </Form.Group>
-
-        <Form.Group controlId="formGridDireccion">
-          <Form.Label>Direccion*</Form.Label>
-          <Form.Control 
-          placeholder="muñecas 541" />
-        </Form.Group>
-
-        <Form.Group controlId="formGridLocalidad">
-          <Form.Label>Localidad*</Form.Label>
-          <Form.Control 
-          type="text"
-          placeholder="Capital" />
-        </Form.Group>
-
-        
-        <Form.Group controlId="formGridCodigoPostal">
-          <Form.Label>Codigo Postal*</Form.Label>
-          <Form.Control placeholder="4000" type="number"/>
-        </Form.Group>
-
-        
-        <Form.Group controlId="formGridTelefono">
-          <Form.Label >Telefono*</Form.Label>
-          <Form.Control placeholder="154123543" type="text" />
-        </Form.Group>
-
-
-        <Button variant="primary" type="submit">
-          Registrarse
+          <Button variant="primary" type="submit">
+            Registrarse
         </Button>
-      </Form>
-    </div>
+        </Form>
+      </div>
     </div>
   );
 };
