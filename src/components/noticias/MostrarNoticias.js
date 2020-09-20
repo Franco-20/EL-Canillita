@@ -16,7 +16,7 @@ const MostrarNoticias = (props) => {
           <div className="row">
             <div>
               {props.noticias.map((noticias) => (
-               <Noti key={noticias.id}
+               <Noti key={noticias._id}
                noticia={noticias}></Noti>
               ))}
             </div>
