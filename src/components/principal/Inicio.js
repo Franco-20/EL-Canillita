@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ApiClimaMoneda from "./ApiClimaMoneda";
 import Card from "react-bootstrap/Card";
+import { Link } from 'react-router-dom';
 import Deportes from "../categorias/Deportes";
 import Salud from "../categorias/Salud";
 
