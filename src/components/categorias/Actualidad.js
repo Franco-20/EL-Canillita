@@ -1,5 +1,6 @@
  import React ,{useState, useEffect} from "react";
  import Card from "react-bootstrap/Card";
+ import { Link } from 'react-router-dom';
 
  const Actualidad = () => {
       const [actualidad, setActualidad] = useState([]);
@@ -43,6 +44,9 @@
                     <p className="card-text"> {item.principal}</p>
                     </div>
                   </Card.Body>
+                  <Link  className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
                  </Card>
           )
          }
