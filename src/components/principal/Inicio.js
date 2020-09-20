@@ -12,7 +12,7 @@ const Inicio = (props) => {
   }, [])
 
   const traerArticulo = async () => {
-    const respuesta = await fetch('n');
+    const respuesta = await fetch('');
     const resultado = await respuesta.json();
     console.log(resultado)
     setTodasNoticias(resultado);
