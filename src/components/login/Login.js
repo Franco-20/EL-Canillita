@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2';
-import emailjs from 'emailjs-com';
 
 const Login = () => {
   const [nombre, setNombre] = useState('');
@@ -29,9 +28,9 @@ const Login = () => {
      codigoPostal.trim() === '' ||
       telefono.trim() === '' ||
      accept === '') {
-    setDesvio(true);
+    
+      setDesvio(true);
       return;
-
     }{
       Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
 
