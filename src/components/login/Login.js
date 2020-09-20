@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <div className="fondosesion">
       <div className="container">
-        <h1 className="py-3">Registrarse</h1>
+        <h1 className="py-3 text-center">Registrarse</h1>
         <h6 className="text-center pl-3 text-secondary">Todos los campos marcados con * son obligatorios.
       </h6>
 
