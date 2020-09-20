@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button, Alert } from "react-bootstrap";
@@ -13,37 +13,58 @@ const Login = () => {
   const [codigoPostal, setCodigoPostal] = useState('');
   const [telefono, setTelefono] = useState('');
   const [accept, setAcepto] = useState('');
-
   const [desvio, setDesvio] = useState(false);
 
-  const sendEmail = e => {
+
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     if (
-     nombre.trim() === '' ||
-     apellido.trim() === '' ||
-    email.trim() === '' ||
-     direccion.trim() === '' ||
-     localidad.trim() === '' ||
-     codigoPostal.trim() === '' ||
+      nombre.trim() === '' ||
+      apellido.trim() === '' ||
+      email.trim() === '' ||
+      direccion.trim() === '' ||
+      localidad.trim() === '' ||
+      codigoPostal.trim() === '' ||
       telefono.trim() === '' ||
-     accept === '') {
-    
+      accept === '') {
       setDesvio(true);
       return;
-    }{
-      Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
-
     }
-    setDesvio(false)
+    setDesvio(false);
+    var data = {
+      service_id: 'diegogala',
+      template_id: 'template_5azup3f',
+      user_id: 'user_cO75FCUgZjJuhII3zgxx7',
+      template_params: {
+        nombre,
+        apellido,
+        email,
+        direccion,
+        localidad,
+        codigoPostal,
+        telefono
+      }
+    };
+    try {
+      const cabecera = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }
+      const resultado = await fetch('https://api.emailjs.com/api/v1.0/email/send', cabecera)
+      console.log(resultado)
+      if (resultado.status === 200) {
+        Swal.fire("Bienvenido!",
+          "A la brevedad responderemos tu solicitud",
+          "success");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
-    
-         
-
-   
-    
-
-
   return (
     <div className="fondosesion">
       <div className="container">
@@ -52,8 +73,8 @@ const Login = () => {
       </h6>
 
 
-        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={desvio}  onSubmit={sendEmail}>
-        {desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null}
+        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={desvio} onSubmit={sendEmail}>
+          {desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null}
           <Form.Row>
             <Form.Group as={Col} className="mr-3" controlId="formGridText">
               <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
@@ -68,7 +89,7 @@ const Login = () => {
               <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
                 Debe de ingresar algun dato
-          </Form.Control.Feedback>
+              </Form.Control.Feedback>
 
             </Form.Group>
 
