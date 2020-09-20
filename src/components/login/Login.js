@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Form';
 import { Button, Alert } from "react-bootstrap";
@@ -19,32 +19,30 @@ const Login = () => {
 
   const sendEmail = e => {
     e.preventDefault();
+
     if (
-      nombre.trim() === '' ||
-      apellido.trim() === '' ||
-      email.trim() === '' ||
-      direccion.trim() === '' ||
-      localidad.trim() === '' ||
-      codigoPostal.trim() === '' ||
+     nombre.trim() === '' ||
+     apellido.trim() === '' ||
+    email.trim() === '' ||
+     direccion.trim() === '' ||
+     localidad.trim() === '' ||
+     codigoPostal.trim() === '' ||
       telefono.trim() === '' ||
-      accept === '') {
-      setDesvio(true);
+     accept === '') {
+    setDesvio(true);
       return;
 
-    } {
-
-      emailjs.sendForm('diegogala', 'template_5azup3f', e.target, 'user_cO75FCUgZjJuhII3zgxx7')
-        .then((result) => {
-          console.log(result.text + "si funciona");
-        }, (error) => {
-          console.log(error.text + "unerror");
-        });
-
+    }{
       Swal.fire("Bienvenido!", "A la brevedad responderemos tu solicitud", "success");
-      e.target.useState('')
+
     }
     setDesvio(false)
   };
+    
+         
+
+   
+    
 
 
   return (
@@ -55,10 +53,8 @@ const Login = () => {
       </h6>
 
 
-        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={desvio} onSubmit={sendEmail}>
-          {
-            desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null
-          }
+        <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={desvio}  onSubmit={sendEmail}>
+        {desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null}
           <Form.Row>
             <Form.Group as={Col} className="mr-3" controlId="formGridText">
               <Form.Label Col lg="6" md="6" sm="6">Nombre*</Form.Label>
