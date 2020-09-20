@@ -1,49 +1,49 @@
-import React ,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ApiClimaMoneda from "./ApiClimaMoneda";
 import Card from "react-bootstrap/Card";
 import Deportes from "../categorias/Deportes";
 import Salud from "../categorias/Salud";
 
 const Inicio = (props) => {
-  const [ todasNoticias , setTodasNoticias] = useState([]);
-      
+  const [todasNoticias, setTodasNoticias] = useState([]);
+
   useEffect(() => {
     traerArticulo()
   }, [])
 
   const traerArticulo = async () => {
-       const respuesta = await fetch('http://localhost:4005/api/noticia');
-       const resultado = await respuesta.json();
-       console.log(resultado)
-       setTodasNoticias(resultado);
+    const respuesta = await fetch('http://localhost:4005/api/noticia');
+    const resultado = await respuesta.json();
+    console.log(resultado)
+    setTodasNoticias(resultado);
   }
- 
+
   // Para mostrar categoria actualidad
-  const actualidad = todasNoticias.reverse().filter ( (noticia) => {
-         return noticia.categoria === 'actualidad' ;
+  const actualidad = todasNoticias.reverse().filter((noticia) => {
+    return noticia.categoria === 'actualidad';
   });
-  const mostrarActualidad = actualidad.slice(0,3)
-   console.log( 'respuesta de actualidad', mostrarActualidad);
-  
+  const mostrarActualidad = actualidad.slice(0, 3)
+  console.log('respuesta de actualidad', mostrarActualidad);
+
 
   //  Para mostrar categoria Deportes
-  const deportes = todasNoticias.reverse().filter ( (noticia) => {
-         return noticia.categoria === 'deportes'
+  const deportes = todasNoticias.reverse().filter((noticia) => {
+    return noticia.categoria === 'deportes'
   });
-  const mostrarDeportes = deportes.slice(0,3)
-  console.log( 'respuesta de deportes', mostrarDeportes);
+  const mostrarDeportes = deportes.slice(0, 3)
+  console.log('respuesta de deportes', mostrarDeportes);
 
   //  Para mostrar categoria politica
-  const politica = todasNoticias.reverse().filter ( (noticia) =>{
-          return noticia.categoria === 'politica'
+  const politica = todasNoticias.reverse().filter((noticia) => {
+    return noticia.categoria === 'politica'
   });
-  const mostrarPolitica = politica.slice(0,3);
+  const mostrarPolitica = politica.slice(0, 3);
 
   // Para mostrar categoria Salud
-  const salud = todasNoticias.reverse().filter ( (noticia) => {
-         return noticia.categoria === 'salud'
+  const salud = todasNoticias.reverse().filter((noticia) => {
+    return noticia.categoria === 'salud'
   })
-  const mostrarSalud = salud.slice(0,3);
+  const mostrarSalud = salud.slice(0, 3);
 
   return (
     <div>
@@ -57,13 +57,13 @@ const Inicio = (props) => {
         </article>
         {/* SECCION DESTACADO */}
         <h3 className=" titulo text-center">Destacadas del dia</h3>
-        <div className="d-flex justify-content-center col-sm-12">
+        <div className="container d-flex justify-content-center">
           <div className="row">
-            <div className="body destacada">
-              <Card className="bg-dark text-white efecto destacadaGrande">
+            <div className="col-sm-12 col-md-12 col-lg-8 body">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
-                  alt="Card image"/>
+                  alt="Card image" />
                 <Card.ImgOverlay>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
@@ -75,8 +75,8 @@ const Inicio = (props) => {
                 </Card.ImgOverlay>
               </Card>
             </div>
-            <div className="col-sm-12 col-lg-3 justify-content-center">
-              <Card className="bg-dark text-white cardDestacado efecto">
+            <div className="col-sm-12 col-lg-4 cardDestacado">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -91,7 +91,7 @@ const Inicio = (props) => {
                   <Card.Text>Last updated 3 mins ago</Card.Text>
                 </Card.ImgOverlay>
               </Card>
-              <Card className="bg-dark text-white cardDestacado efecto mt-1">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -119,39 +119,39 @@ const Inicio = (props) => {
 
         {/* SECCION ACTUALIDAD */}
         <h1 className=' subtitulos'>Actualidad</h1>
-        <br/>
+        <br />
         <div className='d-flex flex-row flex-wrap justify-content-around '>
-        {
-          mostrarActualidad.map(item => 
-            <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body"  key={item._id} >
-              <Card.Img
-                variant="top"
-                src= {item.imagen}
-                alt="imagen de la noticia"
-              /> 
-              <Card.Body className='efecto medio'>
-                <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                <h3 className="card-text" > {item.resumen} </h3>
-                <p className="card-text" > {item.detalle} </p>
-               <Card.Img
-                variant="top"
-                src= {item.imagen2}
-                alt="imagen secundaria de la noticia "
-              /> 
-                <div className='efecto bajo'>
-                <p className="card-text">categoria: {item.categoria}</p>
-                <p className="card-text">Autor: {item.autor}</p>
-                <p className="card-text">Fecha: {item.fecha}</p>
-                <p className="card-text"> {item.principal}</p>
-                </div>
-              </Card.Body>
-             </Card>
-       )
-     }
-  </div> 
+          {
+            mostrarActualidad.map(item =>
+              <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                <Card.Img
+                  variant="top"
+                  src={item.imagen}
+                  alt="imagen de la noticia"
+                />
+                <Card.Body className='efecto medio'>
+                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text" > {item.resumen} </h3>
+                  <p className="card-text" > {item.detalle} </p>
+                  <Card.Img
+                    variant="top"
+                    src={item.imagen2}
+                    alt="imagen secundaria de la noticia "
+                  />
+                  <div className='efecto bajo'>
+                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Autor: {item.autor}</p>
+                    <p className="card-text">Fecha: {item.fecha}</p>
+                    <p className="card-text"> {item.principal}</p>
+                  </div>
+                </Card.Body>
+              </Card>
+            )
+          }
+        </div>
 
 
-      
+
 
         {/* PUBLICIDAD */}
         <article className="text-center my-4 banner">
@@ -160,40 +160,40 @@ const Inicio = (props) => {
 
         {/* SECCION DEPORTES */}
         <h1 className=' subtitulos'>Deportes</h1>
-        <br/>
+        <br />
         <div className='d-flex flex-row flex-wrap justify-content-around '>
-        {
-          mostrarDeportes.map(item => 
-            <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body"  key={item._id} >
-              <Card.Img
-                variant="top"
-                src= {item.imagen}
-                alt="imagen de la noticia"
-              /> 
-              <Card.Body className='efecto medio'>
-                <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                <h3 className="card-text" > {item.resumen} </h3>
-                <p className="card-text" > {item.detalle} </p>
-               <Card.Img
-                variant="top"
-                src= {item.imagen2}
-                alt="imagen secundaria de la noticia "
-              /> 
-                <div className='efecto bajo'>
-                <p className="card-text">categoria: {item.categoria}</p>
-                <p className="card-text">Autor: {item.autor}</p>
-                <p className="card-text">Fecha: {item.fecha}</p>
-                <p className="card-text"> {item.principal}</p>
-                </div>
-              </Card.Body>
-             </Card>
-       )
-     }
-  </div> 
+          {
+            mostrarDeportes.map(item =>
+              <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                <Card.Img
+                  variant="top"
+                  src={item.imagen}
+                  alt="imagen de la noticia"
+                />
+                <Card.Body className='efecto medio'>
+                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text" > {item.resumen} </h3>
+                  <p className="card-text" > {item.detalle} </p>
+                  <Card.Img
+                    variant="top"
+                    src={item.imagen2}
+                    alt="imagen secundaria de la noticia "
+                  />
+                  <div className='efecto bajo'>
+                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Autor: {item.autor}</p>
+                    <p className="card-text">Fecha: {item.fecha}</p>
+                    <p className="card-text"> {item.principal}</p>
+                  </div>
+                </Card.Body>
+              </Card>
+            )
+          }
+        </div>
 
 
-     
-      
+
+
 
         {/* PUBLICIDAD */}
         <article className="text-center mt-4 banner">
@@ -202,38 +202,38 @@ const Inicio = (props) => {
 
         {/* SECCION POLITICA */}
         <h1 className=' subtitulos'>Politica</h1>
-        <br/>
+        <br />
         <div className='d-flex flex-row flex-wrap justify-content-around '>
-        {
-          mostrarPolitica.map(item => 
-            <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body"  key={item._id} >
-              <Card.Img
-                variant="top"
-                src= {item.imagen}
-                alt="imagen de la noticia"
-              /> 
-              <Card.Body className='efecto medio'>
-                <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                <h3 className="card-text" > {item.resumen} </h3>
-                <p className="card-text" > {item.detalle} </p>
-               <Card.Img
-                variant="top"
-                src= {item.imagen2}
-                alt="imagen secundaria de la noticia "
-              /> 
-                <div className='efecto bajo'>
-                <p className="card-text">categoria: {item.categoria}</p>
-                <p className="card-text">Autor: {item.autor}</p>
-                <p className="card-text">Fecha: {item.fecha}</p>
-                <p className="card-text"> {item.principal}</p>
-                </div>
-              </Card.Body>
-             </Card>
-       )
-     }
-  </div> 
+          {
+            mostrarPolitica.map(item =>
+              <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                <Card.Img
+                  variant="top"
+                  src={item.imagen}
+                  alt="imagen de la noticia"
+                />
+                <Card.Body className='efecto medio'>
+                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text" > {item.resumen} </h3>
+                  <p className="card-text" > {item.detalle} </p>
+                  <Card.Img
+                    variant="top"
+                    src={item.imagen2}
+                    alt="imagen secundaria de la noticia "
+                  />
+                  <div className='efecto bajo'>
+                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Autor: {item.autor}</p>
+                    <p className="card-text">Fecha: {item.fecha}</p>
+                    <p className="card-text"> {item.principal}</p>
+                  </div>
+                </Card.Body>
+              </Card>
+            )
+          }
+        </div>
 
-     
+
 
         {/* PUBLICIDAD */}
         <article className="text-center mt-4 banner">
@@ -242,36 +242,36 @@ const Inicio = (props) => {
 
         {/* SECCION SALUD */}
         <h1 className=' subtitulos'>Salud</h1>
-        <br/>
+        <br />
         <div className='d-flex flex-row flex-wrap justify-content-around '>
-        {
-          mostrarSalud.map(item => 
-            <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body"  key={item._id} >
-              <Card.Img
-                variant="top"
-                src= {item.imagen}
-                alt="imagen de la noticia"
-              /> 
-              <Card.Body className='efecto medio'>
-                <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                <h3 className="card-text" > {item.resumen} </h3>
-                <p className="card-text" > {item.detalle} </p>
-               <Card.Img
-                variant="top"
-                src= {item.imagen2}
-                alt="imagen secundaria de la noticia "
-              /> 
-                <div className='efecto bajo'>
-                <p className="card-text">categoria: {item.categoria}</p>
-                <p className="card-text">Autor: {item.autor}</p>
-                <p className="card-text">Fecha: {item.fecha}</p>
-                <p className="card-text"> {item.principal}</p>
-                </div>
-              </Card.Body>
-             </Card>
-       )
-     }
-  </div> 
+          {
+            mostrarSalud.map(item =>
+              <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                <Card.Img
+                  variant="top"
+                  src={item.imagen}
+                  alt="imagen de la noticia"
+                />
+                <Card.Body className='efecto medio'>
+                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text" > {item.resumen} </h3>
+                  <p className="card-text" > {item.detalle} </p>
+                  <Card.Img
+                    variant="top"
+                    src={item.imagen2}
+                    alt="imagen secundaria de la noticia "
+                  />
+                  <div className='efecto bajo'>
+                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Autor: {item.autor}</p>
+                    <p className="card-text">Fecha: {item.fecha}</p>
+                    <p className="card-text"> {item.principal}</p>
+                  </div>
+                </Card.Body>
+              </Card>
+            )
+          }
+        </div>
 
 
         {/* PUBLICIDAD */}
