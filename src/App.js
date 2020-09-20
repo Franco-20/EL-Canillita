@@ -17,23 +17,25 @@ import Tecnologia from "./components/categorias/Tecnología";
 import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
 import InfoNoticia from "./components/InfoNoticia";
-
 import AgregarNoticias from "./components/noticias/AgregarNoticias";
 import EditarNoticias from "./components/noticias/EditarNoticias";
 import ItemNoticias from "./components/noticias/ItemNoticias";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import MostrarNoticias from "./components/noticias/MostrarNoticias";
 import Noti from "./components/noticias/Noti";
+import RecuperarClave from "./components/login/RecuperarClave";
+
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [recargarNoticia, setRecargarNoticia] = useState(true);
 
   useEffect(() => {
-    if(recargarNoticia){
-    consultar();
-    setRecargarNoticia(false);
-  }}, [recargarNoticia]);
+    if (recargarNoticia) {
+      consultar();
+      setRecargarNoticia(false);
+    }
+  }, [recargarNoticia]);
 
   const consultar = async () => {
     try {
@@ -53,8 +55,13 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
+        
         <Route exact path="/Inicio de Sesion">
           <Sesion></Sesion>
+        </Route>
+        
+        <Route exact path="/recuperar-clave">
+          <RecuperarClave></RecuperarClave>
         </Route>
         <Route exact path="/">
           <Inicio></Inicio>
@@ -90,13 +97,29 @@ function App() {
           <Error404></Error404>
         </Route>
         <Route exact path="/noticias/agregar">
-          <AgregarNoticias setRecargarNoticia={setRecargarNoticia}></AgregarNoticias>
+          <AgregarNoticias
+            setRecargarNoticia={setRecargarNoticia}
+          ></AgregarNoticias>
         </Route>
-        <Route exact path="/noticias/editar">
-          <EditarNoticias></EditarNoticias>
-        </Route>
+        <Route
+          exact
+          path="/noticias/editar/:id"
+          render={(props) => {
+
+            const parametroUrl = parseInt(props.match.params.id)
+            console.log(parametroUrl);
+            const buscarNoticia = noticias.find((item)=> item.id === parametroUrl)
+            
+
+
+            return <EditarNoticias noticia={buscarNoticia}></EditarNoticias>;
+          }}
+        ></Route>
         <Route exact path="/admin">
-          <ListarNoticias noticias={noticias} setRecargarNoticia={setRecargarNoticia}></ListarNoticias>
+          <ListarNoticias
+            noticias={noticias}
+            setRecargarNoticia={setRecargarNoticia}
+          ></ListarNoticias>
         </Route>
         <Route exact path="/principal">
           <MostrarNoticias noticias={noticias}></MostrarNoticias>
