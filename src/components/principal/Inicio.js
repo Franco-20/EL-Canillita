@@ -145,6 +145,9 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
@@ -186,6 +189,9 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
@@ -228,6 +234,9 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
@@ -268,6 +277,9 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
