@@ -26,8 +26,8 @@
 .titulo {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
     "AppleGothic", sans-serif;
-  font-size: 60px;
-  padding: 30px;
+  font-size: 50px;
+  padding: 20px;
   text-align: center;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
@@ -37,7 +37,7 @@
   text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 .cardDestacado {
-  width: 350px;
+  padding: 10px;
 }
 .subtitulos {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
@@ -73,6 +73,7 @@
   }
   .cardDestacado{
     display:flex;
+
   }
   .destacadaGrande{
     width: 700px;
@@ -87,7 +88,7 @@
     display: none;
   }
   .titulo {
-    font-size: 50px;
+    font-size: 30px;
     justify-content: center;
   }
   .abajo{

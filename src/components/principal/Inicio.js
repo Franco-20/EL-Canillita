@@ -57,10 +57,10 @@ const Inicio = (props) => {
         </article>
         {/* SECCION DESTACADO */}
         <h3 className=" titulo text-center">Destacadas del dia</h3>
-        <div className="d-flex justify-content-center col-sm-12">
+        <div className="container d-flex justify-content-center">
           <div className="row">
-            <div className="body destacada">
-              <Card className="bg-dark text-white efecto destacadaGrande">
+            <div className="col-sm-12 col-md-12 col-lg-8 body">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image" />
@@ -75,8 +75,8 @@ const Inicio = (props) => {
                 </Card.ImgOverlay>
               </Card>
             </div>
-            <div className="col-sm-12 col-lg-3 justify-content-center">
-              <Card className="bg-dark text-white cardDestacado efecto">
+            <div className="col-sm-12 col-lg-4 cardDestacado">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
@@ -91,7 +91,7 @@ const Inicio = (props) => {
                   <Card.Text>Last updated 3 mins ago</Card.Text>
                 </Card.ImgOverlay>
               </Card>
-              <Card className="bg-dark text-white cardDestacado efecto mt-1">
+              <Card className="bg-dark text-white efecto">
                 <Card.Img
                   src={process.env.PUBLIC_URL + "covid1.jpg"}
                   alt="Card image"
