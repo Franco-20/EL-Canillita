@@ -1,39 +1,54 @@
-import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import Card from "react-bootstrap/Card";
+import { Link } from 'react-router-dom';
 
-
-const Fotografía = () => {
-    const [imgUrl, setImgUrl] = useState('');
-    const [imgArray, setImgArray] = useState([]);
-
-    const imagenes = (e) =>{
-        setImgArray(e.target.value);
-
+const Fotografia = () => {
+    const [fotografia, setFotografia] = useState([]);
+    useEffect(() => {
+        traerArticulo()
+    }, [])
+    const traerArticulo = async () => {
+        const respuesta = await fetch('http://localhost:4005/api/noticia/fotografia');
+        const resultado = await respuesta.json();
+        console.log(resultado)
+        setFotografia(resultado);
     }
-
     return (
         <>
-            <Container>
-                <article className="d-flex my-4">
-                    <h6 className="p-1 title bg-primary">8M</h6>
-                    <h6 className="p-1 title bg-danger">DIA INTERNACIONAL DE LA MUJER</h6>
-                </article>
-                <h1 className=" my-4 text-justify"><strong>“No somos histéricas, somos históricas”: Las postales que dejó la multitudinaria marcha del 8M</strong></h1>
-                <Row>
-                    <Col>
-                   <img 
-                   src={imgArray } 
-                   alt=""
-                   onChange={imagenes}
-                   />
-
-                    </Col>
-
-                </Row>
-            </Container>
-
+            <h1 className='titulo text-center'>Fotografía</h1>
+            <div className='d-flex flex-row flex-wrap justify-content-around '>
+                {
+                    fotografia.map(item =>
+                        <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                            <Card.Img
+                                variant="top"
+                                src={item.imagen}
+                                alt="imagen de la noticia"
+                            />
+                            <Card.Body className='efecto medio'>
+                                <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
+                                <h3 className="card-text" > {item.resumen} </h3>
+                                <p className="card-text" > {item.detalle} </p>
+                                <Card.Img
+                                    variant="top"
+                                    src={item.imagen2}
+                                    alt="imagen secundaria de la noticia "
+                                />
+                                <div className='efecto bajo'>
+                                    <p className="card-text">categoria: {item.categoria}</p>
+                                    <p className="card-text">Autor: {item.autor}</p>
+                                    <p className="card-text">Fecha: {item.fecha}</p>
+                                    <p className="card-text"> {item.principal}</p>
+                                </div>
+                            </Card.Body>
+                            <Link className='btn btn-primary my-2 p-2'>
+                                ver Más.!!
+                   </Link>
+                        </Card>
+                    )
+                }
+            </div>
         </>
     );
-};
-
-export default Fotografía;
+}
+export default Fotografia;
