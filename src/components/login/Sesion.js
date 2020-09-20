@@ -1,28 +1,33 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-import Alert from "react-bootstrap/Alert";
-import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 const Sesion = () => {
-  const [correo, setCorreo] = useState("");
-  const [contraseña, setContraseña] = useState("");
+  //state para iniciar sesion
+   const [usuario, guardaUsuario] = useState({
+    email:'',
+    contraseña:''
+   });
 
-  const [error, setError] = useState(false);
+   //extraer de usuario email y contraseña
+   const{email, contraseña} = usuario;
 
-  const handleSubmit = (e) => {
+  const onChange = e =>{
+    guardaUsuario({
+      ...usuario,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  //cuando el ususario quiere iniciar sesion
+  const onSubmit = e =>{
     e.preventDefault();
-    //validacion
-    if (correo.trim() === "" || contraseña.trim() === "") {
-      setError(true);
-      return;
-    } else {
-      Swal.fire("Bienvenido!", "Inicio de sesion correcto!", "success");
-    }
 
-    //eliminar el error previo
-    setError(false);
-  };
+    //validar que no haya campos vacios
+
+    //pasarlo al action 
+  }
 
   return (
     <div className="fondosesion justify-content-center">
@@ -30,39 +35,40 @@ const Sesion = () => {
         <article className="justify-content-center my-1">
           <div>
             <h1 className="text-center" id="titulolog">
-              Inicia sesion
+              Iniciar Sesion
             </h1>
-            {error ? (
-              <Alert variant={"danger"}>
-                Todos los campos son obligatorios
-              </Alert>
-            ) : null}
-            <Form onSubmit={handleSubmit}>
+
+            <Form onSubmit={onSubmit}>
               <Form.Group controlId="formGroupEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email-"
-                  placeholder="ejemplo@gmail.com"
-                  onChange={(e) => setCorreo(e.target.value)}
-                />
+                  placeholder="Ingrese email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={onChange}
+                ></Form.Control>
               </Form.Group>
               <Form.Group controlId="formGroupPassword">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Ingrese su contraseña"
-                  onChange={(e) => setContraseña(e.target.value)}
-                />
+                  id="contraseña"
+                  name="contraseña"
+                  value={contraseña}
+                  onChange={onChange}
+                ></Form.Control>
               </Form.Group>
 
-              <Button variant="primary" type="submit" className="my-3">
+              <Button variant="primary" className="my-3" type="submit">
                 Ingresar
               </Button>
-              <Button variant="secondary" type="submit" className="mx-4 my-3">
-                Olvidaste tu contraseña?
-              </Button>
             </Form>
-
+              <Link to={'/recuperar-clave'} variant="secondary" type="submit" className="mx-4 my-3">
+                Olvidaste tu contraseña?
+              </Link>
             <section className="">
               <h1 className="text-center mx-3">
                 Puedes ingresar con tus redes sociales

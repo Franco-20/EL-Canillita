@@ -24,6 +24,8 @@ import ItemNoticias from "./components/noticias/ItemNoticias";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import MostrarNoticias from "./components/noticias/MostrarNoticias";
 import Noti from "./components/noticias/Noti";
+import RecuperarClave from "./components/login/RecuperarClave";
+import AutoState from "./components/login/autenticacion/AutoState"
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -54,8 +56,13 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
+        <AutoState> 
         <Route exact path="/Inicio de Sesion">
           <Sesion></Sesion>
+        </Route>
+        </AutoState>
+        <Route exact path="/recuperar-clave">
+          <RecuperarClave></RecuperarClave>
         </Route>
         <Route exact path="/">
           <Inicio></Inicio>
