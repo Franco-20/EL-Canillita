@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
+import Col from 'react-bootstrap/Form';
 import { Button } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import Swal from "sweetalert2";
@@ -25,11 +26,11 @@ const Sesion = () => {
   };
 
   return (
-    <div className="fondosesion justify-content-center">
+    <div className="">
       <div className="container">
         <article className="justify-content-center my-1">
           <div>
-            <h1 className="text-center" id="titulolog">
+            <h1 className="text-center titulo" id="titulolog">
               Inicia sesion
             </h1>
             {error ? (
@@ -37,22 +38,32 @@ const Sesion = () => {
                 Todos los campos son obligatorios
               </Alert>
             ) : null}
-            <Form onSubmit={handleSubmit}>
+            <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={error}  onSubmit={handleSubmit}>
               <Form.Group controlId="formGroupEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
-                  type="email-"
+                required
+                  type="email"
                   placeholder="ejemplo@gmail.com"
                   onChange={(e) => setCorreo(e.target.value)}
                 />
+                 <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+              Debe de ingresar un email valido ejemplo: perez@ejemplo.com
+              </Form.Control.Feedback>
               </Form.Group>
               <Form.Group controlId="formGroupPassword">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
+                required
                   type="password"
                   placeholder="Ingrese su contraseña"
                   onChange={(e) => setContraseña(e.target.value)}
                 />
+                  <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Debe de ingresar algun dato
+              </Form.Control.Feedback>
               </Form.Group>
 
               <Button variant="primary" type="submit" className="my-3">

@@ -1,21 +1,31 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+
 
 const Fotografía = () => {
+
+
     return (
         <>
-        <Container>
-            <Row>
-                <Col lg={8} md={12}>
-                <div className="Container">
-                            <h1 className="my-4"><strong>Coronavirus en Tucumán: 9 muertes y 543 casos en total este sábado</strong></h1>
-                            <h3 className="my-4">PANDEMIA | Hace instantes el Ministerio de Salud dio su reporte vespertino del virus: a las cifras de la mañana se sumaron 3 fallecimientos y 183 positivos. Todos los números.</h3>
-                        </div>
-                        <h1>Imagenes</h1>
-                    <img alt="" src="" className="" />
-                </Col>
-            </Row>
-        </Container>
+            <Container>
+                <article className="d-flex my-4">
+                    <h6 className="p-1 title bg-primary">8M</h6>
+                    <h6 className="p-1 title bg-danger">DIA INTERNACIONAL DE LA MUJER</h6>
+                </article>
+                <h1 className=" my-4 text-justify"><strong>“No somos histéricas, somos históricas”: Las postales que dejó la multitudinaria marcha del 8M</strong></h1>
+                <Row>
+                    <Col>
+                   <img 
+                   src="" 
+                   alt=""
+                   onChange="{imagenes}"
+                   />
+
+                    </Col>
+
+                </Row>
+            </Container>
+
         </>
     );
 };
