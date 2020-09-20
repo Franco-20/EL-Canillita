@@ -1,10 +1,13 @@
 import React, {useState, useRef} from 'react';
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
+import { faGalacticSenate } from '@fortawesome/free-brands-svg-icons';
+
 
 const EditarNoticias = (props) => {
     const [categoria, setCategoria] = useState("");
-    const [principal, setPrincipal] = useState("false");
+    const [principal, setPrincipal] = useState(false);
     const [error, setError] = useState(false);
 
     const tituloNoticiaRef = useRef("");
@@ -22,7 +25,31 @@ const EditarNoticias = (props) => {
 
     const handlerSubmit = (e) =>{
         e.preventDefault();
-        
+        const _categoria = (categoria === "") ? props.noticia.categoria : categoria;
+        const _principal = ( principal === false) ? props.noticia.principal : principal;
+      
+
+        console.log(_categoria);
+        console.log(_principal);
+        console.log(tituloNoticiaRef);
+        console.log(tituloNoticiaRef.current.value);
+        console.log(resumenRef.current.value);
+        console.log(fechaRef.current.value);
+
+        if(tituloNoticiaRef.current.value.trim() === "" || 
+        resumenRef.current.value.trim() ===  ""||
+        detalleRef.current.value.trim() === "" ||
+        imagenRef.current.value.trim() === "" ||
+        autorRef.current.value.trim() === "" ||
+        fechaRef.current.value.trim() === "" ||
+        _categoria === ""){
+          //mensaje de error 
+          setError(true);
+          return;
+
+
+        }
+
   
       }
 
@@ -30,6 +57,9 @@ const EditarNoticias = (props) => {
         <section className="container">
       <Form onSubmit={handlerSubmit}>
         <h1 className="text-center my-5">Editar Noticia</h1>
+        {error === true ? (
+          <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
+        ) : null}
         <FormGroup controlId="noticiaId">
           <Form.Label>Titulo Noticia *</Form.Label>
           <FormControl
@@ -86,17 +116,17 @@ const EditarNoticias = (props) => {
           type="text" 
           placeholder="Franco O."
           ref={autorRef}
-          preventDefault={props.noticia.autor}  
+          defaultValue={props.noticia.autor}
           ></FormControl>
         </FormGroup>
 
         <FormGroup controlId="fechaNoticia">
           <Form.Label>Fecha</Form.Label>
           <FormControl 
-          type="date" 
+          type="text" 
           placeholder="20/09/20"
           ref={fechaRef}
-          preventDefault={props.noticia.fecha}
+          preventValue={props.noticia.fecha}
           ></FormControl>
         </FormGroup>
 
@@ -180,9 +210,9 @@ const EditarNoticias = (props) => {
           <Form.Check 
           type="checkbox" 
           label="Publicar en principal" 
-          value="principal"
+          value = "false"
           name="principal"
-          defaultChecked={props.noticia.principal === "true"} 
+          defaultChecked={props.noticia.principal === "false"} 
           />
         </Form.Group>
         </div>

@@ -35,6 +35,30 @@
       "fecha": "2020-09-09",
       "principal": "false",
       "id": 16
+    },
+    {
+      "tituloNoticia": "Se va Globo del pais",
+      "resumen": "La empresa anuncio que se va del pais",
+      "detalle": "mas empresas dejan el pais",
+      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "imagen2": "",
+      "categoria": "economia",
+      "autor": "Raul",
+      "fecha": "10/07/2019",
+      "principal": false,
+      "id": 17
+    },
+    {
+      "tituloNoticia": "wrwrfefrea",
+      "resumen": "fsfsfs",
+      "detalle": "gfdfgsddf",
+      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "imagen2": "",
+      "categoria": "economia",
+      "autor": "Barby",
+      "fecha": "10/07/2018",
+      "principal": false,
+      "id": 18
     }
   ]
 }
