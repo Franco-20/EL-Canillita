@@ -90,8 +90,14 @@ function App() {
         <Route exact path="/tecnologia">
           <Tecnologia></Tecnologia>
         </Route>
-        <Route exact path="/noticias">
-          <InfoNoticia></InfoNoticia>
+        <Route exact path="/noticia/:id" render={ (props) =>{
+            const parametro = props.match.params.id
+            console.log(parametro);
+            const noticiaBuscada = noticias.find((item)=> item.id === parametro)
+           console.log(noticiaBuscada)
+
+          return <InfoNoticia noticia={noticiaBuscada}></InfoNoticia>
+        }}>       
         </Route>
         <Route exact path="/error404">
           <Error404></Error404>
@@ -109,9 +115,6 @@ function App() {
             const parametroUrl = parseInt(props.match.params.id)
             console.log(parametroUrl);
             const buscarNoticia = noticias.find((item)=> item.id === parametroUrl)
-            
-
-
             return <EditarNoticias noticia={buscarNoticia}></EditarNoticias>;
           }}
         ></Route>
