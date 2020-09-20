@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
-import AutenContext from "../../components/login/autenticacion/AutenContext"
+
 
 const RecuperarClave = () => {
     //state para iniciar sesion
@@ -14,8 +14,8 @@ const RecuperarClave = () => {
     });
     const [error, setError] = useState(false);
      
-    const AutenContext = useContext(AutenContext);
-    const{registrarUsuario} = AutenContext;
+    
+    
     
     //extraer de usuario email y contraseña
     const { email, contraseña, confirmar } = usuario;
@@ -48,9 +48,7 @@ const RecuperarClave = () => {
     //las dos contraseñas iguales
 
     //pasarlo al action
-    registrarUsuario({
-        email,contraseña
-    })
+    
 
 
 return (

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
+
 import { Button } from "react-bootstrap";
 import {Link} from "react-router-dom";
 
@@ -30,7 +31,7 @@ const Sesion = () => {
   }
 
   return (
-    <div className="fondosesion justify-content-center">
+    <div className="">
       <div className="container">
         <article className="justify-content-center my-1">
           <div>
@@ -53,6 +54,7 @@ const Sesion = () => {
               <Form.Group controlId="formGroupPassword">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
+                required
                   type="password"
                   placeholder="Ingrese su contraseña"
                   id="contraseña"
