@@ -17,13 +17,14 @@ import Tecnologia from "./components/categorias/Tecnología";
 import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
 import InfoNoticia from "./components/InfoNoticia";
-
 import AgregarNoticias from "./components/noticias/AgregarNoticias";
 import EditarNoticias from "./components/noticias/EditarNoticias";
 import ItemNoticias from "./components/noticias/ItemNoticias";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import MostrarNoticias from "./components/noticias/MostrarNoticias";
 import Noti from "./components/noticias/Noti";
+import RecuperarClave from "./components/login/RecuperarClave";
+
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -54,8 +55,13 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
+        
         <Route exact path="/Inicio de Sesion">
           <Sesion></Sesion>
+        </Route>
+        
+        <Route exact path="/recuperar-clave">
+          <RecuperarClave></RecuperarClave>
         </Route>
         <Route exact path="/">
           <Inicio></Inicio>
@@ -87,9 +93,7 @@ function App() {
         <Route exact path="/noticias">
           <InfoNoticia></InfoNoticia>
         </Route>
-        <Route exact path="/error404">
-          <Error404></Error404>
-        </Route>
+        
         <Route exact path="/noticias/agregar">
           <AgregarNoticias
             setRecargarNoticia={setRecargarNoticia}
@@ -120,6 +124,9 @@ function App() {
         </Route>
         <Route exact path="/principal/noti">
           <Noti noticias={noticias}></Noti>
+        </Route>
+        <Route exact path="*">
+          <Error404></Error404>
         </Route>
       </Switch>
       <Footer></Footer>
