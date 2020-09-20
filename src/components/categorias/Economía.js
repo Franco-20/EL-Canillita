@@ -44,7 +44,7 @@ const Economia = () => {
                    <p className="card-text"> {item.principal}</p>
                    </div>
                  </Card.Body>
-                 <Link to={`/noticia/${props.producto._id}`} className='btn btn-primary my-2 p-2'>
+                 <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
                 </Card>
