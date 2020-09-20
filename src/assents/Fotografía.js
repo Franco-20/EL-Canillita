@@ -1,28 +1,38 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const Fotografía = ({ source }) => {
+const Fotografía = () => {
+    const [imgUrl, setImgUrl] = useState('');
+    const [imgArray, setImgArray] = useState([]);
+
+    const imagenes = (e) =>{
+        setImgArray(e.target.value);
+
+    }
 
     return (
-<>
-    <Container>
-        <article className="d-flex my-4">
-            <h6 className="p-1 title bg-primary">8M</h6>
-            <h6 className="p-1 title bg-danger">DIA INTERNACIONAL DE LA MUJER</h6>
-        </article>
-        <h1 className=" my-4 text-justify"><strong>“No somos histéricas, somos históricas”: Las postales que dejó la multitudinaria marcha del 8M</strong></h1>
-        <Row>
-            <Col>
+        <>
+            <Container>
+                <article className="d-flex my-4">
+                    <h6 className="p-1 title bg-primary">8M</h6>
+                    <h6 className="p-1 title bg-danger">DIA INTERNACIONAL DE LA MUJER</h6>
+                </article>
+                <h1 className=" my-4 text-justify"><strong>“No somos histéricas, somos históricas”: Las postales que dejó la multitudinaria marcha del 8M</strong></h1>
+                <Row>
+                    <Col>
+                   <img 
+                   src={imgArray } 
+                   alt=""
+                   onChange={imagenes}
+                   />
 
+                    </Col>
 
-            </Col>
+                </Row>
+            </Container>
 
-        </Row>
-    </Container>
-
-</>
+        </>
     );
 };
 
