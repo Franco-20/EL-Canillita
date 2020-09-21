@@ -10,7 +10,7 @@ import Actualidad from "./components/categorias/Actualidad";
 import Deportes from "./components/categorias/Deportes";
 import Espectaculos from "./components/categorias/Espectaculos";
 import Economia from "./components/categorias/Economía";
-import Fotografia from "../src/assents/Fotografía";
+import Fotografia from "./components/categorias/Fotografía";
 import Politica from "./components/categorias/Política";
 import Salud from "./components/categorias/Salud";
 import Tecnologia from "./components/categorias/Tecnología";
@@ -46,9 +46,7 @@ function App() {
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4004/noticias");
-      const respuestaCategoria = await fetch("http://localhost:4004/categorias")
-      console.log(respuestaCategoria);
+      const respuesta = await fetch("http://localhost:4005/noticia");
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
@@ -118,9 +116,9 @@ function App() {
           path="/noticias/editar/:id"
           render={(props) => {
 
-            const parametroUrl = parseInt(props.match.params.id)
+            const parametroUrl = (props.match.params.id)
             console.log(parametroUrl);
-            const buscarNoticia = noticias.find((item)=> item.id === parametroUrl)
+            const buscarNoticia = noticias.find((item)=> item._id === parametroUrl)
             
 
 

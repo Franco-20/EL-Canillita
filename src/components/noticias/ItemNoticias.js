@@ -23,7 +23,11 @@ const ItemNoticias = (props) => {
           console.log(result);
           if (result.value) {
               try {
+<<<<<<< HEAD
                   const respuesta = await fetch(`http://localhost:4004/categori${id}`,
+=======
+                  const respuesta = await fetch(`http://localhost:4005/noticia/${id}`,
+>>>>>>> b88031c14bdcd41fa549a4722b6b49b995338ee1
                   {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
@@ -55,8 +59,8 @@ const ItemNoticias = (props) => {
         <td>{props.noticia.categoria}</td>
         <td>
           <span className="mx-2 "><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
-          <span className="mx-1"><Link to={`/noticias/editar/${props.noticia.id}`} className="btn btn-success mr-2"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></span>
-          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarNoticia(props.noticia.id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
+          <span className="mx-1"><Link to={`/noticias/editar/${props.noticia._id}`} className="btn btn-success mr-2"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></span>
+          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarNoticia(props.noticia._id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
         </td>
       </tr>
 

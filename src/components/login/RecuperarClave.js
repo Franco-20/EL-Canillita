@@ -54,11 +54,12 @@ const RecuperarClave = () => {
 return (
     <div className="fondosesion justify-content-center">
         <div className="container">
-            <article className="justify-content-center my-1">
-                <div>
-                    <h1 className="text-center" id="titulolog">
+        <h1 className="text-center m-4" id="titulolog">
                         Recuperar Clave
-            </h1>
+                </h1>
+            <article className="justify-content-center my-1 shadow p-3 mb-5 rounded bg-light">
+                <div>
+                  
                     {error === true ? (
                         <Alert variant={"danger"}>
                             todos los campos son obligatorios
