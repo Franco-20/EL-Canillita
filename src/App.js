@@ -25,6 +25,9 @@ import MostrarNoticias from "./components/noticias/MostrarNoticias";
 import Noti from "./components/noticias/Noti";
 import RecuperarClave from "./components/login/RecuperarClave";
 import AgregarCategoria from "./components/adminCategorias/AgregarCategoria";
+import ListarCategorias from "./components/adminCategorias/ListarCategorias";
+import ItemCategoria from "./components/adminCategorias/ItemCategoria";
+import EditarCategorias from "./components/adminCategorias/EditarCategorias"
 
 
 function App() {
@@ -106,6 +109,8 @@ function App() {
         <Route exact path="/noticias/agregar">
           <AgregarNoticias
             setRecargarNoticia={setRecargarNoticia}
+            categorias ={categorias}
+            setRecargarCategoria ={setRecargarCategoria}
           ></AgregarNoticias>
         </Route>
         <Route
@@ -126,6 +131,7 @@ function App() {
           <ListarNoticias
             noticias={noticias}
             setRecargarNoticia={setRecargarNoticia}
+           
           ></ListarNoticias>
         </Route>
         <Route exact path="/principal">
@@ -136,6 +142,19 @@ function App() {
         </Route>
         <Route exact path="/admin/agregarcategoria">
           <AgregarCategoria setRecargarCategoria ={setRecargarCategoria}></AgregarCategoria>
+        </Route>
+        <Route exact path="/admin/categoria">
+          <ListarCategorias
+          categorias ={categorias}
+          setRecargarCategoria ={setRecargarCategoria}
+          ></ListarCategorias>
+        </Route>
+
+        <Route exact path="/admin/editarcategoria">
+          <EditarCategorias
+          categorias ={categorias}
+          setRecargarCategoria ={setRecargarCategoria}
+          ></EditarCategorias>
         </Route>
 
 

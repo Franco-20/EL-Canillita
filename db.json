@@ -63,12 +63,20 @@
   ],
   "categorias": [
     {
-      "nombre": "deportes",
-      "id": 1
+      "nombreCategoria": "hola",
+      "id": 4
     },
     {
-      "nombreCategoria": "llllll",
-      "id": 2
+      "nombreCategoria": "lolo",
+      "id": 5
+    },
+    {
+      "nombreCategoria": "Politica",
+      "id": 6
+    },
+    {
+      "nombreCategoria": "espectaculos",
+      "id": 7
     }
   ]
 }

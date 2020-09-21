@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit, faStar } from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 
 const ItemNoticias = (props) => {
@@ -23,7 +23,7 @@ const ItemNoticias = (props) => {
           console.log(result);
           if (result.value) {
               try {
-                  const respuesta = await fetch(`http://localhost:4004/api/noticias/${id}`,
+                  const respuesta = await fetch(`http://localhost:4004/categori${id}`,
                   {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
@@ -34,10 +34,10 @@ const ItemNoticias = (props) => {
             props.setRecargarNoticia(true);
             Swal.fire(
               "Eliminado!",
-              "El producto fue eliminado correctamente.",
+              "la Noticia fue eliminado correctamente.",
               "success"
             );
-            props.history.push('/admin');
+            props.history.push('/admin/categoria');
          
           }
               } catch (error) {
@@ -64,4 +64,4 @@ const ItemNoticias = (props) => {
         
 };
 
-export default ItemNoticias;
+export default withRouter(ItemNoticias);

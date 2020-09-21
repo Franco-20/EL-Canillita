@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
 import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
 
 
 
@@ -44,7 +45,7 @@ const AgregarCategoria = (props) => {
                             'Categoria nueva creada!',
                             'success'
                           )
-                          
+                          props.history.push('/admin/categoria')
                     }
     
              } catch (error) {
@@ -83,4 +84,4 @@ const AgregarCategoria = (props) => {
     );
 };
 
-export default AgregarCategoria;
+export default withRouter(AgregarCategoria);
