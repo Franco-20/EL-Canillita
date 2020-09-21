@@ -39,7 +39,7 @@ function App() {
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4004/noticias");
+      const respuesta = await fetch("http://localhost:4004/api/noticias");
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
@@ -93,9 +93,7 @@ function App() {
         <Route exact path="/noticias">
           <InfoNoticia></InfoNoticia>
         </Route>
-        <Route exact path="/error404">
-          <Error404></Error404>
-        </Route>
+        
         <Route exact path="/noticias/agregar">
           <AgregarNoticias
             setRecargarNoticia={setRecargarNoticia}
@@ -126,6 +124,9 @@ function App() {
         </Route>
         <Route exact path="/principal/noti">
           <Noti noticias={noticias}></Noti>
+        </Route>
+        <Route exact path="*">
+          <Error404></Error404>
         </Route>
       </Switch>
       <Footer></Footer>

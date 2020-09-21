@@ -15,7 +15,7 @@ const AgregarNoticias = (props) => {
     const [categoria, setCategoria] = useState("");
     const [autor, setAutor] = useState("");
     const [fecha, setFecha] = useState("");
-    const [principal, setPrincipal] = useState("false");
+    const [principal, setPrincipal] = useState(false);
 
     const seleccionarCategoria = (e) =>{
         setCategoria(e.target.value);
@@ -44,7 +44,7 @@ const AgregarNoticias = (props) => {
             categoria: categoria, 
             autor: autor, 
             fecha: fecha,
-            principal: principal
+            principal: false
         };
 
          try {
@@ -57,7 +57,7 @@ const AgregarNoticias = (props) => {
         
 
             } 
-            const resultado = await fetch("http://localhost:4004/noticias", post) 
+            const resultado = await fetch("http://localhost:4004/api/noticias", post) 
             console.log(resultado)
             if(resultado.status === 201){
                 props.setRecargarNoticia(true)
@@ -143,7 +143,7 @@ const AgregarNoticias = (props) => {
         <FormGroup controlId="fechaNoticia">
           <Form.Label>Fecha</Form.Label>
           <FormControl 
-          type="date" 
+          type="text" 
           placeholder="20/09/20"
           onChange={(e) => setFecha(e.target.value)}
           ></FormControl>
@@ -221,7 +221,7 @@ const AgregarNoticias = (props) => {
           <Form.Check 
           type="checkbox" 
           label="Publicar en principal" 
-          value="principal"
+          value="false"
           name="principal"
           onChange= {(e) => setPrincipal(e.target.value)}
           />
