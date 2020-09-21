@@ -60,5 +60,15 @@
       "principal": false,
       "id": 18
     }
+  ],
+  "categorias": [
+    {
+      "nombre": "deportes",
+      "id": 1
+    },
+    {
+      "nombreCategoria": "llllll",
+      "id": 2
+    }
   ]
 }

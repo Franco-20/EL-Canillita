@@ -24,30 +24,39 @@ import ListarNoticias from "./components/noticias/ListarNoticias";
 import MostrarNoticias from "./components/noticias/MostrarNoticias";
 import Noti from "./components/noticias/Noti";
 import RecuperarClave from "./components/login/RecuperarClave";
+import AgregarCategoria from "./components/adminCategorias/AgregarCategoria";
 
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [recargarNoticia, setRecargarNoticia] = useState(true);
+  const [categorias, setCategoria] = useState([]);
+  const [recargarCategoria, setRecargarCategoria] = useState (true);
 
   useEffect(() => {
-    if (recargarNoticia) {
+    if (recargarNoticia || recargarCategoria) {
       consultar();
       setRecargarNoticia(false);
+      setRecargarCategoria(false)
     }
-  }, [recargarNoticia]);
+  }, [recargarNoticia, recargarCategoria]);
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4004/api/noticias");
+      const respuesta = await fetch("http://localhost:4004/noticias");
+      const respuestaCategoria = await fetch("http://localhost:4004/categorias")
+      console.log(respuestaCategoria);
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
+     const resultadoCategoria  = await respuestaCategoria.json();
+     setCategoria(resultadoCategoria)
     } catch (error) {
       console.log(error);
     }
   };
 
+  
   return (
     <Router>
       <Navbar></Navbar>
@@ -125,6 +134,11 @@ function App() {
         <Route exact path="/principal/noti">
           <Noti noticias={noticias}></Noti>
         </Route>
+        <Route exact path="/admin/agregarcategoria">
+          <AgregarCategoria setRecargarCategoria ={setRecargarCategoria}></AgregarCategoria>
+        </Route>
+
+
         <Route exact path="*">
           <Error404></Error404>
         </Route>
