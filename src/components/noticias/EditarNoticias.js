@@ -2,6 +2,9 @@ import React, { useState, useRef } from "react";
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+import Swal from 'sweetalert2';
+import {withRouter} from "react-router-dom";
+
 
 const EditarNoticias = (props) => {
   const [categoria, setCategoria] = useState("");
@@ -55,14 +58,27 @@ const EditarNoticias = (props) => {
     }
 
     try {
-      const consulta = await fetch(`http://localhost:4005/api/noticia//noticias/editar/${props.noticia.id}`,
+      const consulta = await fetch(
+        `http://localhost:4005/api/noticia/${props.noticia.id}`,
+
       {
         method: "PUT",
         headers: { 
-          "Content-Type": "application/json"}
+          "Content-Type": "application/json"
+        },
+          body: JSON.stringify(noticiaModificada)      
+        },  
+      );
+      console.log(consulta)
+      if(consulta.status === 200){
+        props.setRecargarNoticia(true);
+        Swal.fire(
+          'Listo!',
+          'Noticia modificada!',
+          'success'
+        )
+        props.history.push("/admin")
       }
-      )
-      
     } catch (error) {
       console.log(error)
     }
@@ -240,4 +256,4 @@ const EditarNoticias = (props) => {
   );
 };
 
-export default EditarNoticias;
+export default withRouter(EditarNoticias) ;

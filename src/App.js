@@ -110,7 +110,7 @@ function App() {
             
 
 
-            return <EditarNoticias noticia={buscarNoticia}></EditarNoticias>;
+            return <EditarNoticias noticia={buscarNoticia} setRecargarNoticia= {setRecargarNoticia}></EditarNoticias>;
           }}
         ></Route>
         <Route exact path="/admin">
