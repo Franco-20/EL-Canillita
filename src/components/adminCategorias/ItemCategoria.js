@@ -1,18 +1,18 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
-import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit, faStar } from '@fortawesome/free-solid-svg-icons';
 import {Link, withRouter} from 'react-router-dom';
+import Swal from "sweetalert2";
 
 
-const ItemNoticias = (props) => {
-    const eliminarNoticia = (id) => {
+const ItemCategoria = (props) => {
+
+    const eliminarCategoria = (id) => {
         console.log(id);
     
         Swal.fire({
-          title: "Estas seguro de eliminar la noticia?",
-          text: "No se puede recuperar la noticia eliminada!",
+          title: "Estas seguro de eliminar la categoria?",
+          text: "No se puede recuperar la categoria eliminada!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
@@ -23,7 +23,7 @@ const ItemNoticias = (props) => {
           console.log(result);
           if (result.value) {
               try {
-                  const respuesta = await fetch(`http://localhost:4004/noticia/${id}`,
+                  const respuesta = await fetch(`http://localhost:4004/categorias/${id}`,
                   {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
@@ -31,10 +31,10 @@ const ItemNoticias = (props) => {
                    ); 
                    console.log(respuesta);
           if (respuesta.status === 200) {
-            props.setRecargarNoticia(true);
+            props.setRecargarCategoria(true);
             Swal.fire(
               "Eliminado!",
-              "la Noticia fue eliminado correctamente.",
+              "La categoria fue eliminado correctamente.",
               "success"
             );
             props.history.push('/admin/categoria');
@@ -48,20 +48,17 @@ const ItemNoticias = (props) => {
       };
 
     return (
-        <tr>
-        <td>{props.noticia.id}</td>
-        <td>{props.noticia.tituloNoticia}</td>
-        <td>{props.noticia.resumen}</td>
-        <td>{props.noticia.categoria}</td>
-        <td>
+        <tr className="text-center">
+        <td>{props.categoria.id}</td>
+        <td>{props.categoria.nombreCategoria}</td>
+        
+        <td className="text-center">
           <span className="mx-2 "><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
-          <span className="mx-1"><Link to={`/noticias/editar/${props.noticia._id}`} className="btn btn-success mr-2"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></span>
-          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarNoticia(props.noticia._id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
+          <span className="mx-1"><Link to={`/admin/editarcategoria`} className="btn btn-success mr-2"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></span>
+          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarCategoria(props.categoria.id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
         </td>
       </tr>
-
     );
-        
 };
 
-export default withRouter(ItemNoticias);
+export default withRouter(ItemCategoria);

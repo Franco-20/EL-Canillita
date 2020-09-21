@@ -60,5 +60,23 @@
       "principal": false,
       "id": 18
     }
+  ],
+  "categorias": [
+    {
+      "nombreCategoria": "hola",
+      "id": 4
+    },
+    {
+      "nombreCategoria": "lolo",
+      "id": 5
+    },
+    {
+      "nombreCategoria": "Politica",
+      "id": 6
+    },
+    {
+      "nombreCategoria": "espectaculos",
+      "id": 7
+    }
   ]
 }
