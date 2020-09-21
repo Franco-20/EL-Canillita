@@ -1,4 +1,3 @@
-
 import React from 'react';
 import imagen from '../assents/img/noticiacovid.jpg';
 import imagencovid from '../assents/img/publicidad2.gif';
