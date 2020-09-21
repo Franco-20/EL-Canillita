@@ -46,7 +46,7 @@ function App() {
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4005/noticia");
+      const respuesta = await fetch("http://localhost:4005/api/noticia");
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
