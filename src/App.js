@@ -101,7 +101,7 @@ function App() {
         </Route>
         <Route
           exact
-          path="/noticias/editar/:_id"
+          path="/noticias/editar/:id"
           render={(props) => {
 
             const parametroUrl = (props.match.params.id)

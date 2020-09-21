@@ -16,34 +16,28 @@ const Fotografia = () => {
     return (
         <>
             <h1 className='titulo text-center'>Fotografía</h1>
-            <div className='d-flex flex-row flex-wrap justify-content-around '>
+            <h2 className='text-center'>Postales de Tucumán y el mundo</h2>
+            <div className='container d-flex flex-row flex-wrap justify-content-around '>
                 {
                     fotografia.map(item =>
-                        <Card className=" container col-md-4 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                        <Card className="col-md-12 col-sm-12 shadow  my-3  shadow  efecto body" key={item._id} >
+                        <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
                             <Card.Img
+                                className='efecto'
                                 variant="top"
                                 src={item.imagen}
                                 alt="imagen de la noticia"
                             />
-                            <Card.Body className='efecto medio'>
-                                <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
+                            <Card.Body className=''>
                                 <h3 className="card-text" > {item.resumen} </h3>
                                 <p className="card-text" > {item.detalle} </p>
-                                <Card.Img
-                                    variant="top"
-                                    src={item.imagen2}
-                                    alt="imagen secundaria de la noticia "
-                                />
-                                <div className='efecto bajo'>
+                                <div className=''>
                                     <p className="card-text">categoria: {item.categoria}</p>
                                     <p className="card-text">Autor: {item.autor}</p>
                                     <p className="card-text">Fecha: {item.fecha}</p>
                                     <p className="card-text"> {item.principal}</p>
                                 </div>
                             </Card.Body>
-                            <Link className='btn btn-primary my-2 p-2'>
-                                ver Más.!!
-                   </Link>
                         </Card>
                     )
                 }
