@@ -23,7 +23,7 @@ const ItemNoticias = (props) => {
           console.log(result);
           if (result.value) {
               try {
-                  const respuesta = await fetch(`http://localhost:4004/noticias/${id}`,
+                  const respuesta = await fetch(`http://localhost:4004/api/noticias/${id}`,
                   {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
