@@ -12,7 +12,7 @@ const Inicio = (props) => {
   }, [])
 
   const traerArticulo = async () => {
-    const respuesta = await fetch('http://localhost:4005/api/noticia');
+    const respuesta = await fetch('http://localhost:4004/noticias');
     const resultado = await respuesta.json();
     console.log(resultado)
     setTodasNoticias(resultado);
