@@ -130,9 +130,9 @@ const Inicio = (props) => {
                   alt="imagen de la noticia"
                 />
                 <Card.Body className='efecto medio'>
-                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                  <h3 className="card-text" > {item.resumen} </h3>
-                  <p className="card-text" > {item.detalle} </p>
+                  <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text text-justify" > {item.resumen} </h3>
+                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
@@ -171,9 +171,9 @@ const Inicio = (props) => {
                   alt="imagen de la noticia"
                 />
                 <Card.Body className='efecto medio'>
-                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                  <h3 className="card-text" > {item.resumen} </h3>
-                  <p className="card-text" > {item.detalle} </p>
+                  <h2 className='text-center bg-secondary text-light text-justify'>{item.tituloNoticia}</h2>
+                  <h3 className="card-text text-justify" > {item.resumen} </h3>
+                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
@@ -213,9 +213,9 @@ const Inicio = (props) => {
                   alt="imagen de la noticia"
                 />
                 <Card.Body className='efecto medio'>
-                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                  <h3 className="card-text" > {item.resumen} </h3>
-                  <p className="card-text" > {item.detalle} </p>
+                  <h2 className='text-center bg-secondary text-light text-justify'>{item.tituloNoticia}</h2>
+                  <h3 className="card-text text-justify" > {item.resumen} </h3>
+                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
@@ -253,9 +253,9 @@ const Inicio = (props) => {
                   alt="imagen de la noticia"
                 />
                 <Card.Body className='efecto medio'>
-                  <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                  <h3 className="card-text" > {item.resumen} </h3>
-                  <p className="card-text" > {item.detalle} </p>
+                  <h2 className='text-center bg-secondary text-light text-justify'>{item.tituloNoticia}</h2>
+                  <h3 className="card-text text-justify" > {item.resumen} </h3>
+                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}

@@ -30,8 +30,8 @@
                   /> 
                   <Card.Body className='efecto medio'>
                     <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
-                    <h3 className="card-text" > {item.resumen} </h3>
-                    <p className="card-text" > {item.detalle} </p>
+                    <h3 className="card-text text-justify" > {item.resumen} </h3>
+                    <p className="card-text text-justify" > {item.detalle} </p>
                    <Card.Img
                     variant="top"
                     src= {item.imagen2}
@@ -41,7 +41,7 @@
                     <p className="card-text">categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
-                    <p className="card-text"> {item.principal}</p>
+                    <p className="card-text text-justify"> {item.principal}</p>
                     </div>
                   </Card.Body>
                   <Link  className='btn btn-primary my-2 p-2'>

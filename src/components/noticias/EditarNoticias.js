@@ -1,60 +1,92 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from "react";
 import { Form, FormGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-import { faGalacticSenate } from '@fortawesome/free-brands-svg-icons';
+import Swal from 'sweetalert2';
+import {withRouter} from "react-router-dom";
 
 
 const EditarNoticias = (props) => {
-    const [categoria, setCategoria] = useState("");
-    const [principal, setPrincipal] = useState(false);
-    const [error, setError] = useState(false);
+  const [categoria, setCategoria] = useState("");
+  const [principal, setPrincipal] = useState(false);
+  const [error, setError] = useState(false);
 
-    const tituloNoticiaRef = useRef("");
-    const resumenRef = useRef("");
-    const detalleRef = useRef("");
-    const imagenRef = useRef("");
-    const imagen2Ref = useRef ("");
-    const autorRef = useRef("");
-    const fechaRef = useRef ("");
+  const tituloNoticiaRef = useRef("");
+  const resumenRef = useRef("");
+  const detalleRef = useRef("");
+  const imagenRef = useRef("");
+  const imagen2Ref = useRef("");
+  const autorRef = useRef("");
+  const fechaRef = useRef("");
 
-   
-    const seleccionarCategoria = (e) =>{
-        setCategoria(e.target.value);
-    };
+  const seleccionarCategoria = (e) => {
+    setCategoria(e.target.value);
+  };
 
-    const handlerSubmit = (e) =>{
-        e.preventDefault();
-        const _categoria = (categoria === "") ? props.noticia.categoria : categoria;
-        const _principal = ( principal === false) ? props.noticia.principal : principal;
-      
+  const handlerSubmit =  async (e) => {
+    e.preventDefault();
+    const _categoria = categoria === "" ? props.noticia.categoria : categoria;
+    const _principal =
+      principal === false ? props.noticia.principal : principal;
 
-        console.log(_categoria);
-        console.log(_principal);
-        console.log(tituloNoticiaRef);
-        console.log(tituloNoticiaRef.current.value);
-        console.log(resumenRef.current.value);
-        console.log(fechaRef.current.value);
+    console.log(tituloNoticiaRef.current.value);
+    console.log(fechaRef.current.value);
 
-        if(tituloNoticiaRef.current.value.trim() === "" || 
-        resumenRef.current.value.trim() ===  ""||
-        detalleRef.current.value.trim() === "" ||
-        imagenRef.current.value.trim() === "" ||
-        autorRef.current.value.trim() === "" ||
-        fechaRef.current.value.trim() === "" ||
-        _categoria === ""){
-          //mensaje de error 
-          setError(true);
-          return;
+    if (
+      tituloNoticiaRef.current.value.trim() === "" ||
+      resumenRef.current.value.trim() === "" ||
+      detalleRef.current.value.trim() === "" ||
+      imagenRef.current.value.trim() === "" ||
+      autorRef.current.value.trim() === "" ||
+      fechaRef.current.value.trim() === "" ||
+      _categoria === ""
+    ) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    const noticiaModificada = {
+      tituloNoticia: tituloNoticiaRef.current.value,
+      resumen: resumenRef.current.value,
+      detalle: detalleRef.current.value,
+      imagen: imagenRef.current.value,
+      imagen2: imagen2Ref.current.value,
+      categoria: _categoria,
+      autor: autorRef.current.value,
+      fecha: fechaRef.current.value,
+      principal: _principal
+    }
 
+    try {
+      const consulta = await fetch(
+        `http://localhost:4005/api/noticia/${props.noticia._id}`,
 
-        }
-
-  
+      {
+        method: "PUT",
+        headers: { 
+          "Content-Type": "application/json"
+        },
+          body: JSON.stringify(noticiaModificada)      
+        },  
+      );
+      console.log(consulta)
+      if(consulta.status === 200){
+        props.setRecargarNoticia(true);
+        Swal.fire(
+          'Listo!',
+          'Noticia modificada!',
+          'success'
+        )
+        props.history.push("/admin")
       }
+    } catch (error) {
+      console.log(error)
+    }
 
-    return (
-        <section className="container">
+  };
+
+  return (
+    <section className="container">
       <Form onSubmit={handlerSubmit}>
         <h1 className="text-center my-5">Editar Noticia</h1>
         {error === true ? (
@@ -75,8 +107,8 @@ const EditarNoticias = (props) => {
           <FormControl
             type="text"
             placeholder=" Leve aumento en la moneda verde"
-           ref={resumenRef}
-           defaultValue={props.noticia.resumen}
+            ref={resumenRef}
+            defaultValue={props.noticia.resumen}
           ></FormControl>
         </FormGroup>
 
@@ -106,27 +138,27 @@ const EditarNoticias = (props) => {
             type="url"
             placeholder="https://images.app.goo.gl/hQgPVvUBRqcUG3m26"
             ref={imagen2Ref}
-          defaultValue={props.noticia.imagen2}
+            defaultValue={props.noticia.imagen2}
           ></FormControl>
         </FormGroup>
 
         <FormGroup controlId="autorNoticia">
           <Form.Label> Autor</Form.Label>
-          <FormControl 
-          type="text" 
-          placeholder="Franco O."
-          ref={autorRef}
-          defaultValue={props.noticia.autor}
+          <FormControl
+            type="text"
+            placeholder="Franco O."
+            ref={autorRef}
+            defaultValue={props.noticia.autor}
           ></FormControl>
         </FormGroup>
 
         <FormGroup controlId="fechaNoticia">
           <Form.Label>Fecha</Form.Label>
-          <FormControl 
-          type="text" 
-          placeholder="20/09/20"
-          ref={fechaRef}
-          preventValue={props.noticia.fecha}
+          <FormControl
+            type="text"
+            placeholder="20/09/20"
+            ref={fechaRef}
+            preventValue={props.noticia.fecha}
           ></FormControl>
         </FormGroup>
 
@@ -206,22 +238,22 @@ const EditarNoticias = (props) => {
           />
         </div>
         <div className="text-center lead">
-        <Form.Group controlId="principalId">
-          <Form.Check 
-          type="checkbox" 
-          label="Publicar en principal" 
-          value = "false"
-          name="principal"
-          defaultChecked={props.noticia.principal === "false"} 
-          />
-        </Form.Group>
+          <Form.Group controlId="principalId">
+            <Form.Check
+              type="checkbox"
+              label="Publicar en principal"
+              value="false"
+              name="principal"
+              defaultChecked={props.noticia.principal === "false"}
+            />
+          </Form.Group>
         </div>
         <Button variant="primary" type="submit" className="w-100">
           Editar
         </Button>
       </Form>
     </section>
-    );
+  );
 };
 
-export default EditarNoticias;
+export default withRouter(EditarNoticias) ;
