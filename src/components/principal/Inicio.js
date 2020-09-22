@@ -59,9 +59,9 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
   const mostrarSalud = salud.slice(0, 3);
 
   return (
-    <div>
+    <div className="container">
       <ApiClimaMoneda />
-      <div className="container">
+      <div>
         <article className="text-center mt-4 banner">
           <img
             src={process.env.PUBLIC_URL + "virus.gif"}
