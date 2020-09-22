@@ -21,8 +21,6 @@ import AgregarNoticias from "./components/noticias/AgregarNoticias";
 import EditarNoticias from "./components/noticias/EditarNoticias";
 import ItemNoticias from "./components/noticias/ItemNoticias";
 import ListarNoticias from "./components/noticias/ListarNoticias";
-import MostrarNoticias from "./components/noticias/MostrarNoticias";
-import Noti from "./components/noticias/Noti";
 import RecuperarClave from "./components/login/RecuperarClave";
 import AgregarCategoria from "./components/adminCategorias/AgregarCategoria";
 import ListarCategorias from "./components/adminCategorias/ListarCategorias";
@@ -147,15 +145,12 @@ function App() {
           setRecargarCategoria ={setRecargarCategoria}
           ></ListarCategorias>
         </Route>
-
         <Route exact path="/admin/editarcategoria">
           <EditarCategorias
           categorias ={categorias}
           setRecargarCategoria ={setRecargarCategoria}
           ></EditarCategorias>
         </Route>
-
-
         <Route exact path="*">
           <Error404></Error404>
         </Route>
