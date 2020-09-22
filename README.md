@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# El Canillita
 
-## Available Scripts
+## English
 
-In the project directory, you can run:
+This project was created with [Create React App] (https://github.com/facebook/create-react-app), with [Bootstrap-react], [node.js], [MongoDB] and [express]. < br />
+
+It is a digital newspaper that allows, among other things: <br />
+- Registration, cancellation and modification of the news,
+- Login,
+- To subscribe,
+- High and low news categories (Sports, shows, etc).
+
+
+## Installation
+
+To install it, it must be done initially in the terminal:
+
+### `npm i`
+
+and then <br />
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run the application in development mode. <br />
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+And open [http: // localhost: 3000] (http: // localhost: 3000) to see the execution in the browser. <br />
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The web will reload if you make changes. <br />
+You can also see the errors in the console. <br />
 
-### `npm run build`
+## Contributions
+Contributions are welcome. For big changes, please send us a message first to tell us what changes you would make.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Please be sure to test your changes before uploading.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Rolling Code - Commission 7D
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Español
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app), con [Bootstrap-react], [node.js], [MongoDB] y [express].<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Es un diario digital que permitem, entre otras cosas:<br />
+- Alta, baja y modificación de las noticias, 
+- Loguearse,
+- Suscribirse,
+- Alta y baja de las categorias de noticias (Deportes, espectáculos, etc).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Instalación 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para su instalación se debe realizar inicialmente en la terminal: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm i`
 
-### Code Splitting
+y luego <br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### `npm start`
 
-### Analyzing the Bundle Size
+Corre la aplicación en modo development. <br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Y abre [http://localhost:3000](http://localhost:3000) para ver la ejecución en el navegador.<br />
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+La web se recargara si realizas cambios. <br />
+También se pueden observar los errores en la consola.<br />
 
-### Advanced Configuration
+## Contribuciones 
+Las contribuciones son bienvenidas. Para grandes cambios, por favor envianos un mensaje primero para contarnos que cambios realizarias. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Por favor asegúrese de probar los cambios antes de subirlos. 
 
-### Deployment
+## Licencia 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Rolling Code - Comisión 7D 
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
