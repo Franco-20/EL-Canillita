@@ -3,7 +3,7 @@
  import { Link } from 'react-router-dom';
  
 
- const Actualidad = () => {
+ const Actualidad = (props) => {
       const [ actualidad, setActualidad] = useState([]);
       
 
