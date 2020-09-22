@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
-const Tecnologia = () => {
+const Tecnologia = (props) => {
      const [tecnologia, setTecnologia] = useState([]);
      
      useEffect(() => {
@@ -10,10 +10,11 @@ const Tecnologia = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/tecnologia');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/tecnologia');
           const resultado = await respuesta.json();
           console.log(resultado)
           setTecnologia(resultado);
+          props.setNoticiasCategorias(resultado);
      }
 
   return (

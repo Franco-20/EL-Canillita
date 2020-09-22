@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
-const Deportes = () => {
+const Deportes = (props) => {
      const [deportes, setDeportes] = useState([]);
      
      useEffect(() => {
@@ -10,10 +10,11 @@ const Deportes = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/deportes');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/deportes');
           const resultado = await respuesta.json();
           console.log(resultado)
           setDeportes(resultado);
+          props.setNoticiasCategorias(resultado);
      }
 
   return (

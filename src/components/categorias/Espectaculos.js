@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
-const Espectaculos = () => {
+const Espectaculos = (props) => {
      const [espectaculos, setEspectaculos] = useState([]);
      
      useEffect(() => {
@@ -10,10 +10,11 @@ const Espectaculos = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/espectaculos');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/espectaculos');
           const resultado = await respuesta.json();
           console.log(resultado)
           setEspectaculos(resultado);
+          props.setNoticiasCategorias(resultado);
      }
 
   return (

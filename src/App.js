@@ -63,31 +63,31 @@ function App() {
           <RecuperarClave></RecuperarClave>
         </Route>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio setNoticiasCategorias={setNoticiasCategorias}></Inicio>
         </Route>
         <Route exact path="/actualidad">
           <Actualidad setNoticiasCategorias={setNoticiasCategorias}></Actualidad>
         </Route>
         <Route exact path="/deportes">
-          <Deportes></Deportes>
+          <Deportes setNoticiasCategorias={setNoticiasCategorias}></Deportes>
         </Route>
         <Route exact path="/economia">
-          <Economia></Economia>
+          <Economia setNoticiasCategorias={setNoticiasCategorias}></Economia>
         </Route>
         <Route exact path="/espectaculos">
-          <Espectaculos></Espectaculos>
+          <Espectaculos setNoticiasCategorias={setNoticiasCategorias}></Espectaculos>
         </Route>
         <Route exact path="/fotografia">
           <Fotografia></Fotografia>
         </Route>
         <Route exact path="/politica">
-          <Politica></Politica>
+          <Politica setNoticiasCategorias={setNoticiasCategorias}></Politica>
         </Route>
         <Route exact path="/salud">
-          <Salud></Salud>
+          <Salud setNoticiasCategorias={setNoticiasCategorias}></Salud>
         </Route>
         <Route exact path="/tecnologia">
-          <Tecnologia></Tecnologia>
+          <Tecnologia setNoticiasCategorias={setNoticiasCategorias}></Tecnologia>
         </Route>
         <Route exact path="/noticia/:id" render={ (props) =>{
             const parametro = props.match.params.id
