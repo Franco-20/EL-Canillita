@@ -146,7 +146,7 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
-                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                <Link to={`/noticia/actualidad${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
               </Card>
@@ -190,7 +190,7 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
-                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                <Link to={`/noticia/deportes${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
               </Card>
@@ -235,7 +235,7 @@ const Inicio = (props) => {
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
-                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                <Link to={`/noticia/politica${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
               </Card>
