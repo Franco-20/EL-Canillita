@@ -59,7 +59,7 @@ const EditarNoticias = (props) => {
 
     try {
       const consulta = await fetch(
-        `http://localhost:4005/noticia/${props.noticia._id}`,
+        `http://localhost:4004/noticia/${props.noticia._id}`,
 
       {
         method: "PUT",

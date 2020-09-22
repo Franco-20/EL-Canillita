@@ -10,7 +10,7 @@ const Tecnologia = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/tecnologia');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/tecnologia');
           const resultado = await respuesta.json();
           console.log(resultado)
           setTecnologia(resultado);

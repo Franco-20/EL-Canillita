@@ -8,7 +8,7 @@ const Fotografia = () => {
         traerArticulo()
     }, [])
     const traerArticulo = async () => {
-        const respuesta = await fetch('http://localhost:4005/api/noticia/fotografia');
+        const respuesta = await fetch('http://localhost:4004/api/noticia/fotografia');
         const resultado = await respuesta.json();
         console.log(resultado)
         setFotografia(resultado);

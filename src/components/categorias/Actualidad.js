@@ -10,7 +10,7 @@
       }, [])
 
       const traerArticulo = async () => {
-           const respuesta = await fetch('http://localhost:4005/api/noticia/actualidad');
+           const respuesta = await fetch('http://localhost:4004/api/noticia/actualidad');
            const resultado = await respuesta.json();
            console.log(resultado)
            setActualidad(resultado);

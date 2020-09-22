@@ -46,7 +46,7 @@ function App() {
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4005/noticias");
+      const respuesta = await fetch("http://localhost:4004/noticias");
       const respuestaCategoria = await fetch("http://localhost:4005/categorias")
       console.log(respuestaCategoria);
       console.log(respuesta);
@@ -118,9 +118,9 @@ function App() {
           path="/noticias/editar/:id"
           render={(props) => {
 
-            const parametroUrl = parseInt(props.match.params.id)
+            const parametroUrl = (props.match.params.id)
             console.log(parametroUrl);
-            const buscarNoticia = noticias.find((item)=> item.id === parametroUrl)
+            const buscarNoticia = noticias.find((item)=> item._id === parametroUrl)
             
 
 

@@ -10,7 +10,7 @@ const Salud = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/salud');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/salud');
           const resultado = await respuesta.json();
           console.log(resultado)
           setSalud(resultado);
