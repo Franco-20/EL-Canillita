@@ -83,7 +83,7 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                   <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
                   <div className='efecto bajo'>
-                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
                     <p className="card-text"> {item.principal}</p>
@@ -107,7 +107,7 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                   <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
                   <div className='efecto bajo'>
-                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
                     <p className="card-text"> {item.principal}</p>
@@ -146,14 +146,14 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                     alt="imagen secundaria de la noticia "
                   />
                   <div className='efecto bajo'>
-                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
                 <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
-                       ver Más!!
+                Ver Más
                    </Link>
               </Card>
             )
