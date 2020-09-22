@@ -55,7 +55,7 @@ const ItemCategoria = (props) => {
         <td className="text-center">
           <span className="mx-2 "><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
           <span className="mx-1"><Link to={`/admin/editarcategoria`} className="btn btn-success mr-2"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></span>
-          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarCategoria(props.categoria.id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
+          <span className="mx-1 "><button className="btn btn-danger mr-2" onClick={() => eliminarCategoria(props.categoria._id)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></span>
         </td>
       </tr>
     );

@@ -14,11 +14,21 @@ const Login = () => {
   const [telefono, setTelefono] = useState('');
   const [accept, setAcepto] = useState('');
   const [desvio, setDesvio] = useState(false);
+  const [borrarInput, setBorrarInput] = useState([]);
 
-
+  //funcion para enviar el mail con los datos del suscriptor
   const sendEmail = async (e) => {
     e.preventDefault();
-
+    let arreglo = borrarInput;
+    arreglo.push(nombre,
+      apellido,
+      email,
+      direccion,
+      localidad,
+      codigoPostal,
+      telefono,
+      accept);
+    setBorrarInput(arreglo);
     if (
       nombre.trim() === '' ||
       apellido.trim() === '' ||
@@ -61,18 +71,24 @@ const Login = () => {
           "A la brevedad responderemos tu solicitud",
           "success");
       }
+      setNombre('');
+      setApellido('');
+      setEmail('');
+      setDireccion('');
+      setLocalidad('');
+      setCodigoPostal('');
+      setTelefono('');
+      setAcepto('');
     } catch (error) {
       console.log(error);
-    }
+    };
   };
   return (
     <div className="fondosesion">
       <div className="container">
-        <h1 className="py-3">Registrarse</h1>
+        <h1 className="py-3 text-center">Registrarse</h1>
         <h6 className="text-center pl-3 text-secondary">Todos los campos marcados con * son obligatorios.
       </h6>
-
-
         <Form className="shadow p-3 mb-5 rounded bg-light" noValidate validated={desvio} onSubmit={sendEmail}>
           {desvio ? <Alert variant='danger'>Todos los campos con * son obligatorios</Alert> : null}
           <Form.Row>
@@ -84,15 +100,13 @@ const Login = () => {
                 placeholder="Juan"
                 name="nombre"
                 onChange={(e) => setNombre(e.target.value)}
-
+                value={nombre}
               />
               <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
                 Debe de ingresar algun dato
               </Form.Control.Feedback>
-
             </Form.Group>
-
             <Form.Group as={Col} controlId="formGridText">
               <Form.Label Col lg="6" md="6" sm="6">Apellido*</Form.Label>
               <Form.Control
@@ -101,15 +115,14 @@ const Login = () => {
                 name="apellido"
                 placeholder="Perez"
                 onChange={(e) => setApellido(e.target.value)}
-
+                value={apellido}
               />
               <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
                 Debe de ingresar algun dato
-          </Form.Control.Feedback>
+            </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-
           <Form.Group controlId="inputGroupPrepend">
             <Form.Label>Email*</Form.Label>
             <Form.Control
@@ -118,14 +131,13 @@ const Login = () => {
               name="email"
               placeholder="pepito@gmail.com"
               onChange={(e) => setEmail(e.target.value)}
-
+              value={email}
             />
             <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
               Debe de ingresar un email valido ejemplo: perez@ejemplo.com
           </Form.Control.Feedback>
           </Form.Group>
-
           <Form.Group controlId="formGridDireccion">
             <Form.Label>Direccion*</Form.Label>
             <Form.Control
@@ -133,13 +145,13 @@ const Login = () => {
               name="direccion"
               placeholder="muñecas 541"
               onChange={(e) => setDireccion(e.target.value)}
+              value={email}
             />
             <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
               Debe de ingresar algun dato
-          </Form.Control.Feedback>
+        </Form.Control.Feedback>
           </Form.Group>
-
           <Form.Group controlId="formGridLocalidad">
             <Form.Label>Localidad*</Form.Label>
             <Form.Control
@@ -148,31 +160,33 @@ const Login = () => {
               type="text"
               placeholder="Capital"
               onChange={(e) => setLocalidad(e.target.value)}
+              value={localidad}
             />
-            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback>
+              Ingreso datos correctos
+            </Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
               Debe de ingresar algun dato
-          </Form.Control.Feedback>
+            </Form.Control.Feedback>
           </Form.Group>
-
-
           <Form.Group controlId="formGridCodigoPostal">
-            <Form.Label>Codigo Postal*</Form.Label>
+            <Form.Label>
+              Codigo Postal*</Form.Label>
             <Form.Control
               required
               name="codigopostal"
               placeholder="4000"
               type="number"
               onChange={(e) => setCodigoPostal(e.target.value)}
+              value={codigoPostal}
             />
-            <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
+            <Form.Control.Feedback>
+              Ingreso datos correctos
+            </Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
               Debe de ingresar algun dato numerico
-          </Form.Control.Feedback>
-
+            </Form.Control.Feedback>
           </Form.Group>
-
-
           <Form.Group controlId="formGridTelefono">
             <Form.Label >Telefono*</Form.Label>
             <Form.Control
@@ -181,12 +195,12 @@ const Login = () => {
               placeholder="154123543"
               type="number"
               onChange={(e) => setTelefono(e.target.value)}
+              value={telefono}
             />
             <Form.Control.Feedback>Ingreso datos correctos</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
               Debe de ingresar algun dato numerico
           </Form.Control.Feedback>
-
           </Form.Group>
           <Form.Group>
             <Form.Check

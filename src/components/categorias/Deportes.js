@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
-const Deportes = () => {
+const Deportes = (props) => {
      const [deportes, setDeportes] = useState([]);
      
      useEffect(() => {
@@ -10,10 +10,11 @@ const Deportes = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/deportes');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/deportes');
           const resultado = await respuesta.json();
           console.log(resultado)
           setDeportes(resultado);
+          props.setNoticiasCategorias(resultado);
      }
 
   return (
@@ -31,21 +32,20 @@ const Deportes = () => {
                  <Card.Body className='efecto medio'>
                    <h2 className='text-center bg-secondary text-light '>{item.tituloNoticia}</h2>
                    <h3 className="card-text" > {item.resumen} </h3>
-                   <p className="card-text" > {item.detalle} </p>
                   <Card.Img
                    variant="top"
                    src= {item.imagen2}
                    alt="imagen secundaria de la noticia "
                  /> 
                    <div className='efecto bajo'>
-                   <p className="card-text">categoria: {item.categoria}</p>
+                   <p className="card-text">Categoria: {item.categoria}</p>
                    <p className="card-text">Autor: {item.autor}</p>
                    <p className="card-text">Fecha: {item.fecha}</p>
                    <p className="card-text"> {item.principal}</p>
                    </div>
                  </Card.Body>
-                 <Link  className='btn btn-primary my-2 p-2'>
-                       ver Más.!!
+                 <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                 Ver Más
                    </Link>
                 </Card>
          )

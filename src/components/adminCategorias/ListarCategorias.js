@@ -22,7 +22,7 @@ const ListarCategorias = (props) => {
 
        {props.categorias.map((categoria) => 
        <ItemCategoria categoria={categoria} 
-       setRecargarCategoria={props.setRecargarCategoria} key={categoria.id}></ItemCategoria>)} 
+       setRecargarCategoria={props.setRecargarCategoria} key={categoria._id}></ItemCategoria>)} 
         </tbody>
       </Table>
       <Button className="w-100 mb-5 mt-2" href="/admin/agregarcategoria">Agregar categoria</Button>
