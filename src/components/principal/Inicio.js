@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ApiClimaMoneda from "./ApiClimaMoneda";
 import Card from "react-bootstrap/Card";
+import { Link } from 'react-router-dom';
 import Deportes from "../categorias/Deportes";
 import Salud from "../categorias/Salud";
 
@@ -16,6 +17,7 @@ const Inicio = (props) => {
     const resultado = await respuesta.json();
     console.log(resultado)
     setTodasNoticias(resultado);
+    props.setNoticiasCategorias(resultado);
   }
 
  // Para mostrar noticias en general
@@ -165,6 +167,9 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
@@ -206,6 +211,9 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
@@ -248,6 +256,9 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }
@@ -288,6 +299,9 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
+                <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
+                       ver Más.!!
+                   </Link>
               </Card>
             )
           }

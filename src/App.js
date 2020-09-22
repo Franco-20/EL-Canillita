@@ -33,8 +33,7 @@ import EditarCategorias from "./components/adminCategorias/EditarCategorias"
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [recargarNoticia, setRecargarNoticia] = useState(true);
-  const [categorias, setCategoria] = useState([]);
-  const [recargarCategoria, setRecargarCategoria] = useState (true);
+  const [noticiasCategorias, setNoticiasCategorias] = useState ([]);
 
   useEffect(() => {
     if (recargarNoticia || recargarCategoria) {
@@ -46,9 +45,7 @@ function App() {
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4004/api/noticias");
-      const respuestaCategoria = await fetch("http://localhost:4004/api/categorias")
-      console.log(respuestaCategoria);
+      const respuesta = await fetch("http://localhost:4004/api/noticia");
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
@@ -67,43 +64,47 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
-        
         <Route exact path="/Inicio de Sesion">
           <Sesion></Sesion>
         </Route>
-        
         <Route exact path="/recuperar-clave">
           <RecuperarClave></RecuperarClave>
         </Route>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio setNoticiasCategorias={setNoticiasCategorias}></Inicio>
         </Route>
         <Route exact path="/actualidad">
-          <Actualidad></Actualidad>
+          <Actualidad setNoticiasCategorias={setNoticiasCategorias}></Actualidad>
         </Route>
         <Route exact path="/deportes">
-          <Deportes></Deportes>
+          <Deportes setNoticiasCategorias={setNoticiasCategorias}></Deportes>
         </Route>
         <Route exact path="/economia">
-          <Economia></Economia>
+          <Economia setNoticiasCategorias={setNoticiasCategorias}></Economia>
         </Route>
         <Route exact path="/espectaculos">
-          <Espectaculos></Espectaculos>
+          <Espectaculos setNoticiasCategorias={setNoticiasCategorias}></Espectaculos>
         </Route>
         <Route exact path="/fotografia">
           <Fotografia></Fotografia>
         </Route>
         <Route exact path="/politica">
-          <Politica></Politica>
+          <Politica setNoticiasCategorias={setNoticiasCategorias}></Politica>
         </Route>
         <Route exact path="/salud">
-          <Salud></Salud>
+          <Salud setNoticiasCategorias={setNoticiasCategorias}></Salud>
         </Route>
         <Route exact path="/tecnologia">
-          <Tecnologia></Tecnologia>
+          <Tecnologia setNoticiasCategorias={setNoticiasCategorias}></Tecnologia>
         </Route>
-        <Route exact path="/noticias">
-          <InfoNoticia></InfoNoticia>
+        <Route exact path="/noticia/:id" render={ (props) =>{
+            const parametro = props.match.params.id
+            console.log(parametro);
+            const noticiaBuscada = noticiasCategorias.find((item)=> item._id === parametro)
+           console.log(noticiaBuscada)
+
+          return <InfoNoticia noticia={noticiaBuscada}></InfoNoticia>
+        }}>       
         </Route>
         
         <Route exact path="/noticias/agregar">
@@ -121,9 +122,6 @@ function App() {
             const parametroUrl = (props.match.params.id)
             console.log(parametroUrl);
             const buscarNoticia = noticias.find((item)=> item._id === parametroUrl)
-            
-
-
             return <EditarNoticias noticia={buscarNoticia} setRecargarNoticia= {setRecargarNoticia}></EditarNoticias>;
           }}
         ></Route>

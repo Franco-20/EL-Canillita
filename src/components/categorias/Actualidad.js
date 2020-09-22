@@ -3,8 +3,13 @@
  import { Link } from 'react-router-dom';
  
 
+<<<<<<< HEAD
  const Actualidad = () => {
       const [ actualidad, setActualidad] = useState([]);
+=======
+ const Actualidad = (props) => {
+      const [actualidad, setActualidad] = useState([]);
+>>>>>>> detalleNoticia
       
 
       useEffect(() => {
@@ -16,6 +21,7 @@
            const resultado = await respuesta.json();
            console.log(resultado)
            setActualidad(resultado);
+           props.setNoticiasCategorias(resultado);
       }
 
   
@@ -48,7 +54,7 @@
                     <p className="card-text text-justify"> {item.principal}</p>
                     </div>
                   </Card.Body>
-                  <Link  className='btn btn-primary my-2 p-2'>
+                  <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
                  </Card>

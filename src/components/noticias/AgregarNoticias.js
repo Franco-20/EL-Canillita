@@ -58,7 +58,11 @@ const AgregarNoticias = (props) => {
         
 
             } 
+<<<<<<< HEAD
             const resultado = await fetch("http://localhost:4004/api/noticias", post) 
+=======
+            const resultado = await fetch("http://localhost:4004/api/noticia", post) 
+>>>>>>> detalleNoticia
             console.log(resultado)
             if(resultado.status === 201){
                 props.setRecargarNoticia(true)

@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
-const Salud = () => {
+const Salud = (props) => {
      const [ salud, setSalud] = useState([]);
      
      useEffect(() => {
@@ -14,6 +14,7 @@ const Salud = () => {
           const resultado = await respuesta.json();
           console.log(resultado)
           setSalud(resultado);
+          props.setNoticiasCategorias(resultado);
      }
 
   return (
@@ -44,7 +45,7 @@ const Salud = () => {
                    <p className="card-text"> {item.principal}</p>
                    </div>
                  </Card.Body>
-                 <Link  className='btn btn-primary my-2 p-2'>
+                 <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                  </Link>
                 </Card>

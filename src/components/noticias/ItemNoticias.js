@@ -7,8 +7,8 @@ import {Link, withRouter} from 'react-router-dom';
 
 
 const ItemNoticias = (props) => {
-    const eliminarNoticia = (id) => {
-        console.log(id);
+    const eliminarNoticia = (_id) => {
+        console.log(_id);
     
         Swal.fire({
           title: "Estas seguro de eliminar la noticia?",
@@ -23,7 +23,7 @@ const ItemNoticias = (props) => {
           console.log(result);
           if (result.value) {
               try {
-                  const respuesta = await fetch(`http://localhost:4004/api/noticia/${id}`,
+                  const respuesta = await fetch(`http://localhost:4004/api/noticia/${_id}`,
                   {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
@@ -49,7 +49,7 @@ const ItemNoticias = (props) => {
 
     return (
         <tr>
-        <td>{props.noticia.id}</td>
+        <td>{props.noticia._id}</td>
         <td>{props.noticia.tituloNoticia}</td>
         <td>{props.noticia.resumen}</td>
         <td>{props.noticia.categoria}</td>

@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
-const Deportes = () => {
+const Deportes = (props) => {
      const [deportes, setDeportes] = useState([]);
      
      useEffect(() => {
@@ -14,6 +14,7 @@ const Deportes = () => {
           const resultado = await respuesta.json();
           console.log(resultado)
           setDeportes(resultado);
+          props.setNoticiasCategorias(resultado);
      }
 
   return (
@@ -44,7 +45,7 @@ const Deportes = () => {
                    <p className="card-text"> {item.principal}</p>
                    </div>
                  </Card.Body>
-                 <Link  className='btn btn-primary my-2 p-2'>
+                 <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
                 </Card>
