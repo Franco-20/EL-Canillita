@@ -10,43 +10,56 @@ import Actualidad from "./components/categorias/Actualidad";
 import Deportes from "./components/categorias/Deportes";
 import Espectaculos from "./components/categorias/Espectaculos";
 import Economia from "./components/categorias/Economía";
-import Fotografia from "../src/assents/Fotografía";
+import Fotografia from "./components/categorias/Fotografía";
 import Politica from "./components/categorias/Política";
 import Salud from "./components/categorias/Salud";
 import Tecnologia from "./components/categorias/Tecnología";
 import Login from "./components/login/Login";
 import Sesion from "./components/login/Sesion";
 import InfoNoticia from "./components/InfoNoticia";
-
 import AgregarNoticias from "./components/noticias/AgregarNoticias";
 import EditarNoticias from "./components/noticias/EditarNoticias";
 import ItemNoticias from "./components/noticias/ItemNoticias";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import MostrarNoticias from "./components/noticias/MostrarNoticias";
 import Noti from "./components/noticias/Noti";
+import RecuperarClave from "./components/login/RecuperarClave";
+import AgregarCategoria from "./components/adminCategorias/AgregarCategoria";
+import ListarCategorias from "./components/adminCategorias/ListarCategorias";
+import ItemCategoria from "./components/adminCategorias/ItemCategoria";
+import EditarCategorias from "./components/adminCategorias/EditarCategorias"
+
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [recargarNoticia, setRecargarNoticia] = useState(true);
+  const [categorias, setCategoria] = useState([]);
+  const [recargarCategoria, setRecargarCategoria] = useState (true);
 
   useEffect(() => {
-    if (recargarNoticia) {
+    if (recargarNoticia || recargarCategoria) {
       consultar();
       setRecargarNoticia(false);
+      setRecargarCategoria(false)
     }
-  }, [recargarNoticia]);
+  }, [recargarNoticia, recargarCategoria]);
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4004/noticias");
+      const respuesta = await fetch("http://localhost:4004/api/noticias");
+      const respuestaCategoria = await fetch("http://localhost:4004/api/categorias")
+      console.log(respuestaCategoria);
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
+     const resultadoCategoria  = await respuestaCategoria.json();
+     setCategoria(resultadoCategoria)
     } catch (error) {
       console.log(error);
     }
   };
 
+  
   return (
     <Router>
       <Navbar></Navbar>
@@ -54,8 +67,13 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
+        
         <Route exact path="/Inicio de Sesion">
           <Sesion></Sesion>
+        </Route>
+        
+        <Route exact path="/recuperar-clave">
+          <RecuperarClave></RecuperarClave>
         </Route>
         <Route exact path="/">
           <Inicio></Inicio>
@@ -87,12 +105,12 @@ function App() {
         <Route exact path="/noticias">
           <InfoNoticia></InfoNoticia>
         </Route>
-        <Route exact path="/error404">
-          <Error404></Error404>
-        </Route>
+        
         <Route exact path="/noticias/agregar">
           <AgregarNoticias
             setRecargarNoticia={setRecargarNoticia}
+            categorias ={categorias}
+            setRecargarCategoria ={setRecargarCategoria}
           ></AgregarNoticias>
         </Route>
         <Route
@@ -100,19 +118,20 @@ function App() {
           path="/noticias/editar/:id"
           render={(props) => {
 
-            const parametroUrl = parseInt(props.match.params.id)
+            const parametroUrl = (props.match.params.id)
             console.log(parametroUrl);
-            const buscarNoticia = noticias.find((item)=> item.id === parametroUrl)
+            const buscarNoticia = noticias.find((item)=> item._id === parametroUrl)
             
 
 
-            return <EditarNoticias noticia={buscarNoticia}></EditarNoticias>;
+            return <EditarNoticias noticia={buscarNoticia} setRecargarNoticia= {setRecargarNoticia}></EditarNoticias>;
           }}
         ></Route>
         <Route exact path="/admin">
           <ListarNoticias
             noticias={noticias}
             setRecargarNoticia={setRecargarNoticia}
+           
           ></ListarNoticias>
         </Route>
         <Route exact path="/principal">
@@ -120,6 +139,27 @@ function App() {
         </Route>
         <Route exact path="/principal/noti">
           <Noti noticias={noticias}></Noti>
+        </Route>
+        <Route exact path="/admin/agregarcategoria">
+          <AgregarCategoria setRecargarCategoria ={setRecargarCategoria}></AgregarCategoria>
+        </Route>
+        <Route exact path="/admin/categoria">
+          <ListarCategorias
+          categorias ={categorias}
+          setRecargarCategoria ={setRecargarCategoria}
+          ></ListarCategorias>
+        </Route>
+
+        <Route exact path="/admin/editarcategoria">
+          <EditarCategorias
+          categorias ={categorias}
+          setRecargarCategoria ={setRecargarCategoria}
+          ></EditarCategorias>
+        </Route>
+
+
+        <Route exact path="*">
+          <Error404></Error404>
         </Route>
       </Switch>
       <Footer></Footer>

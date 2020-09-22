@@ -15,7 +15,8 @@ const AgregarNoticias = (props) => {
     const [categoria, setCategoria] = useState("");
     const [autor, setAutor] = useState("");
     const [fecha, setFecha] = useState("");
-    const [principal, setPrincipal] = useState("false");
+    const [principal, setPrincipal] = useState(false);
+
 
     const seleccionarCategoria = (e) =>{
         setCategoria(e.target.value);
@@ -44,7 +45,7 @@ const AgregarNoticias = (props) => {
             categoria: categoria, 
             autor: autor, 
             fecha: fecha,
-            principal: principal
+            principal: false
         };
 
          try {
@@ -57,7 +58,7 @@ const AgregarNoticias = (props) => {
         
 
             } 
-            const resultado = await fetch("http://localhost:4004/noticias", post) 
+            const resultado = await fetch("http://localhost:4004/api/noticias", post) 
             console.log(resultado)
             if(resultado.status === 201){
                 props.setRecargarNoticia(true)
@@ -143,7 +144,7 @@ const AgregarNoticias = (props) => {
         <FormGroup controlId="fechaNoticia">
           <Form.Label>Fecha</Form.Label>
           <FormControl 
-          type="date" 
+          type="text" 
           placeholder="20/09/20"
           onChange={(e) => setFecha(e.target.value)}
           ></FormControl>
@@ -151,77 +152,23 @@ const AgregarNoticias = (props) => {
 
         <h3 className="text-center">Categoria *</h3>
         <div className="text-center my-4">
+          {props.categorias.map((categoria) =>  
           <Form.Check
             type="radio"
-            label="Actualidad"
-            value="actualidad"
+            label={categoria.nombreCategoria}
+            value={categoria.nombreCategoria}
             inline
-            name="categoria"
+            name= "categoria"
             onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Deportes"
-            value="deportes"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Espectaculos"
-            value="espectaculos"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Tecnologia"
-            value="tecnologia"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Politica"
-            value="politica"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Economia"
-            value="economia"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Salud"
-            value="salud"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
-          <Form.Check
-            type="radio"
-            label="Fotografia"
-            value="fotografia"
-            inline
-            name="categoria"
-            onChange={seleccionarCategoria}
-          />
+          />        )}
+         
         </div>
         <div className="text-center lead">
         <Form.Group controlId="principalId">
           <Form.Check 
           type="checkbox" 
           label="Publicar en principal" 
-          value="principal"
+          value="false"
           name="principal"
           onChange= {(e) => setPrincipal(e.target.value)}
           />

@@ -26,15 +26,57 @@
     },
     {
       "tituloNoticia": "Aumenta el dolar",
-      "resumen": "dfmasdfmodsms",
+      "resumen": "el dolar aumento 30 pesos",
       "detalle": "fsmfdsmfkmsd",
       "imagen": "https://images.app.goo.gl/8q6RK41jbGFeyFVdA",
       "imagen2": "",
       "categoria": "politica",
       "autor": "fsmf",
-      "fecha": "2020-09-09",
+      "fecha": "10/10/2020",
       "principal": "false",
       "id": 16
+    },
+    {
+      "tituloNoticia": "Se va Globo del pais",
+      "resumen": "La empresa anuncio que se va del pais",
+      "detalle": "mas empresas dejan el pais",
+      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "imagen2": "",
+      "categoria": "economia",
+      "autor": "Raul",
+      "fecha": "10/07/2019",
+      "principal": false,
+      "id": 17
+    },
+    {
+      "tituloNoticia": "Habia una vez",
+      "resumen": "fsfsfs",
+      "detalle": "gfdfgsddf",
+      "imagen": "ttps://images.app.goo.gl/8q6RK41jbGFeyFVdA",
+      "imagen2": "",
+      "categoria": "economia",
+      "autor": "Barby",
+      "fecha": "10/10/2020",
+      "principal": false,
+      "id": 18
+    }
+  ],
+  "categorias": [
+    {
+      "nombreCategoria": "hola",
+      "id": 4
+    },
+    {
+      "nombreCategoria": "lolo",
+      "id": 5
+    },
+    {
+      "nombreCategoria": "Politica",
+      "id": 6
+    },
+    {
+      "nombreCategoria": "espectaculos",
+      "id": 7
     }
   ]
 }
