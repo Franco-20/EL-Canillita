@@ -18,8 +18,8 @@ const InfoNoticia = (props) => {
                         <p className="my-2"><small><b>{props.noticia.fecha} / Autor: {props.noticia.autor}</b></small></p>
                     </Col>
                     <Col className="d-none d-sm-none d-md-block" lg={4}>
-                        <img alt="" src={imagencovid} className="publicidad2"></img>
-                        <img alt="" src={imagenpublicidad} className="publicidad"></img>
+                        <img alt="gif cuidados para el covid" src={imagencovid} className="publicidad2 public"></img>
+                        <img alt="imagen de publicidad de un diario" src={imagenpublicidad} className="publicidad public"></img>
                     </Col>
                     <div className="mt-4 text-justify">
                         <h5><em>{props.noticia.detalle}</em></h5>
