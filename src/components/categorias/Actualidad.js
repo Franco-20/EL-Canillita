@@ -2,7 +2,7 @@
  import Card from "react-bootstrap/Card";
  import { Link } from 'react-router-dom';
 
- const Actualidad = () => {
+ const Actualidad = (props) => {
       const [actualidad, setActualidad] = useState([]);
       
       useEffect(() => {
@@ -10,10 +10,11 @@
       }, [])
 
       const traerArticulo = async () => {
-           const respuesta = await fetch('http://localhost:4005/api/noticia/actualidad');
+           const respuesta = await fetch('http://localhost:4004/api/noticia/actualidad');
            const resultado = await respuesta.json();
            console.log(resultado)
            setActualidad(resultado);
+           props.setNoticiasCategorias(resultado);
       }
 
    return (
@@ -44,7 +45,7 @@
                     <p className="card-text"> {item.principal}</p>
                     </div>
                   </Card.Body>
-                  <Link to={`/noticia/actualidad/${item._id}`} className='btn btn-primary my-2 p-2'>
+                  <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
                        ver Más.!!
                    </Link>
                  </Card>

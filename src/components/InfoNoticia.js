@@ -6,19 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faComment, faShareSquare } from '@fortawesome/free-solid-svg-icons';
 
 const InfoNoticia = (props) => {
-    const [detalleNoticia, setDetalleNoticia] = useState([]);
-    useEffect(() => {
-        traerArticulo()
-    }, [])
-    const traerArticulo = async () => {
-        const respuesta = await fetch(`http://localhost:4005/api/noticia/${props.noticia._id}`);
-        const resultado = await respuesta.json();
-        console.log(resultado)
-        setDetalleNoticia(resultado);
-    }
     return (
         <>
-          
                     <Container >
                         <Row>
                             <Col lg={8} md={12}>

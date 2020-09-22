@@ -29,6 +29,7 @@ import RecuperarClave from "./components/login/RecuperarClave";
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [recargarNoticia, setRecargarNoticia] = useState(true);
+  const [noticiasCategorias, setNoticiasCategorias] = useState ([]);
 
   useEffect(() => {
     if (recargarNoticia) {
@@ -39,7 +40,7 @@ function App() {
 
   const consultar = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4005/api/noticia");
+      const respuesta = await fetch("http://localhost:4004/api/noticia");
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
@@ -55,11 +56,9 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
-        
         <Route exact path="/Inicio de Sesion">
           <Sesion></Sesion>
         </Route>
-        
         <Route exact path="/recuperar-clave">
           <RecuperarClave></RecuperarClave>
         </Route>
@@ -67,7 +66,7 @@ function App() {
           <Inicio></Inicio>
         </Route>
         <Route exact path="/actualidad">
-          <Actualidad></Actualidad>
+          <Actualidad setNoticiasCategorias={setNoticiasCategorias}></Actualidad>
         </Route>
         <Route exact path="/deportes">
           <Deportes></Deportes>
@@ -93,7 +92,7 @@ function App() {
         <Route exact path="/noticia/:id" render={ (props) =>{
             const parametro = props.match.params.id
             console.log(parametro);
-            const noticiaBuscada = noticias.find((item)=> item.id === parametro)
+            const noticiaBuscada = noticiasCategorias.find((item)=> item._id === parametro)
            console.log(noticiaBuscada)
 
           return <InfoNoticia noticia={noticiaBuscada}></InfoNoticia>
