@@ -2,7 +2,7 @@
 
 ## English
 
-This project was created with [Create React App] (https://github.com/facebook/create-react-app), with [Bootstrap-react], [node.js], [MongoDB] and [express]. < br />
+This project was created with [Create React App] (https://github.com/facebook/create-react-app), with [Bootstrap-react], [node.js], [MongoDB] and [express]. 
 
 It is a digital newspaper that allows, among other things: <br />
 - Registration, cancellation and modification of the news,
