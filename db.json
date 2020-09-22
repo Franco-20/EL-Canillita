@@ -77,6 +77,10 @@
     {
       "nombreCategoria": "espectaculos",
       "id": 7
+    },
+    {
+      "nombreCategoria": "deportes",
+      "id": 8
     }
   ]
 }
