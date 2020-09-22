@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import ApiClimaMoneda from "./ApiClimaMoneda";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
-import Deportes from "../categorias/Deportes";
-import Salud from "../categorias/Salud";
 
 const Inicio = (props) => {
   const [todasNoticias, setTodasNoticias] = useState([]);
@@ -20,13 +18,13 @@ const Inicio = (props) => {
     props.setNoticiasCategorias(resultado);
   }
 
- // Para mostrar noticias en general
+ // Para mostrar noticias destacada grande
 const noticiaGeneral1 = todasNoticias.reverse().filter((noticia) => {
   return noticia.categoria;   
 })
 const mostrarNotiGeneral1 = noticiaGeneral1.slice(0,1)
 
-  // Para mostrar categoria tecnologia
+  // Para mostrar noticias destacadas derecha
 const noticiaGeneral = todasNoticias.reverse().filter((noticia) => {
       return noticia.categoria === 'tecnologia'; 
 })
@@ -84,14 +82,8 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                 <Card.Body className='efecto medio'>
                   <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
-                  <p className="card-text text-justify" > {item.detalle} </p>
-                  <Card.Img
-                    variant="top"
-                    src={item.imagen2}
-                    alt="imagen secundaria de la noticia "
-                  />
                   <div className='efecto bajo'>
-                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
                     <p className="card-text"> {item.principal}</p>
@@ -114,14 +106,8 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                 <Card.Body className='efecto medio'>
                   <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
-                  <p className="card-text text-justify" > {item.detalle} </p>
-                  <Card.Img
-                    variant="top"
-                    src={item.imagen2}
-                    alt="imagen secundaria de la noticia "
-                  />
                   <div className='efecto bajo'>
-                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
                     <p className="card-text"> {item.principal}</p>
@@ -154,21 +140,20 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                 <Card.Body className='efecto medio'>
                   <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
-                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
                     alt="imagen secundaria de la noticia "
                   />
                   <div className='efecto bajo'>
-                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Categoria: {item.categoria}</p>
                     <p className="card-text">Autor: {item.autor}</p>
                     <p className="card-text">Fecha: {item.fecha}</p>
                     <p className="card-text"> {item.principal}</p>
                   </div>
                 </Card.Body>
                 <Link to={`/noticia/${item._id}`} className='btn btn-primary my-2 p-2'>
-                       ver Más.!!
+                Ver Más
                    </Link>
               </Card>
             )
@@ -198,7 +183,6 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                 <Card.Body className='efecto medio'>
                   <h2 className='text-center bg-secondary text-light text-justify'>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
-                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
@@ -243,7 +227,6 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                 <Card.Body className='efecto medio'>
                   <h2 className='text-center bg-secondary text-light text-justify'>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
-                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
@@ -286,7 +269,6 @@ console.log('noticiaGeneral', mostrarNotiGeneral);
                 <Card.Body className='efecto medio'>
                   <h2 className='text-center bg-secondary text-light text-justify'>{item.tituloNoticia}</h2>
                   <h3 className="card-text text-justify" > {item.resumen} </h3>
-                  <p className="card-text text-justify" > {item.detalle} </p>
                   <Card.Img
                     variant="top"
                     src={item.imagen2}
