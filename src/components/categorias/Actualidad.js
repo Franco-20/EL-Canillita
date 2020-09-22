@@ -3,13 +3,8 @@
  import { Link } from 'react-router-dom';
  
 
-<<<<<<< HEAD
  const Actualidad = () => {
       const [ actualidad, setActualidad] = useState([]);
-=======
- const Actualidad = (props) => {
-      const [actualidad, setActualidad] = useState([]);
->>>>>>> detalleNoticia
       
 
       useEffect(() => {
