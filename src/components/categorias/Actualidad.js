@@ -1,20 +1,24 @@
  import React ,{useState, useEffect} from "react";
  import Card from "react-bootstrap/Card";
  import { Link } from 'react-router-dom';
+ 
 
  const Actualidad = () => {
-      const [actualidad, setActualidad] = useState([]);
+      const [ actualidad, setActualidad] = useState([]);
       
+
       useEffect(() => {
         traerArticulo()
       }, [])
 
       const traerArticulo = async () => {
-           const respuesta = await fetch('http://localhost:4005/api/noticia/actualidad');
+           const respuesta = await fetch('http://localhost:4004/api/noticia/actualidad');
            const resultado = await respuesta.json();
            console.log(resultado)
            setActualidad(resultado);
       }
+
+  
 
    return (
         <>
@@ -50,7 +54,7 @@
                  </Card>
           )
          }
-      </div>
+       </div>
       </>
    );
   }
