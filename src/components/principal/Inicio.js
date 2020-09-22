@@ -18,6 +18,19 @@ const Inicio = (props) => {
     setTodasNoticias(resultado);
   }
 
+ // Para mostrar noticias en general
+const noticiaGeneral1 = todasNoticias.reverse().filter((noticia) => {
+  return noticia.categoria;   
+})
+const mostrarNotiGeneral1 = noticiaGeneral1.slice(0,1)
+
+  // Para mostrar categoria tecnologia
+const noticiaGeneral = todasNoticias.reverse().filter((noticia) => {
+      return noticia.categoria === 'tecnologia'; 
+})
+const mostrarNotiGeneral = noticiaGeneral.slice(0,2)
+console.log('noticiaGeneral', mostrarNotiGeneral);
+
   // Para mostrar categoria actualidad
   const actualidad = todasNoticias.reverse().filter((noticia) => {
     return noticia.categoria === 'actualidad';
@@ -57,57 +70,64 @@ const Inicio = (props) => {
         </article>
         {/* SECCION DESTACADO */}
         <h3 className=" titulo text-center">Destacadas del dia</h3>
-        <div className="container d-flex justify-content-center">
-          <div className="row">
-            <div className="col-sm-12 col-md-12 col-lg-8 body">
-              <Card className="bg-dark text-white efecto">
+            <div className='d-flex w-100 flex-wrap justify-content-around '>
+          {
+            mostrarNotiGeneral1.map(item =>
+              <Card className="  col-md-12 col-sm-12 shadow  my-3  efecto body" key={item._id} >
                 <Card.Img
-                  src={process.env.PUBLIC_URL + "covid1.jpg"}
-                  alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                  <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
-              </Card>
-            </div>
-            <div className="col-sm-12 col-lg-4 cardDestacado">
-              <Card className="bg-dark text-white efecto">
-                <Card.Img
-                  src={process.env.PUBLIC_URL + "covid1.jpg"}
-                  alt="Card image"
+                  variant="top"
+                  src={item.imagen}
+                  alt="imagen de la noticia"
                 />
-                <Card.ImgOverlay>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                  <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
+                <Card.Body className='efecto medio'>
+                  <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text text-justify" > {item.resumen} </h3>
+                  <p className="card-text text-justify" > {item.detalle} </p>
+                  <Card.Img
+                    variant="top"
+                    src={item.imagen2}
+                    alt="imagen secundaria de la noticia "
+                  />
+                  <div className='efecto bajo'>
+                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Autor: {item.autor}</p>
+                    <p className="card-text">Fecha: {item.fecha}</p>
+                    <p className="card-text"> {item.principal}</p>
+                  </div>
+                </Card.Body>
               </Card>
-              <Card className="bg-dark text-white efecto">
+            )
+          }
+        </div>
+
+            <div className='d-flex w-100 flex-wrap justify-content-around '>
+          {
+            mostrarNotiGeneral.map(item =>
+              <Card className="  col-md-6 col-sm-12 shadow  my-3  efecto body" key={item._id} >
                 <Card.Img
-                  src={process.env.PUBLIC_URL + "covid1.jpg"}
-                  alt="Card image"
+                  variant="top"
+                  src={item.imagen}
+                  alt="imagen de la noticia"
                 />
-                <Card.ImgOverlay>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                  <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
+                <Card.Body className='efecto medio'>
+                  <h2 className='text-center bg-secondary text-light text-justify '>{item.tituloNoticia}</h2>
+                  <h3 className="card-text text-justify" > {item.resumen} </h3>
+                  <p className="card-text text-justify" > {item.detalle} </p>
+                  <Card.Img
+                    variant="top"
+                    src={item.imagen2}
+                    alt="imagen secundaria de la noticia "
+                  />
+                  <div className='efecto bajo'>
+                    <p className="card-text">categoria: {item.categoria}</p>
+                    <p className="card-text">Autor: {item.autor}</p>
+                    <p className="card-text">Fecha: {item.fecha}</p>
+                    <p className="card-text"> {item.principal}</p>
+                  </div>
+                </Card.Body>
               </Card>
-            </div>
-          </div>
+            )
+          }
         </div>
 
         {/* SECCION CATEGORIA */}

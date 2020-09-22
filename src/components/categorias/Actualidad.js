@@ -1,10 +1,12 @@
  import React ,{useState, useEffect} from "react";
  import Card from "react-bootstrap/Card";
  import { Link } from 'react-router-dom';
+ 
 
  const Actualidad = () => {
-      const [actualidad, setActualidad] = useState([]);
+      const [ actualidad, setActualidad] = useState([]);
       
+
       useEffect(() => {
         traerArticulo()
       }, [])
@@ -15,6 +17,8 @@
            console.log(resultado)
            setActualidad(resultado);
       }
+
+  
 
    return (
         <>
@@ -50,7 +54,7 @@
                  </Card>
           )
          }
-      </div>
+       </div>
       </>
    );
   }
