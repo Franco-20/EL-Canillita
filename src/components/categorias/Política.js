@@ -10,7 +10,7 @@ const Politica = () => {
      }, [])
 
      const traerArticulo = async () => {
-          const respuesta = await fetch('http://localhost:4005/api/noticia/politica');
+          const respuesta = await fetch('http://localhost:4004/api/noticia/politica');
           const resultado = await respuesta.json();
           console.log(resultado)
           setPolitica(resultado);
