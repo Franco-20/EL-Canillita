@@ -11,7 +11,7 @@ const Inicio = (props) => {
   }, [])
 
   const traerArticulo = async () => {
-    const respuesta = await fetch('http://localhost:4004/api/noticias');
+    const respuesta = await fetch('http://localhost:4004/api/noticia');
     const resultado = await respuesta.json();
     console.log(resultado)
     setTodasNoticias(resultado);
@@ -19,7 +19,7 @@ const Inicio = (props) => {
   }
 
  // Para mostrar noticias destacada grande
-const noticiaGeneral1 = todasNoticias.reverse().filter((noticia) => {
+const noticiaGeneral1 = todasNoticias.filter((noticia) => {
   return noticia.categoria;   
 })
 const mostrarNotiGeneral1 = noticiaGeneral1.slice(0,1)

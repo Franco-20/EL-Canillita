@@ -36,7 +36,7 @@ const AgregarCategoria = (props) => {
             
     
                 } 
-                const resultado = await fetch("http://localhost:4004/categorias", post) 
+                const resultado = await fetch("http://localhost:4000/categorias", post) 
                 console.log(resultado)
                 if(resultado.status === 201){
                     props.setRecargarCategoria(true)

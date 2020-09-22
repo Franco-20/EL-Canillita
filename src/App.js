@@ -26,12 +26,15 @@ import AgregarCategoria from "./components/adminCategorias/AgregarCategoria";
 import ListarCategorias from "./components/adminCategorias/ListarCategorias";
 import ItemCategoria from "./components/adminCategorias/ItemCategoria";
 import EditarCategorias from "./components/adminCategorias/EditarCategorias"
-
+import MostrarNoticias from "./components/noticias/MostrarNoticias";
+import Noti from "./components/noticias/Noti";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [recargarNoticia, setRecargarNoticia] = useState(true);
   const [noticiasCategorias, setNoticiasCategorias] = useState ([]);
+  const [categorias, setCategoria] = useState([]);
+  const [recargarCategoria, setRecargarCategoria] = useState (true);
 
   useEffect(() => {
     if (recargarNoticia || recargarCategoria) {
@@ -44,6 +47,7 @@ function App() {
   const consultar = async () => {
     try {
       const respuesta = await fetch("http://localhost:4004/api/noticia");
+      const respuestaCategoria = await fetch("http://localhost:4000/categorias")
       console.log(respuesta);
       const resultado = await respuesta.json();
       setNoticias(resultado);
