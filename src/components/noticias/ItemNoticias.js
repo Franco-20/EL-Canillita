@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom';
 
 
 const ItemNoticias = (props) => {
-    const eliminarNoticia = (_id) => {
-        console.log(_id);
+    const eliminarNoticia = (id) => {
+        console.log(id);
     
         Swal.fire({
           title: "Estas seguro de eliminar la noticia?",
