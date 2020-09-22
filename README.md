@@ -77,7 +77,6 @@ Por favor asegúrese de probar los cambios antes de subirlos.
 
 Rolling Code - Comisión 7D 
 
-
-
+## Diego Galarce, Franco Olmi, Daiana Olmi, Esteban, Raul Serrano, Barbara Steimberg, Tomas Quiroga
 
 
