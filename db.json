@@ -81,6 +81,10 @@
     {
       "nombreCategoria": "deportes",
       "id": 8
+    },
+    {
+      "nombreCategoria": "Economia",
+      "id": 9
     }
   ]
 }
